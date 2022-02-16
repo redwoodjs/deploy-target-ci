@@ -1,16 +1,16 @@
 {
-    "extends": ["config:base"],
-    "packageRules": [
-      {
-        "automerge": true,
-        "matchPackagePatterns": ["@redwoodjs"],
-        "rangeStrategy": "pin"
-      }
-    ],
-    "ignoreDeps": [
-      "prop-types",
-      "react",
-      "react-dom"
-    ]
-  }
-  
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "automerge": true,
+      "matchPackagePatterns": ["@redwoodjs"],
+      "rangeStrategy": "pin",
+      "followTag": "canary
+    }
+  ],
+  "ignoreDeps": [
+    "prop-types",
+    "react",
+    "react-dom"
+  ]
+}
