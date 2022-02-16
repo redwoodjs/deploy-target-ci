@@ -2,11 +2,6 @@
     "extends": ["config:base"],
     "packageRules": [
       {
-        "matchUpdateTypes": [
-          "major",
-          "minor",
-          "patch"
-        ],
         "automerge": true,
         "matchPackagePatterns": ["@redwoodjs"],
         "rangeStrategy": "pin"
