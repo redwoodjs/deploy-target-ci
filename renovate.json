@@ -1,0 +1,21 @@
+{
+    "extends": ["config:base"],
+    "packageRules": [
+      {
+        "matchUpdateTypes": [
+          "major",
+          "minor",
+          "patch"
+        ],
+        "automerge": true,
+        "matchPackagePatterns": ["@redwoodjs"],
+        "rangeStrategy": "pin"
+      }
+    ],
+    "ignoreDeps": [
+      "prop-types",
+      "react",
+      "react-dom"
+    ]
+  }
+  
