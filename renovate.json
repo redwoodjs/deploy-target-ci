@@ -3,7 +3,6 @@
   "packageRules": [
     {
       "automerge": true,
-      "matchUpdateTypes": ["minor", "patch", "pin", "major"],
       "matchPackagePatterns": ["@redwoodjs"],
       "rangeStrategy": "pin",
       "followTag": "canary"
