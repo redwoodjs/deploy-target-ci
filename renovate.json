@@ -4,7 +4,9 @@
     {
       "automerge": true,
       "matchUpdateTypes": ["minor", "patch", "pin", "major"],
-      "matchPackagePatterns": ["@redwoodjs"]
+      "matchPackagePatterns": ["@redwoodjs"],
+      "rangeStrategy": "pin",
+      "followTag": "canary"
     }
   ],
   "ignoreDeps": [
