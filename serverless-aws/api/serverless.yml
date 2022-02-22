@@ -39,7 +39,7 @@ provider:
     # Add environment variables here, either in the form
     # VARIABLE_NAME: ${env:VARIABLE_NAME} for vars in your local environment, or
     # VARIABLE_NAME: ${param:VARIABLE_NAME} for vars from the Serverless dashboard
-    DATABASE_URL: ${env:DATABASE_URL}
+    DATABASE_URL: ${param:DATABASE_URL}
 
 package:
   individually: true
