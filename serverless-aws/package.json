@@ -8,7 +8,12 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "0.46.1-canary.14"
+    "@redwoodjs/core": "0.46.1-canary.14",
+    "@vercel/nft": "0.17.5",
+    "archiver": "5.3.0",
+    "fs-extra": "10.0.0",
+    "serverless": "3.3.0",
+    "serverless-lift": "1.12.1"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
@@ -20,5 +25,8 @@
   },
   "prisma": {
     "seed": "yarn rw exec seed"
+  },
+  "scripts": {
+    "postinstall": "yarn rw deploy serverless --pack-only"
   }
 }
