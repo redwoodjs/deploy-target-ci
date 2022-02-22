@@ -42,3 +42,4 @@ jobs:
       - name: Deploy
         run: |
           yarn rw deploy serverless
+        working-directory: ./serverless-aws          
