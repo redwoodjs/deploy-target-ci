@@ -8,10 +8,13 @@ jobs:
   build:
     if: github.repository == 'redwoodjs/deploy-target-ci'
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.SERVERLESS_DATABASE_URL }}
+      API_URL: ${{ secrets.SERVERLESS_API_URL}}
+
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # Required because lerna uses tags to determine the version.
+
       - name: Setup node
         uses: actions/setup-node@v2
         with:
