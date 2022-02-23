@@ -2,10 +2,12 @@
   "extends": ["config:base"],
   "packageRules": [
     {
-      "automerge": true,
+      "matchPackagePrefixes": ["@redwoodjs/"],
       "followTag": "canary",
-      "matchPackageNames": [ "@redwoodjs/core", "@redwoodjs/web", "@redwoodjs/router", "@redwoodjs/forms", "@redwoodjs/auth", "@redwoodjs/api", "@redwoodjs/graphql-server" ]
-    }
+      "groupName": "RedwoodJS dependencies",
+      "schedule": ["at any time"],
+      "automerge": true
+    }    
   ],
   "ignoreDeps": [
     "prop-types",
