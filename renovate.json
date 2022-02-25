@@ -2,7 +2,7 @@
   "extends": ["config:base"],
   "packageRules": [
     {
-      "matchPackagePrefixes": ["@redwoodjs/"],
+      "matchPackageNames": [ "@redwoodjs/core", "@redwoodjs/web", "@redwoodjs/router", "@redwoodjs/forms", "@redwoodjs/auth", "@redwoodjs/api", "@redwoodjs/graphql-server" ],
       "followTag": "canary",
       "groupName": "RedwoodJS dependencies",
       "schedule": ["at any time"],
