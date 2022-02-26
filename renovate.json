@@ -1,14 +1,17 @@
 {
-  "extends": ["config:base"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":disableRateLimiting"],
+  "schedule": ["at any time"],
+  "semanticCommits": "enabled",
+  "rebaseWhen": "conflicted",
+  "rangeStrategy": "pin",
+  "automerge": true
   "packageRules": [
     {
+      "groupName": "RedwoodJS Dependencies",
       "matchPackagePrefixes": [ "@redwoodjs" ],
       "followTag": "canary",
       "ignoreUnstable": false,
-      "rangeStrategy": "pin",
-      "groupName": "RedwoodJS Dependencies",
-      "schedule": ["at any time"],
-      "automerge": true
     }    
   ],
   "ignoreDeps": [
