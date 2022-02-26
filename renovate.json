@@ -5,13 +5,13 @@
   "semanticCommits": "enabled",
   "rebaseWhen": "conflicted",
   "rangeStrategy": "pin",
-  "automerge": true
+  "automerge": true,
   "packageRules": [
     {
       "groupName": "RedwoodJS Dependencies",
       "matchPackagePrefixes": [ "@redwoodjs" ],
       "followTag": "canary",
-      "ignoreUnstable": false,
+      "ignoreUnstable": false
     }    
   ],
   "ignoreDeps": [
