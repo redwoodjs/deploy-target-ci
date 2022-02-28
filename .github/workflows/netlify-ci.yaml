@@ -6,18 +6,16 @@ on:
     types: [opened, synchronize]     
 
 jobs:
-  postgresql:
-    name: Set up Postgres
+  runCI:
+    name: Run CI with Postgres
     runs-on: ubuntu-latest
     steps:
-      - uses: harmon758/postgresql-action@v1
+      - name: Set up Postgres
+        uses: harmon758/postgresql-action@v1
         with:
           postgresql version: '14'
           postgresql db: 'test'
-  runCI:
-    name: Run CI
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Set project directory
         id: project-directory
         run: echo "::set-output name=dir::./netlify"
@@ -29,12 +27,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
-          
-      - name: Cache "node_modules"
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: node_modules_${{ hashFiles('**/yarn.lock') }}
+
+      # TODO          
+      # - name: Cache "node_modules"
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: '**/node_modules'
+      #     key: node_modules_${{ hashFiles('**/yarn.lock') }}
       
       - name: Install dependencies
         working-directory: ${{ steps.project-directory.outputs.dir }}
