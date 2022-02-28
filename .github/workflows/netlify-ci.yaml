@@ -1,56 +1,55 @@
 name: Netlify CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize]     
 
-  on:
-    push:
-      branches: [main]
-    pull_request:
-      types: [opened, synchronize]     
+jobs:
+  postgresql:
+    name: Set up Postgres
+    runs-on: ubuntu-latest
+    steps:
+      - uses: harmon758/postgresql-action@v1
+        with:
+          postgresql version: '14'
+          postgresql db: 'test'
+  runCI:
+    name: Run CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set project directory
+        id: project-directory
+        run: echo "::set-output name=dir::./netlify"
 
-  jobs:
-    postgresql:
-      name: Set up Postgres
-      runs-on: ubuntu-latest
-        steps:
-          - uses: harmon758/postgresql-action@v1
-            with:
-              postgresql version: '14'
-              postgresql db: 'test'
-    runCI:
-      name: Run CI
-      runs-on: ubuntu-latest
-      steps:
-        - name: Set project directory
-          id: project-directory
-          run: echo "::set-output name=dir::./netlify"
+      - name: Checkout
+        uses: actions/checkout@v2
 
-        - name: Checkout
-          uses: actions/checkout@v2
-
-        - name: Setup Node.js v16
-          uses: actions/setup-node@v3
-          with:
-            node-version: "16"
-            
-        - name: Cache "node_modules"
-          uses: actions/cache@v2
-          with:
-            path: '**/node_modules'
-            key: node_modules_${{ hashFiles('**/yarn.lock') }}
+      - name: Setup Node.js v16
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          
+      - name: Cache "node_modules"
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: node_modules_${{ hashFiles('**/yarn.lock') }}
+      
+      - name: Install dependencies
+        working-directory: ${{ steps.project-directory.outputs.dir }}
+        run: yarn install --frozen-lockfile
         
-        - name: Install dependencies
-          working-directory: ${{ steps.project-directory.outputs.dir }}
-          run: yarn install --frozen-lockfile
-          
-        - name: Run Build
-          working-directory: ${{ steps.project-directory.outputs.dir }}
-          run: yarn rw build
+      - name: Run Build
+        working-directory: ${{ steps.project-directory.outputs.dir }}
+        run: yarn rw build
 
-        - name: Run Diagnostics
-          working-directory: ${{ steps.project-directory.outputs.dir }}
-          run: yarn rw check
-          
-        - name: Run Tests
-          working-directory: ${{ steps.project-directory.outputs.dir }}
-          run: yarn rw test
-          env:
-            TEST_DATABASE_URL: postgresql://postgres@localhost:5432/test
+      - name: Run Diagnostics
+        working-directory: ${{ steps.project-directory.outputs.dir }}
+        run: yarn rw check
+        
+      - name: Run Tests
+        working-directory: ${{ steps.project-directory.outputs.dir }}
+        run: yarn rw test
+        env:
+          TEST_DATABASE_URL: postgresql://postgres@localhost:5432/test
