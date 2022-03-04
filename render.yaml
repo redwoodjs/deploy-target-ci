@@ -8,11 +8,16 @@ services:
 - name: render-postgres-web
   type: web
   env: static
-  buildCommand: yarn rw deploy render web
-  staticPublishPath: ./web/dist
+  buildCommand: cd render-postgres && yarn rw deploy render web
+  staticPublishPath: ./render-postgres/web/dist
   envVars:
   - key: NODE_VERSION
     value: 16
+  - key: API_DOMAIN
+    fromService:
+      - name: render-postgres-api
+        type: web
+        property: host
   routes:
   - type: rewrite
     source: /.redwood/functions/*
@@ -30,8 +35,8 @@ services:
   type: web
   env: node
   region: oregon
-  buildCommand: yarn && yarn rw build api
-  startCommand: yarn rw deploy render api
+  buildCommand: cd render-postgres && yarn && yarn rw build api
+  startCommand: cd render-postgres && yarn rw deploy render api
   envVars:
   - key: NODE_VERSION
     value: 16
@@ -43,4 +48,3 @@ services:
 databases:
   - name: render-postgres-db
     region: oregon
-
