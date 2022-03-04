@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: autoapprove
         uses: hmarr/auto-approve-action@v2
-        if: github.actor == 'app/renovate' || github.actor == 'renovate[bot]'
+        if: github.event.pull_request.user.login == 'app/renovate' || github.event.pull_request.user.login == 'renovate[bot]'
         env:
           GITHUB_TOKEN: ${{ github.token }}  
 
