@@ -46,7 +46,7 @@ jobs:
 
       - name: Set project directory
         id: project-directory
-        run: echo "::set-output name=dir::./netlify"
+        run: echo "::set-output name=dir::netlify"
       
       - name: Install dependencies
         working-directory: ${{ steps.project-directory.outputs.dir }}
@@ -81,7 +81,7 @@ jobs:
 
       - name: Set project directory
         id: project-directory
-        run: echo "::set-output name=dir::./vercel"
+        run: echo "::set-output name=dir::vercel"
       
       - name: Install dependencies
         working-directory: ${{ steps.project-directory.outputs.dir }}
