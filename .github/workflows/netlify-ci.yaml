@@ -6,8 +6,8 @@ on:
     types: [opened, synchronize]     
 
 jobs:
-  setup:
-    name: Initial Setup 
+  netlifyCI:
+    name: Netlify CI
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,6 +17,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
+
+      - name: Set up Postgres
+        uses: CasperWA/postgresql-action@v1
+        with:
+          postgresql version: '14'
+          postgresql db: 'test'
+          postgresql user: test
+          postgresql password: password
 
       # Project is using Yarn 3
       - name: Get yarn cache directory path
@@ -32,21 +40,9 @@ jobs:
           restore-keys: |
             yarn-    
 
-  netlifyCI:
-    name: Run CI with Postgres
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Postgres
-        uses: CasperWA/postgresql-action@v1
-        with:
-          postgresql version: '14'
-          postgresql db: 'test'
-          postgresql user: test
-          postgresql password: password   
-
       - name: Set project directory
         id: project-directory
-        run: echo "::set-output name=dir::netlify"
+        run: echo "::set-output name=dir::./netlify"
       
       - name: Install dependencies
         working-directory: ${{ steps.project-directory.outputs.dir }}
@@ -68,20 +64,42 @@ jobs:
           TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test
 
   vercelCI:
-    name: Run CI with Postgres
+    name: Vercel CI
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js v16
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
       - name: Set up Postgres
         uses: CasperWA/postgresql-action@v1
         with:
           postgresql version: '14'
           postgresql db: 'test'
           postgresql user: test
-          postgresql password: password   
+          postgresql password: password
+
+      # Project is using Yarn 3
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache yarn
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            yarn-    
 
       - name: Set project directory
         id: project-directory
-        run: echo "::set-output name=dir::vercel"
+        run: echo "::set-output name=dir::./vercel"
       
       - name: Install dependencies
         working-directory: ${{ steps.project-directory.outputs.dir }}
