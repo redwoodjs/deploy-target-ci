@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Postgres
-        uses: harmon758/postgresql-action@v1
+        uses: CasperWA/postgresql-action@v1
         with:
           postgresql version: '14'
           postgresql db: 'test'
