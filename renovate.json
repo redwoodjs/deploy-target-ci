@@ -2,16 +2,16 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", ":disableRateLimiting"],
   "schedule": ["at any time"],
-  "semanticCommits": "enabled",
+  "semanticCommits": "disabled",
   "rebaseWhen": "conflicted",
   "rangeStrategy": "pin",
   "automerge": true,
+  "prHourlyLimit": 0,
   "packageRules": [
     {
-      "groupName": "RedwoodJS Dependencies",
-      "matchPackagePrefixes": [ "@redwoodjs" ],
-      "followTag": "canary",
-      "ignoreUnstable": false
+      "ignoreUnstable": false,
+      "packageNames": ["@redwoodjs/core", "@redwoodjs/forms", "@redwoodjs/router", "@redwoodjs/web", "@redwoodjs/api", "@redwoodjs/graphql-server"],
+      "followTag": "canary"
     }    
   ],
   "ignoreDeps": [
