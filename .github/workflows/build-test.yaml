@@ -213,7 +213,7 @@ jobs:
 
       - name: Set project directory
         id: project-directory
-        run: echo "::set-output name=dir::./serverless"
+        run: echo "::set-output name=dir::./serverless-aws"
       
       - name: Install dependencies
         working-directory: ${{ steps.project-directory.outputs.dir }}
