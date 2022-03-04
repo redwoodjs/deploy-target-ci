@@ -15,7 +15,7 @@ services:
     value: 16
   - key: API_DOMAIN
     fromService:
-    - name: render-postgres-api
+      name: render-postgres-api
       type: web
       property: host
   routes:
