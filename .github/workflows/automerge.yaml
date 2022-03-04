@@ -32,7 +32,14 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - uses: reitermarkus/automerge@v1
+      - name: autoapprove
+        uses: hmarr/auto-approve-action@v2
+        if: github.actor == 'app/renovate' || github.actor == 'renovate[bot]'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}  
+
+      - name: automerge       
+        uses: reitermarkus/automerge@v1
         with:
           merge-method: squash
           do-not-merge-labels: never-merge
