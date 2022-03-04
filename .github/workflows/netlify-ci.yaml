@@ -1,4 +1,4 @@
-name: Netlify CI
+name: Projects CI
 on:
   push:
     branches: [main]
@@ -6,22 +6,10 @@ on:
     types: [opened, synchronize]     
 
 jobs:
-  runCI:
-    name: Run CI with Postgres
+  setup:
+    name: Initial Setup 
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Postgres
-        uses: CasperWA/postgresql-action@v1
-        with:
-          postgresql version: '14'
-          postgresql db: 'test'
-          postgresql user: test
-          postgresql password: password   
-
-      - name: Set project directory
-        id: project-directory
-        run: echo "::set-output name=dir::./netlify"
-
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -42,7 +30,58 @@ jobs:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: yarn-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            yarn-
+            yarn-    
+
+  netlifyCI:
+    name: Run CI with Postgres
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Postgres
+        uses: CasperWA/postgresql-action@v1
+        with:
+          postgresql version: '14'
+          postgresql db: 'test'
+          postgresql user: test
+          postgresql password: password   
+
+      - name: Set project directory
+        id: project-directory
+        run: echo "::set-output name=dir::./netlify"
+      
+      - name: Install dependencies
+        working-directory: ${{ steps.project-directory.outputs.dir }}
+        run: yarn install --immutable
+        
+      - name: Run Build
+        working-directory: ${{ steps.project-directory.outputs.dir }}
+        run: yarn rw build
+
+      # missing a service implementation 
+      # - name: Run Diagnostics
+      #   working-directory: ${{ steps.project-directory.outputs.dir }}
+      #   run: yarn rw check
+        
+      - name: Run Tests
+        working-directory: ${{ steps.project-directory.outputs.dir }}
+        run: yarn rw test
+        env:
+          TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test
+
+  vercelCI:
+    name: Run CI with Postgres
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Postgres
+        uses: CasperWA/postgresql-action@v1
+        with:
+          postgresql version: '14'
+          postgresql db: 'test'
+          postgresql user: test
+          postgresql password: password   
+
+      - name: Set project directory
+        id: project-directory
+        run: echo "::set-output name=dir::./vercel"
       
       - name: Install dependencies
         working-directory: ${{ steps.project-directory.outputs.dir }}
