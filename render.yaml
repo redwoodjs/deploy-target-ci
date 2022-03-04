@@ -15,9 +15,9 @@ services:
     value: 16
   - key: API_DOMAIN
     fromService:
-      - name: render-postgres-api
-        type: web
-        property: host
+    - name: render-postgres-api
+      type: web
+      property: host
   routes:
   - type: rewrite
     source: /.redwood/functions/*
@@ -30,7 +30,6 @@ services:
   - type: rewrite
     source: /*
     destination: /index.html
-
 - name: render-postgres-api
   type: web
   env: node
