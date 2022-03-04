@@ -35,8 +35,8 @@ jobs:
       - name: autoapprove
         uses: hmarr/auto-approve-action@v2
         if: github.event.pull_request.user.login == 'app/renovate' || github.event.pull_request.user.login == 'renovate[bot]'
-        env:
-          GITHUB_TOKEN: ${{ github.token }}  
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}" 
 
       - name: automerge       
         uses: reitermarkus/automerge@v1
