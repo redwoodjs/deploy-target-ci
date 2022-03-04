@@ -28,16 +28,23 @@ jobs:
         with:
           node-version: "16"
 
-      # TODO          
-      # - name: Cache "node_modules"
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: '**/node_modules'
-      #     key: node_modules_${{ hashFiles('**/yarn.lock') }}
+      # Project is using Yarn 3
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache yarn
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            yarn-
       
       - name: Install dependencies
         working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn install --frozen-lockfile --ignore-scripts
+        run: yarn install --immutable
         
       - name: Run Build
         working-directory: ${{ steps.project-directory.outputs.dir }}
