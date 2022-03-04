@@ -1,4 +1,4 @@
-name: Projects CI
+name: CI
 on:
   push:
     branches: [main]
@@ -7,7 +7,7 @@ on:
 
 jobs:
   netlifyCI:
-    name: Netlify CI
+    name: Netlify
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -64,7 +64,7 @@ jobs:
           TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test
 
   vercelCI:
-    name: Vercel CI
+    name: Vercel
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -121,7 +121,7 @@ jobs:
           TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test
 
   renderCI:
-    name: Render CI
+    name: Render
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -178,7 +178,7 @@ jobs:
           TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test
 
   serverlessCI:
-    name: Serverless CI
+    name: Serverless
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
