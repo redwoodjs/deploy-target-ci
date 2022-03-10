@@ -28,15 +28,18 @@ on:
         description: Pull Request Number
         required: false
 
+# this job may trigger other workflows; use personal token because actions don't trigger actions
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
       - name: autoapprove
+        env:
+          GITHUB_TOKEN: ${{ secrets.DAVID_P_TOKEN }}
         uses: hmarr/auto-approve-action@v2
         if: github.event.pull_request.user.login == 'app/renovate' || github.event.pull_request.user.login == 'renovate[bot]'
         with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}" 
+          github-token: $GITHUB_TOKEN 
 
       - name: automerge       
         uses: reitermarkus/automerge@v1
@@ -46,4 +49,4 @@ jobs:
           required-labels: automerge
           pull-request: ${{ github.event.inputs.pull-request }}
         env:
-          GITHUB_TOKEN: ${{ github.token }}          
+          GITHUB_TOKEN: ${{ secrets.DAVID_P_TOKEN }}          
