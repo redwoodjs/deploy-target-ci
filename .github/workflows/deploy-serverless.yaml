@@ -4,10 +4,11 @@ on:
   push:
     branches: [ main ]
 
-  workflow_run:
-    workflows: [Merge Renovate]
-    types:
-      - completed    
+# maybe I don't need this...
+  # workflow_run:
+  #   workflows: [Merge Renovate]
+  #   types:
+  #     - completed    
 
 jobs:
   build:
