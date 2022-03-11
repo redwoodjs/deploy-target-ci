@@ -4,6 +4,11 @@ on:
   push:
     branches: [ main ]
 
+  workflow_run:
+    workflows: [Merge Renovate]
+    types:
+      - completed    
+
 jobs:
   build:
     if: github.repository == 'redwoodjs/deploy-target-ci'
