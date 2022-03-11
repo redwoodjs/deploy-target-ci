@@ -34,12 +34,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: autoapprove
-        env:
-          GITHUB_TOKEN: ${{ secrets.DAVID_P_TOKEN }}
         uses: hmarr/auto-approve-action@v2
         if: github.event.pull_request.user.login == 'app/renovate' || github.event.pull_request.user.login == 'renovate[bot]'
         with:
-          github-token: $GITHUB_TOKEN 
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: automerge       
         uses: reitermarkus/automerge@v1
