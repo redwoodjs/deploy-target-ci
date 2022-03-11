@@ -36,9 +36,8 @@ jobs:
       - name: auto-merge-step
         uses: reitermarkus/automerge@v1
         with:
+          token: ${{ secrets.DAVID_P_TOKEN }}
           merge-method: squash
           do-not-merge-labels: never-merge
           required-labels: automerge
-          pull-request: ${{ github.event.inputs.pull-request }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.DAVID_P_TOKEN }}          
+          pull-request: ${{ github.event.inputs.pull-request }}     
