@@ -5,7 +5,7 @@ datasource db {
 
 generator client {
   provider      = "prisma-client-js"
-  binaryTargets = ["native", "rhel-openssl-1.0.x"]
+  binaryTargets = "native"
 }
 
 // Define your own datamodels here and run `yarn redwood prisma migrate dev`
@@ -31,4 +31,14 @@ model Contact {
   email     String
   message   String
   createdAt DateTime @default(now())
+}
+
+model User {
+  id                  Int       @id @default(autoincrement())
+  email               String    @unique
+  hashedPassword      String
+  salt                String
+  resetToken          String?
+  resetTokenExpiresAt DateTime?
+  roles               String?
 }
