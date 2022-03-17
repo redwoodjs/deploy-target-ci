@@ -38,10 +38,19 @@ jobs:
           yarn install --immutable
         working-directory: ./baremetal
 
+      - name: Setup SSH Keys and known_hosts
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY_BAREMETAL }}"
+
       - name: Deploy
         run: |
           yarn rw deploy baremetal
         working-directory: ./baremetal
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
           
 # TODO
 # Add Slack Notifications for deploy success/fail
