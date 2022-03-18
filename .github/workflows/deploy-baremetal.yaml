@@ -1,0 +1,57 @@
+name: Deploy baremetal
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    if: github.repository == 'redwoodjs/deploy-target-ci'
+    runs-on: ubuntu-latest
+    # env:
+      # DATABASE_URL: ${{ secrets.BAREMETAL_DATABASE_URL }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Project is using Yarn 3
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache yarn
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            yarn-
+
+      - name: Install dependencies
+        run: |
+          yarn install --immutable
+        working-directory: ./baremetal
+
+      - name: Setup SSH Keys and known_hosts
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY_BAREMETAL }}"
+
+      - name: Deploy
+        run: |
+          yarn rw deploy baremetal
+        working-directory: ./baremetal
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+          
+# TODO
+# Add Slack Notifications for deploy success/fail
+# https://github.com/marketplace/actions/slack-send          
