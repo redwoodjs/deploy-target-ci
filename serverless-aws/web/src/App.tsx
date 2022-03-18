@@ -12,8 +12,15 @@ import './index.css'
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
-      <AuthProvider type="dbAuth">
-        <RedwoodApolloProvider>
+      <AuthProvider
+        type="dbAuth"
+        config={{ fetchConfig: { credentials: 'include' } }}
+      >
+        <RedwoodApolloProvider
+          graphQLClientConfig={{
+            httpLinkConfig: { credentials: 'include' },
+          }}
+        >
           <Routes />
         </RedwoodApolloProvider>
       </AuthProvider>
