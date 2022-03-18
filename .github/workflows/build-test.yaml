@@ -8,7 +8,7 @@ on:
 jobs:
   netlifyCI:
     name: Netlify
-    uses: ./.github/actions/project-ci.yml@${{github.head_ref}}
+    uses: ./.github/actions/project-ci
     with:
       project-directory: './netlify'
       run-lint: 'no'
