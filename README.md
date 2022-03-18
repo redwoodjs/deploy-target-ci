@@ -14,3 +14,6 @@ https://d2y24ev7gslziu.cloudfront.net
 
 ## Render
 https://render-postgres-web.onrender.com
+
+## baremetal
+http://ec2-52-73-122-38.compute-1.amazonaws.com:8910
