@@ -19,3 +19,4 @@ https://render-postgres-web.onrender.com
 http://ec2-34-200-219-134.compute-1.amazonaws.com:8910/
 
 ## Flightcontrol
+https://d2dub2qmgsm5yj.cloudfront.net
