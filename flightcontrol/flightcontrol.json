@@ -16,7 +16,7 @@
           "memory": 0.5,
           "port": 8911,
           "installCommand": "NODE_ENV=development yarn install --immutable",
-          "buildCommand": "yarn rw deploy flightcontrol",
+          "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol",
           "startCommand": "yarn rw deploy flightcontrol --serve",
           "postBuildCommand": "echo 0",
           "healthCheckPath": "/graphql/health"
@@ -27,7 +27,7 @@
           "type": "static",
           "singlePageApp": true,
           "installCommand": "NODE_ENV=development yarn install --immutable",
-          "buildCommand": "yarn rw deploy flightcontrol web",
+          "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol web",
           "outputDirectory": "web/dist"
         }
       ]
