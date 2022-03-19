@@ -2,7 +2,7 @@
 Testing supported RedwoodJS deploy targets using canary packages
 
 ## Netlify
-[![Netlify Status](https://api.netlify.com/api/v1/badges/df4e9ede-0129-45e4-ad8f-e5e2c414c0b6/deploy-status)](https://app.netlify.com/sites/rwjs-deploy-target-ci/deploys)  
+[![Netlify Status](https://api.netlify.com/api/v1/badges/df4e9ede-0129-45e4-ad8f-e5e2c414c0b6/deploy-status)](https://app.netlify.com/sites/rwjs-deploy-target-ci/deploys)
 
 https://rwjs-deploy-target-ci.netlify.app
 
@@ -16,4 +16,4 @@ https://d2y24ev7gslziu.cloudfront.net
 https://render-postgres-web.onrender.com
 
 ## baremetal
-http://ec2-52-73-122-38.compute-1.amazonaws.com:8910
+http://ec2-34-200-219-134.compute-1.amazonaws.com:8910/
