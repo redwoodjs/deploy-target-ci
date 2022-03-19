@@ -11,7 +11,7 @@ on:
 #     - completed
 
 jobs:
-  build:
+  build-deploy:
     if: github.repository == 'redwoodjs/deploy-target-ci'
     runs-on: ubuntu-latest
 
@@ -21,7 +21,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
 
       # Project is using Yarn 3
       - name: Get yarn cache directory path
@@ -49,3 +49,62 @@ jobs:
         working-directory: ./layer0
         env:
           deploy_token: ${{secrets.LAYER0_DEPLOY_TOKEN}}
+
+      - name: Update Deploy Job Status
+        if: always()
+        run: |
+          echo ${{ job.status }} > status_deploy.txt
+
+      - name: Upload file status_deploy.txt as an artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pass_status_deploy_job
+          path: status_deploy.txt
+
+# Slack Notifications for deploy success/fail
+# https://github.com/marketplace/actions/slack-send
+  slack-notification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    needs: build-deploy
+    if: always()
+
+    steps:
+      - name: Download deploy status artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: pass_status_deploy_job
+
+      - name: Set the deploy status as output
+        id: deploy-status
+        run: |
+          echo "::set-output name=deploy-result::$(<status_deploy.txt)" 
+
+      - name: Overwrite deploy status env if failure
+        if: ${{ steps.deploy-status.outputs.deploy-result == 'failure' }}
+        run: |
+          echo "DEPLOY_STATUS=Deploy FAILED 🚨" >> $GITHUB_ENV
+
+      - name: Overwrite deploy status env if success
+        if: ${{ steps.deploy-status.outputs.deploy-result == 'success' }}
+        run: |
+          echo "DEPLOY_STATUS=Deployed Successfully ✅" >> $GITHUB_ENV  
+
+      - name: Overwrite deploy status env if something else
+        if: ${{ (steps.deploy-status.outputs.deploy-result != 'failure') &&  (steps.deploy-status.outputs.deploy-result != 'success') }}
+        run: |
+          echo "DEPLOY_STATUS=Deploy Cancelled" >> $GITHUB_ENV              
+
+      - name: Slack
+        id: slack
+        uses: slackapi/slack-github-action@v1
+        with:
+          payload: |
+            {
+              "deploy_target": "layer0 🍰",
+              "deploy_status": "${{ env.DEPLOY_STATUS }}",
+              "deploy_commit": "${{ github.event.head_commit.message }}"
+            }            
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

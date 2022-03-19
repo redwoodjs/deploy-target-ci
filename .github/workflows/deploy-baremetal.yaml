@@ -64,8 +64,7 @@ jobs:
           name: pass_status_deploy_job
           path: status_deploy.txt          
           
-# TODO
-# Add Slack Notifications for deploy success/fail
+# Slack Notifications for deploy success/fail
 # https://github.com/marketplace/actions/slack-send
   slack-notification:
     name: Slack Notification
