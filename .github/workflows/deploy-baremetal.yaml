@@ -82,7 +82,7 @@ jobs:
       - name: Set the deploy status as output
         id: deploy-status
         run: |
-          echo "::set-output name=deploy-result::$(<pass_status_deploy_job/status_deploy.txt)" 
+          echo "::set-output name=deploy-result::$(<status_deploy.txt)" 
 
       - name: Overwrite deploy status env if failure
         if: ${{ steps.deploy-status.outputs.deploy-result == 'failure' }}
