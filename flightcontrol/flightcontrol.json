@@ -14,6 +14,7 @@
           "type": "fargate",
           "cpu": 0.25,
           "memory": 0.5,
+          "installCommand": "npm ci --production=false && yarn install --immutable",
           "buildCommand": "yarn rw build api && yarn rw prisma migrate deploy && yarn rw data-migrate",
           "startCommand": "yarn rw serve api",
           "postBuildCommand": "echo 0",
@@ -24,6 +25,7 @@
           "name": "Redwood Web",
           "type": "static",
           "singlePageApp": true,
+          "installCommand": "npm ci --production=false && yarn install --immutable",
           "buildCommand": "yarn rw build web",
           "outputDirectory": "web/dist"
         }
