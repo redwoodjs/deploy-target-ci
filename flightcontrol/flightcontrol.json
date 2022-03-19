@@ -14,15 +14,10 @@
           "type": "fargate",
           "cpu": 0.25,
           "memory": 0.5,
-          "buildCommand": "rw build api && rw prisma migrate deploy",
+          "buildCommand": "yarn rw build api && yarn rw prisma migrate deploy && yarn rw data-migrate",
           "startCommand": "rw serve api --port $PORT",
           "postBuildCommand": "echo 0",
-          "healthCheckPath": "/graphql/health",
-          "envVariables": {
-            "DATABASE_URL": {
-              "fromService": { "id": "db", "value": "dbConnectionString" }
-            }
-          }
+          "healthCheckPath": "/graphql/health"
         },
         {
           "id": "redwood-web",
@@ -31,16 +26,6 @@
           "singlePageApp": true,
           "buildCommand": "rw build web",
           "outputDirectory": "web/dist"
-        },
-        {
-          "id": "db",
-          "name": "Database",
-          "type": "rds",
-          "engine": "postgres",
-          "engineVersion": "12",
-          "instanceSize": "db.t2.micro",
-          "storage": 20,
-          "private": false
         }
       ]
     }
