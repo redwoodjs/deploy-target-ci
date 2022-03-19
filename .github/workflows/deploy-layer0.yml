@@ -2,13 +2,7 @@ name: Deploy Layer0
 
 on:
   push:
-    branches: [main, layer0-deploy]
-
-# maybe I don't need this...
-# workflow_run:
-#   workflows: [Merge Renovate]
-#   types:
-#     - completed
+    branches: [ main ]
 
 jobs:
   build-deploy:
