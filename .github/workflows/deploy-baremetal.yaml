@@ -87,17 +87,17 @@ jobs:
       - name: Overwrite deploy status env if failure
         if: ${{ steps.deploy-status.outputs.deploy-result == 'failure' }}
         run: |
-          echo "DEPLOY_STATUS='Deploy FAILED 🚨'" >> $GITHUB_ENV
+          echo "DEPLOY_STATUS=Deploy FAILED 🚨" >> $GITHUB_ENV
 
-      - name: Overwrite deploy status env if failure
+      - name: Overwrite deploy status env if success
         if: ${{ steps.deploy-status.outputs.deploy-result == 'success' }}
         run: |
-          echo "DEPLOY_STATUS='Deployed Successfully ✅'" >> $GITHUB_ENV  
+          echo "DEPLOY_STATUS=Deployed Successfully ✅" >> $GITHUB_ENV  
 
-      - name: Overwrite deploy status env if failure
+      - name: Overwrite deploy status env if something else
         if: ${{ (steps.deploy-status.outputs.deploy-result != 'failure') &&  (steps.deploy-status.outputs.deploy-result != 'success') }}
         run: |
-          echo "DEPLOY_STATUS='Deploy Cancelled '" >> $GITHUB_ENV              
+          echo "DEPLOY_STATUS=Deploy Cancelled" >> $GITHUB_ENV              
 
       - name: Slack
         id: slack
