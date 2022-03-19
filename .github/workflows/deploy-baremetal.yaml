@@ -68,7 +68,7 @@ jobs:
 # Add Slack Notifications for deploy success/fail
 # https://github.com/marketplace/actions/slack-send
   slack-notification:
-    name: Slack Notificaiton
+    name: Slack Notification
     runs-on: ubuntu-latest
     needs: build-deploy
     if: always()
@@ -91,7 +91,7 @@ jobs:
           payload: |
             {
               "deploy_target": "baremetal 🤘",
-              "deploy_status": ${{ steps.deploy-status.outputs.deploy-result }}
+              "deploy_status": "${{ steps.deploy-status.outputs.deploy-result }}"
             }            
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
