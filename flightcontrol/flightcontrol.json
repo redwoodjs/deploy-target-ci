@@ -1,0 +1,33 @@
+{
+  "environments": [
+    {
+      "id": "development",
+      "name": "Development",
+      "region": "us-east-1",
+      "source": {
+        "branch": "main"
+      },
+      "services": [
+        {
+          "id": "redwood-api",
+          "name": "Redwood API",
+          "type": "fargate",
+          "cpu": 0.25,
+          "memory": 0.5,
+          "buildCommand": "yarn rw build api && yarn rw prisma migrate deploy && yarn rw data-migrate",
+          "startCommand": "rw serve api --port $PORT",
+          "postBuildCommand": "echo 0",
+          "healthCheckPath": "/graphql/health"
+        },
+        {
+          "id": "redwood-web",
+          "name": "Redwood Web",
+          "type": "static",
+          "singlePageApp": true,
+          "buildCommand": "rw build web",
+          "outputDirectory": "web/dist"
+        }
+      ]
+    }
+  ]
+}
