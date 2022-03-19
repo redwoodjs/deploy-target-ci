@@ -15,7 +15,7 @@
           "cpu": 0.25,
           "memory": 0.5,
           "port": 8911,
-          "installCommand: "cd flightcontrol && yarn install --frozen-lockfile --production=false",
+          "installCommand": "cd flightcontrol && yarn install --frozen-lockfile --production=false",
           "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol",
           "startCommand": "cd flightcontrol && yarn rw deploy flightcontrol --serve",
           "postBuildCommand": "echo 0",
