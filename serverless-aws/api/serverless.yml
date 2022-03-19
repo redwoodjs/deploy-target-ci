@@ -40,6 +40,7 @@ provider:
     # VARIABLE_NAME: ${env:VARIABLE_NAME} for vars in your local environment, or
     # VARIABLE_NAME: ${param:VARIABLE_NAME} for vars from the Serverless dashboard
     DATABASE_URL: ${env:DATABASE_URL}
+    SESSION_SECRET: ${env:SESSION_SECRET}    
 
 package:
   individually: true
