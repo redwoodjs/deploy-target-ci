@@ -8,6 +8,7 @@ module.exports = {
       exec_mode: 'cluster',
       wait_ready: true,
       listen_timeout: 10000,
+      autorestart: false,
     },
   ],
 }
