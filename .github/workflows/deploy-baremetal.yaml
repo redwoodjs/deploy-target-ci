@@ -82,7 +82,21 @@ jobs:
       - name: Set the deploy status as output
         id: deploy-status
         run: |
-          echo "::set-output name=deploy-result::$(<pass_status_deploy_job/status_deploy.txt)"          
+          echo "::set-output name=deploy-result::$(<pass_status_deploy_job/status_deploy.txt)" 
+
+      - name: Convert output to env
+        env:
+          DEPLOY_STATUS: ${{ steps.deploy-status.outputs.deploy-result }}
+
+      - name: Overwrite deploy status env if failure
+        if: ${{ env.DEPLOY_STATUS == 'failure' }}
+        env:
+          DEPLOY_STATUS: 'Deploy FAILED 🚨'
+
+      - name: Overwrite deploy status env if failure
+        if: ${{ env.DEPLOY_STATUS == 'success' }}
+        env:
+          DEPLOY_STATUS: 'Deployed Successfully ✅'          
 
       - name: Slack
         id: slack
@@ -91,7 +105,8 @@ jobs:
           payload: |
             {
               "deploy_target": "baremetal 🤘",
-              "deploy_status": "${{ steps.deploy-status.outputs.deploy-result }}"
+              "deploy_status": "${{ env.DEPLOY_STATUS }}",
+              "deploy_commit": "${{ github.event.head_commit.message }}"
             }            
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
