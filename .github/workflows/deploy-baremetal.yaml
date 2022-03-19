@@ -102,7 +102,7 @@ jobs:
       - name: Prepare commit message payload
         id: commit-message
         run: |
-          echo "::set-output name=payload::$(${{ github.event.head_commit.message }} | sed -n '1p')"
+          echo "::set-output name=payload::$(${{ github.event.head_commit.message }} | awk 'NR==1 {print}')"
 
       - name: Slack
         id: slack
