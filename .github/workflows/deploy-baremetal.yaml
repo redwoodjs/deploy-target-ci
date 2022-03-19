@@ -84,19 +84,20 @@ jobs:
         run: |
           echo "::set-output name=deploy-result::$(<pass_status_deploy_job/status_deploy.txt)" 
 
-      - name: Convert output to env
+      - name: Overwrite deploy status env if failure
+        if: ${{ steps.deploy-status.outputs.deploy-result == 'failure' }}
         env:
-          DEPLOY_STATUS: ${{ steps.deploy-status.outputs.deploy-result }}
+          DEPLOY_STATUS: Deploy FAILED 🚨
 
       - name: Overwrite deploy status env if failure
-        if: ${{ env.DEPLOY_STATUS == 'failure' }}
+        if: ${{ steps.deploy-status.outputs.deploy-result == 'success' }}
         env:
-          DEPLOY_STATUS: 'Deploy FAILED 🚨'
+          DEPLOY_STATUS: Deployed Successfully ✅  
 
       - name: Overwrite deploy status env if failure
-        if: ${{ env.DEPLOY_STATUS == 'success' }}
+        if: ${{ (steps.deploy-status.outputs.deploy-result != 'failure') &&  (steps.deploy-status.outputs.deploy-result != 'success') }}
         env:
-          DEPLOY_STATUS: 'Deployed Successfully ✅'          
+          DEPLOY_STATUS: Deploy Cancelled                  
 
       - name: Slack
         id: slack
