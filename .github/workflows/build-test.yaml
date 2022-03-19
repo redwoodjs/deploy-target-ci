@@ -5,6 +5,8 @@ on:
   pull_request:
     types: [opened, synchronize]     
 
+# Eventually this needs to use .github/actions/project-ci
+# Currently can't get it to work without the "needs version" error
 jobs:
   Netlify:
     name: Netlify
