@@ -14,9 +14,8 @@
           "type": "fargate",
           "cpu": 0.25,
           "memory": 0.5,
-          "installCommand": "npm ci --production=false && yarn install",
-          "buildCommand": "yarn rw build api && yarn rw prisma migrate deploy && yarn rw data-migrate",
-          "startCommand": "yarn rw serve api",
+          "buildCommand": "yarn rw deploy flightcontrol",
+          "startCommand": "yarn rw deploy flightcontrol --serve",
           "postBuildCommand": "echo 0",
           "healthCheckPath": "/graphql/health"
         },
@@ -25,8 +24,7 @@
           "name": "Redwood Web",
           "type": "static",
           "singlePageApp": true,
-          "installCommand": "npm ci --production=false && yarn install",
-          "buildCommand": "yarn rw build web",
+          "buildCommand": "yarn rw deploy flightcontrol web",
           "outputDirectory": "web/dist"
         }
       ]
