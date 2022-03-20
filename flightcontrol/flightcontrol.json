@@ -17,7 +17,7 @@
           "port": 8911,
           "installCommand": "yarn set version berry && cd flightcontrol && NODE_ENV=development yarn install --immutable",
           "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol api",
-          "startCommand": "yarn rw deploy flightcontrol --serve",
+          "startCommand": "cd flightcontrol && yarn rw deploy flightcontrol --serve",
           "postBuildCommand": "echo 0",
           "healthCheckPath": "/graphql/health"
         },
@@ -28,7 +28,7 @@
           "singlePageApp": true,
           "installCommand": "yarn set version berry && cd flightcontrol && NODE_ENV=development yarn install --immutable",
           "buildCommand": "yarn rw deploy flightcontrol web",
-          "outputDirectory": "flightcontrol/web/dist"
+          "outputDirectory": "web/dist"
         }
       ]
     }
