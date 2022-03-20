@@ -16,7 +16,7 @@
           "memory": 0.5,
           "port": 8911,
           "installCommand": "yarn set version berry && cd flightcontrol && NODE_ENV=development yarn install --immutable",
-          "buildCommand": "yarn rw deploy flightcontrol api",
+          "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol api",
           "startCommand": "yarn rw deploy flightcontrol --serve",
           "postBuildCommand": "echo 0",
           "healthCheckPath": "/graphql/health"
