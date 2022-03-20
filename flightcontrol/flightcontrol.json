@@ -17,7 +17,7 @@
           "port": 8911,
           "installCommand": "yarn set version stable && cd flightcontrol && NODE_ENV=development yarn install --immutable",
           "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol api",
-          "startCommand": "cd flightcontrol && yarn rw deploy flightcontrol --serve",
+          "startCommand": "cd flightcontrol && yarn rw deploy flightcontrol api --serve",
           "postBuildCommand": "echo 0",
           "healthCheckPath": "/graphql/health"
         },
