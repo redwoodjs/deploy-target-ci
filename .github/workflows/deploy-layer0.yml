@@ -88,7 +88,12 @@ jobs:
       - name: Overwrite deploy status env if something else
         if: ${{ (steps.deploy-status.outputs.deploy-result != 'failure') &&  (steps.deploy-status.outputs.deploy-result != 'success') }}
         run: |
-          echo "DEPLOY_STATUS=Deploy Cancelled" >> $GITHUB_ENV              
+          echo "DEPLOY_STATUS=Deploy Cancelled" >> $GITHUB_ENV  
+
+      - name: Prepare commit message payload
+        id: commit-message
+        run: |
+          echo "::set-output name=payload::$(echo '${{ github.event.head_commit.message }}' | awk 'NR==1 {print}')"
 
       - name: Slack
         id: slack
@@ -98,7 +103,7 @@ jobs:
             {
               "deploy_target": "layer0 🍰",
               "deploy_status": "${{ env.DEPLOY_STATUS }}",
-              "deploy_commit": "${{ github.event.head_commit.message }}"
+              "deploy_commit": "${{ steps.commit-message.outputs.payload }}"
             }            
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
