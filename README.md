@@ -18,5 +18,8 @@ https://render-postgres-web.onrender.com
 ## baremetal
 http://ec2-34-200-219-134.compute-1.amazonaws.com:8910/
 
+## Flightcontrol
+https://d2dub2qmgsm5yj.cloudfront.net
+
 ## Layer0
 https://8d1ec73f-21d5-44f2-ac77-96907321b982.layer0-limelight.link
