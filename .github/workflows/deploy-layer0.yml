@@ -1,4 +1,4 @@
-name: Deploy baremetal
+name: Deploy Layer0
 
 on:
   push:
@@ -8,8 +8,6 @@ jobs:
   build-deploy:
     if: github.repository == 'redwoodjs/deploy-target-ci'
     runs-on: ubuntu-latest
-    # env:
-      # DATABASE_URL: ${{ secrets.BAREMETAL_DATABASE_URL }}
 
     steps:
       - uses: actions/checkout@v3
@@ -25,7 +23,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache yarn
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -36,21 +34,15 @@ jobs:
       - name: Install dependencies
         run: |
           yarn install --immutable
-        working-directory: ./baremetal
+        working-directory: ./layer0
 
-      - name: Setup SSH Keys and known_hosts
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY_BAREMETAL }}"
-
+      # TODO change to `rw deploy layer0` when implemented
       - name: Deploy
         run: |
-          yarn rw deploy baremetal
-        working-directory: ./baremetal
+          yarn layer0:deploy -- --token=$deploy_token
+        working-directory: ./layer0
         env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+          deploy_token: ${{secrets.LAYER0_DEPLOY_TOKEN}}
 
       - name: Update Deploy Job Status
         if: always()
@@ -62,8 +54,8 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: pass_status_deploy_job
-          path: status_deploy.txt          
-          
+          path: status_deploy.txt
+
 # Slack Notifications for deploy success/fail
 # https://github.com/marketplace/actions/slack-send
   slack-notification:
@@ -96,7 +88,7 @@ jobs:
       - name: Overwrite deploy status env if something else
         if: ${{ (steps.deploy-status.outputs.deploy-result != 'failure') &&  (steps.deploy-status.outputs.deploy-result != 'success') }}
         run: |
-          echo "DEPLOY_STATUS=Deploy Cancelled" >> $GITHUB_ENV
+          echo "DEPLOY_STATUS=Deploy Cancelled" >> $GITHUB_ENV  
 
       - name: Prepare commit message payload
         id: commit-message
@@ -109,7 +101,7 @@ jobs:
         with:
           payload: |
             {
-              "deploy_target": "baremetal 🤘",
+              "deploy_target": "layer0 🍰",
               "deploy_status": "${{ env.DEPLOY_STATUS }}",
               "deploy_commit": "${{ steps.commit-message.outputs.payload }}"
             }            
