@@ -124,7 +124,7 @@ export const handler = async (event, context) => {
     db: db,
 
     cors: {
-      origin: 'https://d2dub2qmgsm5yj.cloudfront.net',
+      origin: 'process.env.REDWOOD_API_URL',
       credentials: true
     },
 
