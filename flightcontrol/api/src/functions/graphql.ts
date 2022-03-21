@@ -16,7 +16,7 @@ export const handler = createGraphQLHandler({
   sdls,
   services,
   cors: {
-    origin: 'https://d2dub2qmgsm5yj.cloudfront.net',
+    origin: process.env.REDWOOD_API_URL,
     credentials: true
   },
   onException: () => {
