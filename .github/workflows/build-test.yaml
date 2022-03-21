@@ -346,7 +346,7 @@ jobs:
           TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test  
 
   layer0:
-    name: baremetal
+    name: layer0
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
