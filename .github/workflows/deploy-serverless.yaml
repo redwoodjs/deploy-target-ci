@@ -17,6 +17,7 @@ jobs:
     env:
       DATABASE_URL: ${{ secrets.SERVERLESS_DATABASE_URL }}
       API_URL: ${{ secrets.SERVERLESS_API_URL}}
+      SESSION_SECRET: ${{ secrets.SERVERLESS_SESSION_SECRET}}
       SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
 
     steps:
