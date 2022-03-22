@@ -10,7 +10,7 @@ https://rwjs-deploy-target-ci.netlify.app
 https://rwjs-deploy-target-ci.vercel.app
 
 ## Serverless
-https://d2y24ev7gslziu.cloudfront.net
+https://d3j2lmbogvczkg.cloudfront.net
 
 ## Render
 https://render-postgres-web.onrender.com
