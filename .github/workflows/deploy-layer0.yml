@@ -39,7 +39,7 @@ jobs:
       # TODO change to `rw deploy layer0` when implemented
       - name: Deploy
         run: |
-          yarn layer0:deploy -- --token=$deploy_token
+          yarn layer0:deploy --site=redwoodjs-deploy-target-ci --team=redwoodjs --ni --token=$deploy_token
         working-directory: ./layer0
         env:
           deploy_token: ${{secrets.LAYER0_DEPLOY_TOKEN}}
