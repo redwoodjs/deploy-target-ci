@@ -6978,6 +6978,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"asn1@npm:^0.2.4":
+  version: 0.2.6
+  resolution: "asn1@npm:0.2.6"
+  dependencies:
+    safer-buffer: ~2.1.0
+  checksum: 00c8a06c37e548762306bcb1488388d2f76c74c36f70c803f0c081a01d3bdf26090fc088cd812afc5e56a6d49e33765d451a5f8a68ab9c2b087eba65d2e980e0
+  languageName: node
+  linkType: hard
+
 "assert@npm:^1.1.1":
   version: 1.5.0
   resolution: "assert@npm:1.5.0"
@@ -7635,6 +7644,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bcrypt-pbkdf@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "bcrypt-pbkdf@npm:1.0.2"
+  dependencies:
+    tweetnacl: ^0.14.3
+  checksum: ddfe85230b32df25aeebfdccfbc61d3bc493ace49c884c9c68575de1f5dcf733a5d7de9def3b0f318b786616b8d85bad50a28b1da1750c43e0012c93badcc148
+  languageName: node
+  linkType: hard
+
 "better-opn@npm:^2.1.1":
   version: 2.1.1
   resolution: "better-opn@npm:2.1.1"
@@ -7994,6 +8012,13 @@ __metadata:
     base64-js: ^1.3.1
     ieee754: ^1.1.13
   checksum: 27cac81cff434ed2876058d72e7c4789d11ff1120ef32c9de48f59eab58179b66710c488987d295ae89a228f835fc66d088652dffeb8e3ba8659f80eb091d55e
+  languageName: node
+  linkType: hard
+
+"buildcheck@npm:0.0.3":
+  version: 0.0.3
+  resolution: "buildcheck@npm:0.0.3"
+  checksum: 0fda98a7dca9d7a5edfe4e08d0ca98b440dc78695b15dfeb6ca1a695aa3a44512a0a4aa5a1d671df1d9bb33d964a9c6b1034cd3bccc9cad2c440d62bbcf4e2bf
   languageName: node
   linkType: hard
 
@@ -9231,6 +9256,17 @@ __metadata:
     nested-error-stacks: ^2.0.0
     p-event: ^4.1.0
   checksum: db3ef3e3e466742f392ae71edb9b2cdbb314e855d97630a65de57bc1097bacf6e844f6d9d44882b8678c0de26ba7e656c2c915960435970067823372e807eafa
+  languageName: node
+  linkType: hard
+
+"cpu-features@npm:0.0.3":
+  version: 0.0.3
+  resolution: "cpu-features@npm:0.0.3"
+  dependencies:
+    buildcheck: 0.0.3
+    nan: ^2.15.0
+    node-gyp: latest
+  checksum: 86043df8c4e8042818e32bbaae24f6033dc208696309a73067aaaa0a0b93d80ade6a8b9128192a0a90a1777f95aa301d9742a8b8492671d1fae07b05fa2290f6
   languageName: node
   linkType: hard
 
@@ -16938,7 +16974,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nan@npm:^2.12.1":
+"nan@npm:^2.12.1, nan@npm:^2.15.0":
   version: 2.15.0
   resolution: "nan@npm:2.15.0"
   dependencies:
@@ -17149,6 +17185,20 @@ __metadata:
   version: 2.0.2
   resolution: "node-releases@npm:2.0.2"
   checksum: d4f0f090670c02c3537b38c43ff39216be0addd75908cd7027bfff30a3ce8ac9b1db0c802c60756d1e79c33b8154dd0c9f2e5bbfb0deaaf39563299d52458ae9
+  languageName: node
+  linkType: hard
+
+"node-ssh@npm:12.0.4":
+  version: 12.0.4
+  resolution: "node-ssh@npm:12.0.4"
+  dependencies:
+    is-stream: ^2.0.0
+    make-dir: ^3.1.0
+    sb-promise-queue: ^2.1.0
+    sb-scandir: ^3.1.0
+    shell-escape: ^0.2.0
+    ssh2: ^1.5.0
+  checksum: 077ffcdca7613b9192e59b2e9246065b7b84b5c29d7ed67f4c3985d224e8aa242cc8b95f1197171383ac415a2a55e500e5328495373b88e010abb50f8e77e516
   languageName: node
   linkType: hard
 
@@ -20403,6 +20453,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@redwoodjs/core": 0.50.1-canary.39
+    node-ssh: 12.0.4
     pm2: 5.2.0
   languageName: unknown
   linkType: soft
@@ -20510,7 +20561,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.1.0":
+"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.1.0, safer-buffer@npm:~2.1.0":
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: 7e3c8b2e88a1841c9671094bbaeebd94448111dd90a81a1f606f3f67708a6ec57763b3b47f06da09fc6054193e0e6709e77325415dc8422b04497a8070fa02d4
@@ -20530,6 +20581,22 @@ __metadata:
   dependencies:
     xmlchars: ^2.2.0
   checksum: b7476c41dbe1c3a89907d2546fecfba234de5e66743ef914cde2603f47b19bed09732ab51b528ad0f98b958369d8be72b6f5af5c9cfad69972a73d061f0b3952
+  languageName: node
+  linkType: hard
+
+"sb-promise-queue@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "sb-promise-queue@npm:2.1.0"
+  checksum: 76ee74af0c7c4db89fac2acf12615c1801f2c2848fd8028a97b515d13adcc680f68f353ebb6ddc7f4253619326e62b7cf5f1afc6a675b1470d4df30b726452ed
+  languageName: node
+  linkType: hard
+
+"sb-scandir@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "sb-scandir@npm:3.1.0"
+  dependencies:
+    sb-promise-queue: ^2.1.0
+  checksum: 550ac637d8e4a5c05ab8220bd9d2978f6f69a32f7096200474450684d54245fed76182976b6d1348939365d6ac60b65c24be2a35715b5c694e3c36d93d00f41f
   languageName: node
   linkType: hard
 
@@ -20895,6 +20962,13 @@ __metadata:
   version: 3.0.0
   resolution: "shebang-regex@npm:3.0.0"
   checksum: 1dbed0726dd0e1152a92696c76c7f06084eb32a90f0528d11acd764043aacf76994b2fb30aa1291a21bd019d6699164d048286309a278855ee7bec06cf6fb690
+  languageName: node
+  linkType: hard
+
+"shell-escape@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "shell-escape@npm:0.2.0"
+  checksum: 501616713d13fd053b3858da18b613d83bfcdc8368e62be393dc563cc9fe2550492d403f73211e9a84429f39c8b9617f1e016dabee177b0ebdcb298fa47fc612
   languageName: node
   linkType: hard
 
@@ -21312,6 +21386,23 @@ __metadata:
   version: 1.0.3
   resolution: "sprintf-js@npm:1.0.3"
   checksum: ecadcfe4c771890140da5023d43e190b7566d9cf8b2d238600f31bec0fc653f328da4450eb04bd59a431771a8e9cc0e118f0aa3974b683a4981b4e07abc2a5bb
+  languageName: node
+  linkType: hard
+
+"ssh2@npm:^1.5.0":
+  version: 1.8.0
+  resolution: "ssh2@npm:1.8.0"
+  dependencies:
+    asn1: ^0.2.4
+    bcrypt-pbkdf: ^1.0.2
+    cpu-features: 0.0.3
+    nan: ^2.15.0
+  dependenciesMeta:
+    cpu-features:
+      optional: true
+    nan:
+      optional: true
+  checksum: 3977ee8b83366d0f1d4241f2884ea42bfe03ba6eae639535fe985e246563d253e67c710bffbcbf87dc8d9ec24780a30373e2ffcc2aeed0002f6e72978db8ed17
   languageName: node
   linkType: hard
 
@@ -22557,6 +22648,13 @@ __metadata:
   version: 1.3.0
   resolution: "tv4@npm:1.3.0"
   checksum: 714a37d005a902db0099379ed473c4780f6473f31c223cb0f023640cb32e0be9957cf2c95add8ec07665c6a699d45e6fd5c6ef49162b4e92000038b13fd8b759
+  languageName: node
+  linkType: hard
+
+"tweetnacl@npm:^0.14.3":
+  version: 0.14.5
+  resolution: "tweetnacl@npm:0.14.5"
+  checksum: 4612772653512c7bc19e61923fbf42903f5e0389ec76a4a1f17195859d114671ea4aa3b734c2029ce7e1fa7e5cc8b80580f67b071ecf0b46b5636d030a0102a2
   languageName: node
   linkType: hard
 
