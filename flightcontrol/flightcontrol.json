@@ -27,7 +27,7 @@
           "type": "static",
           "singlePageApp": true,
           "installCommand": "yarn set version stable && cd flightcontrol && NODE_ENV=development yarn install --immutable",
-          "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol api",
+          "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol web",
           "outputDirectory": "web/dist"
         }
       ]
