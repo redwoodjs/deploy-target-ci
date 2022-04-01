@@ -1,0 +1,25 @@
+app = "redwood-deploy-ci"
+
+[deploy]
+  release_command = ".fly/release.sh"
+
+[env]
+  PORT = "8910"
+
+[[services]]
+  internal_port = 8910
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"
