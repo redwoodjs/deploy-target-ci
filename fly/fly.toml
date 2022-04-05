@@ -1,13 +1,31 @@
 app = "redwood-deploy-ci"
 
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
 [deploy]
   release_command = ".fly/release.sh"
 
 [env]
   PORT = "8910"
+  REDWOOD_DISABLE_TELEMETRY = "1"
+
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
 
 [[services]]
+  http_checks = []
   internal_port = 8910
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
 
   [[services.ports]]
     force_https = true
