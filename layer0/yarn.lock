@@ -3060,9 +3060,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@layer0/cli@npm:^4.11":
-  version: 4.11.0
-  resolution: "@layer0/cli@npm:4.11.0"
+"@layer0/cli@npm:^4.12":
+  version: 4.12.0
+  resolution: "@layer0/cli@npm:4.12.0"
   dependencies:
     axios: ^0.21.2
     chalk: ^4.1.2
@@ -3103,13 +3103,13 @@ __metadata:
   bin:
     0: index.js
     layer0: index.js
-  checksum: fb33d0704fba7820996cb64a72cea02f81c4e07ed13a4d6315f2ad7ab184aeef1d552eca373a6b956a1db5be508fb50d0a7243d031be129addd2ba693b471b90
+  checksum: 4b438d8a3a7833d865a280fa3a33f42ad0682a49094f41770c38c78fc979ef58fb30a7ce04c3d73c7dbf16dddd9f357e531c8b0e510c46abcf84298e5d8ea7d6
   languageName: node
   linkType: hard
 
-"@layer0/core@npm:^4.11, @layer0/core@npm:^4.11.0":
-  version: 4.11.0
-  resolution: "@layer0/core@npm:4.11.0"
+"@layer0/core@npm:^4.12, @layer0/core@npm:^4.12.0":
+  version: 4.12.0
+  resolution: "@layer0/core@npm:4.12.0"
   dependencies:
     "@babel/parser": ^7.16.2
     "@babel/traverse": ^7.16.0
@@ -3145,28 +3145,28 @@ __metadata:
     ts-loader: ^8.2.0
     unixify: ^1.0.0
     uuid: ^8.3.2
-  checksum: 10a85483aa0fd4717ddcb03079e265c2df0442f3d4c14e40e2c21ec28436078cdac98181186546f1109c40d3870633a89b23b2bc8c23eae8e4bae1c864075158
+  checksum: e6efb358356ebb722c5d14ef6fb7082835e3cf28edb6cf9315b435853fb394945c78ce736ff3c674e77fcbe14f294b83b8cbfeea123103dfd27d3b53dd5666f4
   languageName: node
   linkType: hard
 
-"@layer0/devtools@npm:^4.11":
-  version: 4.11.0
-  resolution: "@layer0/devtools@npm:4.11.0"
+"@layer0/devtools@npm:^4.12":
+  version: 4.12.0
+  resolution: "@layer0/devtools@npm:4.12.0"
   dependencies:
     clsx: ^1.1.1
     lodash: ^4.17.20
     sirv-cli: ^1.0.0
   peerDependencies:
     "@layer0/prefetch": ^4.0.0
-  checksum: d4d1bc229544fc805c5e8c66f2b6811d270f4d71f9317f2a805bf6000cfccc4997f6b40d2f96536d7af9247604b30798d0eb1082a7b3ced61471af3d58163171
+  checksum: 471c4d24c442c54fd28377cecefa754ca644fea3f9b5a15f6ac6d50cca5dba74ee6c4dafb816973e7e2ccb033c5a61eace14ad924068df29c8a0301fed87cfbe
   languageName: node
   linkType: hard
 
-"@layer0/prefetch@npm:^4.11":
-  version: 4.11.0
-  resolution: "@layer0/prefetch@npm:4.11.0"
+"@layer0/prefetch@npm:^4.12":
+  version: 4.12.0
+  resolution: "@layer0/prefetch@npm:4.12.0"
   dependencies:
-    "@layer0/core": ^4.11.0
+    "@layer0/core": ^4.12.0
     cheerio: ^1.0.0-rc.3
     json-query: ^2.2.2
     workbox-cacheable-response: ^5.1.2
@@ -3177,13 +3177,13 @@ __metadata:
     workbox-strategies: ^5.1.2
   peerDependencies:
     "@layer0/devtools": ^4.0.0
-  checksum: 9095b748f2f088520ef81420414079f11d83aa9b89a033ebb91e0724e9a58b7836860b4ea4970734da16e1e8da599e80e175b8149a95620c1e8e048a2fc6217e
+  checksum: e072bf92f1f83d48c1d2ecb16cad4f965d3987197af75ec11931862ebf814637c0d2407dae8301ff88a0f927d010d61152f4e42ef6c4845197d7f36ca0475525
   languageName: node
   linkType: hard
 
-"@layer0/redwood@npm:^4.11":
-  version: 4.11.0
-  resolution: "@layer0/redwood@npm:4.11.0"
+"@layer0/redwood@npm:^4.12":
+  version: 4.12.0
+  resolution: "@layer0/redwood@npm:4.12.0"
   dependencies:
     "@vercel/nft": ^0.13.1
     chalk: ^4.1.2
@@ -3191,7 +3191,7 @@ __metadata:
   peerDependencies:
     "@layer0/cli": ^4.8.0
     "@layer0/core": ^4.8.0
-  checksum: 922e6b6fe70ed3c7d8c3ea52fbbeba92daa471f926e0bd80befe74d40dacc0b838a978252c5869bd92029ceb64f85279c830ce9f5c88dc66c14db99f186af2f5
+  checksum: 12113218085c8e9fbc736b48c52205dad32fbba30f0c06995c4f22b5b0b463bab3391a27da3f436f50b1fbd9fdc8d232089efd84f67a75bba81af3f89bc22305
   languageName: node
   linkType: hard
 
@@ -21829,11 +21829,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@layer0/cli": ^4.11
-    "@layer0/core": ^4.11
-    "@layer0/devtools": ^4.11
-    "@layer0/prefetch": ^4.11
-    "@layer0/redwood": ^4.11
+    "@layer0/cli": 4.12
+    "@layer0/core": 4.12
+    "@layer0/devtools": 4.12
+    "@layer0/prefetch": 4.12
+    "@layer0/redwood": 4.12
     "@redwoodjs/core": 1.0.1-canary.141
   languageName: unknown
   linkType: soft
