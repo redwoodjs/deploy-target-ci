@@ -19,7 +19,12 @@
           "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol api",
           "startCommand": "cd flightcontrol && yarn rw deploy flightcontrol api --serve",
           "postBuildCommand": "echo 0",
-          "healthCheckPath": "/graphql/health"
+          "healthCheckPath": "/graphql/health",
+          "envVariables": {
+            "REDWOOD_WEB_URL": {
+              "fromService": { "id": "redwood-web", "value": "origin" }
+            }
+          }
         },
         {
           "id": "redwood-web",
@@ -28,7 +33,12 @@
           "singlePageApp": true,
           "installCommand": "yarn set version stable && cd flightcontrol && NODE_ENV=development yarn install --immutable",
           "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol web",
-          "outputDirectory": "flightcontrol/web/dist"
+          "outputDirectory": "flightcontrol/web/dist",
+          "envVariables": {
+            "REDWOOD_API_URL": {
+              "fromService": { "id": "redwood-api", "value": "origin" }
+            }
+          }          
         }
       ]
     }
