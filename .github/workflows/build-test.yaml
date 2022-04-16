@@ -8,394 +8,73 @@ on:
 # Eventually this needs to use .github/actions/project-ci
 # Currently can't get it to work without the "needs version" error
 jobs:
-  Netlify:
+  netlifyCI:
     name: Netlify
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js v16
-        uses: actions/setup-node@v3
+      - name: Run Netlify CI
+        uses: redwoodjs/project-ci-action@v0.1.1
         with:
-          node-version: "16"
+          project-directory: './netlify'
+          run-lint: 'no'
 
-      - name: Set up Postgres
-        uses: CasperWA/postgresql-action@v1
-        with:
-          postgresql version: '14'
-          postgresql db: 'test'
-          postgresql user: test
-          postgresql password: password
-
-      # Project is using Yarn 3
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache yarn
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-    
-
-      - name: Set project directory
-        id: project-directory
-        run: echo "::set-output name=dir::./netlify"
-      
-      - name: Install dependencies
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn install --immutable
-        
-      - name: Run Build
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw build
-
-      - name: Run Diagnostics
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw check
-        
-      - name: Run Tests
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw test
-        env:
-          TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test
 
   vercelCI:
     name: Vercel
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js v16
-        uses: actions/setup-node@v3
+      - name: Run Vercel CI
+        uses: redwoodjs/project-ci-action@v0.1.1
         with:
-          node-version: "16"
+          project-directory: './vercel'
+          run-lint: 'no'
 
-      - name: Set up Postgres
-        uses: CasperWA/postgresql-action@v1
-        with:
-          postgresql version: '14'
-          postgresql db: 'test'
-          postgresql user: test
-          postgresql password: password
-
-      # Project is using Yarn 3
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache yarn
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-    
-
-      - name: Set project directory
-        id: project-directory
-        run: echo "::set-output name=dir::./vercel"
-      
-      - name: Install dependencies
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn install --immutable
-        
-      - name: Run Build
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw build
-
-      - name: Run Diagnostics
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw check
-        
-      - name: Run Tests
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw test
-        env:
-          TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test
-
-  renderCI:
-    name: Render
+  renderPostgresCI:
+    name: Render-Postgres
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js v16
-        uses: actions/setup-node@v3
+      - name: Run Render-Postgres CI
+        uses: redwoodjs/project-ci-action@v0.1.1
         with:
-          node-version: "16"
+          project-directory: './render-postgres'
+          run-lint: 'no'
 
-      - name: Set up Postgres
-        uses: CasperWA/postgresql-action@v1
-        with:
-          postgresql version: '14'
-          postgresql db: 'test'
-          postgresql user: test
-          postgresql password: password
-
-      # Project is using Yarn 3
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache yarn
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-    
-
-      - name: Set project directory
-        id: project-directory
-        run: echo "::set-output name=dir::./render-postgres"
-      
-      - name: Install dependencies
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn install --immutable
-        
-      - name: Run Build
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw build
-
-      - name: Run Diagnostics
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw check
-        
-      - name: Run Tests
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw test
-        env:
-          TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test
-
-  serverlessCI:
-    name: Serverless
+  serverlessAwsCI:
+    name: Serverless-AWS
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js v16
-        uses: actions/setup-node@v3
+      - name: Run Serverless-AWS CI
+        uses: redwoodjs/project-ci-action@v0.1.1
         with:
-          node-version: "16"
-
-      - name: Set up Postgres
-        uses: CasperWA/postgresql-action@v1
-        with:
-          postgresql version: '14'
-          postgresql db: 'test'
-          postgresql user: test
-          postgresql password: password
-
-      # Project is using Yarn 3
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache yarn
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-    
-
-      - name: Set project directory
-        id: project-directory
-        run: echo "::set-output name=dir::./serverless-aws"
-      
-      - name: Install dependencies
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn install --immutable
-        
-      - name: Run Build
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw build
-
-      - name: Run Diagnostics
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw check
-        
-      - name: Run Tests
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw test
-        env:
-          TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test    
+          project-directory: './serverless-aws'
+          run-lint: 'no' 
 
   baremetal:
     name: baremetal
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js v16
-        uses: actions/setup-node@v3
+      - name: Run Baremetal CI
+        uses: redwoodjs/project-ci-action@v0.1.1
         with:
-          node-version: "16"
-
-      - name: Set up Postgres
-        uses: CasperWA/postgresql-action@v1
-        with:
-          postgresql version: '14'
-          postgresql db: 'test'
-          postgresql user: test
-          postgresql password: password
-
-      # Project is using Yarn 3
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache yarn
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-    
-
-      - name: Set project directory
-        id: project-directory
-        run: echo "::set-output name=dir::./baremetal"
-      
-      - name: Install dependencies
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn install --immutable
-        
-      - name: Run Build
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw build
-
-      - name: Run Diagnostics
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw check
-        
-      - name: Run Tests
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw test
-        env:
-          TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test
+          project-directory: './baremetal'
+          run-lint: 'no' 
 
   flightcontrol:
     name: Flightcontrol
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js v16
-        uses: actions/setup-node@v3
+      - name: Run Flightcontrol CI
+        uses: redwoodjs/project-ci-action@v0.1.1
         with:
-          node-version: "16"
-
-      - name: Set up Postgres
-        uses: CasperWA/postgresql-action@v1
-        with:
-          postgresql version: '14'
-          postgresql db: 'test'
-          postgresql user: test
-          postgresql password: password
-
-      # Project is using Yarn 3
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache yarn
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-    
-
-      - name: Set project directory
-        id: project-directory
-        run: echo "::set-output name=dir::./flightcontrol"
-      
-      - name: Install dependencies
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn install --immutable
-        
-      - name: Run Build
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw build
-
-      - name: Run Diagnostics
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw check
-        
-      - name: Run Tests
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw test
-        env:
-          TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test 
+          project-directory: './flightcontrol'
+          run-lint: 'no' 
 
   layer0:
     name: layer0
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js v16
-        uses: actions/setup-node@v3
+      - name: Run Layer0 CI
+        uses: redwoodjs/project-ci-action@v0.1.1
         with:
-          node-version: "16"
-
-      - name: Set up Postgres
-        uses: CasperWA/postgresql-action@v1
-        with:
-          postgresql version: '14'
-          postgresql db: 'test'
-          postgresql user: test
-          postgresql password: password
-
-      # Project is using Yarn 3
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Cache yarn
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-    
-
-      - name: Set project directory
-        id: project-directory
-        run: echo "::set-output name=dir::./layer0"
-      
-      - name: Install dependencies
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn install --immutable
-        
-      - name: Run Build
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw build
-
-      - name: Run Diagnostics
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw check
-        
-      - name: Run Tests
-        working-directory: ${{ steps.project-directory.outputs.dir }}
-        run: yarn rw test
-        env:
-          TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test                              
+          project-directory: './layer0'
+          run-lint: 'no'                               
