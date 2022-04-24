@@ -3596,7 +3596,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/auth@npm:1.1.2-canary.88, @redwoodjs/auth@npm:^1.1.2-canary.88+007c88e6":
+"@redwoodjs/auth@npm:1.1.2-canary.88, @redwoodjs/auth@npm:^1.1.2-canary.0+e00d4214, @redwoodjs/auth@npm:^1.1.2-canary.88+007c88e6":
   version: 1.1.2-canary.88
   resolution: "@redwoodjs/auth@npm:1.1.2-canary.88"
   checksum: 24c7b0c6de456e42b6274874ef439a7859eadc2ab256683fd7a90b20ccb0690299d3e5af0c6830287b895a5b25df93f54fe39bb360c89a0ee837248444dd01df
@@ -3850,7 +3850,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/router@npm:1.1.2-canary.88, @redwoodjs/router@npm:^1.1.2-canary.88+007c88e6":
+"@redwoodjs/router@npm:1.1.2-canary.0":
+  version: 1.1.2-canary.0
+  resolution: "@redwoodjs/router@npm:1.1.2-canary.0"
+  dependencies:
+    "@reach/skip-nav": 0.16.0
+    "@redwoodjs/auth": ^1.1.2-canary.0+e00d4214
+    core-js: 3.22.2
+    lodash.isequal: 4.5.0
+  checksum: 46a1a49670ca01b272efdae1edd022f1bd61832f92ba396ea9fa694516f95e2a322572040ea972e9af0904de848cd3f17877e75bb0512bc8a869478628352b39
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/router@npm:^1.1.2-canary.88+007c88e6":
   version: 1.1.2-canary.88
   resolution: "@redwoodjs/router@npm:1.1.2-canary.88"
   dependencies:
@@ -24264,7 +24276,7 @@ __metadata:
   dependencies:
     "@redwoodjs/auth": 1.1.2-canary.88
     "@redwoodjs/forms": 1.1.2-canary.88
-    "@redwoodjs/router": 1.1.2-canary.88
+    "@redwoodjs/router": 1.1.2-canary.0
     "@redwoodjs/web": 1.1.2-canary.88
     autoprefixer: 10.4.3
     postcss: 8.4.11
