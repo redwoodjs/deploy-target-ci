@@ -3560,7 +3560,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api@npm:1.1.2-canary.88, @redwoodjs/api@npm:^1.1.2-canary.88+007c88e6":
+"@redwoodjs/api@npm:1.1.2-canary.0":
+  version: 1.1.2-canary.0
+  resolution: "@redwoodjs/api@npm:1.1.2-canary.0"
+  dependencies:
+    "@babel/runtime-corejs3": 7.16.7
+    "@prisma/client": 3.12.0
+    cross-undici-fetch: 0.3.0
+    crypto-js: 4.1.1
+    humanize-string: 2.1.0
+    jsonwebtoken: 8.5.1
+    jwks-rsa: 2.0.5
+    md5: 2.3.0
+    pascalcase: 1.0.0
+    pino: 7.10.0
+    title-case: 3.0.3
+    uuid: 8.3.2
+  peerDependencies:
+    "@clerk/clerk-sdk-node": 3.3.7
+    "@magic-sdk/admin": 1.4.1
+    firebase-admin: 10.1.0
+  peerDependenciesMeta:
+    "@clerk/clerk-sdk-node":
+      optional: true
+    "@magic-sdk/admin":
+      optional: true
+    firebase-admin:
+      optional: true
+  bin:
+    redwood: dist/bins/redwood.js
+    rw: dist/bins/redwood.js
+    rwfw: dist/bins/rwfw.js
+    tsc: dist/bins/tsc.js
+  checksum: 8eba4bfb296783aff574cf2167c1f311af574e327c009d7782cf9c9981f71167788f97432d979e5b7df37ce26dfcf79a590f4f78cdd424d9dcfae0b68c835f1e
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/api@npm:^1.1.2-canary.88+007c88e6":
   version: 1.1.2-canary.88
   resolution: "@redwoodjs/api@npm:1.1.2-canary.88"
   dependencies:
@@ -7120,7 +7156,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "api@workspace:api"
   dependencies:
-    "@redwoodjs/api": 1.1.2-canary.88
+    "@redwoodjs/api": 1.1.2-canary.0
     "@redwoodjs/graphql-server": 1.1.2-canary.88
   languageName: unknown
   linkType: soft
