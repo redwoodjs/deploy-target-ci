@@ -3610,7 +3610,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api@npm:^1.1.2-canary.88+007c88e6":
+"@redwoodjs/api@npm:^1.1.2-canary.0+e00d4214, @redwoodjs/api@npm:^1.1.2-canary.88+007c88e6":
   version: 1.1.2-canary.88
   resolution: "@redwoodjs/api@npm:1.1.2-canary.88"
   dependencies:
@@ -3812,7 +3812,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/graphql-server@npm:1.1.2-canary.88, @redwoodjs/graphql-server@npm:^1.1.2-canary.88+007c88e6":
+"@redwoodjs/graphql-server@npm:1.1.2-canary.0":
+  version: 1.1.2-canary.0
+  resolution: "@redwoodjs/graphql-server@npm:1.1.2-canary.0"
+  dependencies:
+    "@envelop/depth-limit": 1.5.1
+    "@envelop/disable-introspection": 3.3.1
+    "@envelop/filter-operation-type": 3.3.1
+    "@envelop/parser-cache": 4.3.1
+    "@envelop/validation-cache": 4.3.1
+    "@graphql-tools/merge": 8.2.10
+    "@graphql-tools/schema": 8.3.10
+    "@graphql-tools/utils": 8.6.9
+    "@graphql-yoga/common": 2.3.0
+    "@prisma/client": 3.12.0
+    "@redwoodjs/api": ^1.1.2-canary.0+e00d4214
+    core-js: 3.22.2
+    cross-undici-fetch: 0.3.0
+    graphql: 16.3.0
+    graphql-scalars: 1.17.0
+    graphql-tag: 2.12.6
+    lodash.merge: 4.6.2
+    lodash.omitby: 4.6.0
+    uuid: 8.3.2
+  checksum: f3687cac29443a9e0aa115cf00fada56e9a9041ce7799dff5b8745268726eb0029471bb16a89580bf94b1b4953765d01976355d175fbe0d7066865f19a265c9c
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/graphql-server@npm:^1.1.2-canary.88+007c88e6":
   version: 1.1.2-canary.88
   resolution: "@redwoodjs/graphql-server@npm:1.1.2-canary.88"
   dependencies:
@@ -7175,7 +7202,7 @@ __metadata:
   resolution: "api@workspace:api"
   dependencies:
     "@redwoodjs/api": 1.1.2-canary.0
-    "@redwoodjs/graphql-server": 1.1.2-canary.88
+    "@redwoodjs/graphql-server": 1.1.2-canary.0
   languageName: unknown
   linkType: soft
 
