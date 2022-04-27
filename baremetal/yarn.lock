@@ -6004,21 +6004,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:17.0.16":
+"@types/react-dom@npm:17.0.16, @types/react-dom@npm:<18.0.0":
   version: 17.0.16
   resolution: "@types/react-dom@npm:17.0.16"
   dependencies:
     "@types/react": ^17
   checksum: 57d3d12d4dcde5019ac282d178e58dc8fa82926337272eb2cb5dc492545883d4eef5fac6156d94c0ac76f0c1f1f8d0bf91d455d56184bad5365b759efa3e04f2
-  languageName: node
-  linkType: hard
-
-"@types/react-dom@npm:<18.0.0":
-  version: 17.0.15
-  resolution: "@types/react-dom@npm:17.0.15"
-  dependencies:
-    "@types/react": ^17
-  checksum: f6faa3b12c5301817f37a19a7b54beace8f35dee3480401a165cf9e9e4bcf2775496b7f37f3262ced9f44b0ee8e863b991efcce3b8588aec9a45a85268bdfb89
   languageName: node
   linkType: hard
 
@@ -13618,17 +13609,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:16.4.0":
+"graphql@npm:16.4.0, graphql@npm:^16.3.0":
   version: 16.4.0
   resolution: "graphql@npm:16.4.0"
   checksum: e93fbba004a6c121cbd618e060ea8bc672c4e324ee8b7e490245eb8c8a06e06a6806d196c19ce80522a4cf83031ed4bd837de5c2d9fcb5d39e24a586abed6d1e
-  languageName: node
-  linkType: hard
-
-"graphql@npm:^16.3.0":
-  version: 16.3.0
-  resolution: "graphql@npm:16.3.0"
-  checksum: 71f205c16c93a5085c8a5dc3f9a1a27c022140208042d5be1dfacf04c1d3063ec2f62e3d08b0ed2cfb536c59cca65dd027556a22c47082fc348a5050c5535c71
   languageName: node
   linkType: hard
 
@@ -22851,22 +22835,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"systeminformation@npm:5.11.14":
+"systeminformation@npm:5.11.14, systeminformation@npm:^5.7":
   version: 5.11.14
   resolution: "systeminformation@npm:5.11.14"
   bin:
     systeminformation: lib/cli.js
   checksum: 443c38978d05dd041c7201e19628bcd879df4eb402ea8cef10e667428e62d4b57215f794d5f5dbed4145c5325a83a51a2b52ed736a2432e949cdc80850c1e502
-  conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
-  languageName: node
-  linkType: hard
-
-"systeminformation@npm:^5.7":
-  version: 5.11.13
-  resolution: "systeminformation@npm:5.11.13"
-  bin:
-    systeminformation: lib/cli.js
-  checksum: e11cd732333ff9832229e9ace828913997f9c3d25236c27eaf5b2ef5c9f2e94249b0ad9d979f8a93544ee9e2d2f1a8a6d1da279f84761a7187fcb9809424ad97
   conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
   languageName: node
   linkType: hard
