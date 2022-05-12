@@ -3653,7 +3653,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api@npm:1.3.3-canary.120, @redwoodjs/api@npm:^1.3.3-canary.120+02113f78":
+"@redwoodjs/api@npm:1.3.3-canary.121":
+  version: 1.3.3-canary.121
+  resolution: "@redwoodjs/api@npm:1.3.3-canary.121"
+  dependencies:
+    "@babel/runtime-corejs3": 7.16.7
+    "@prisma/client": 3.14.0
+    core-js: 3.22.5
+    cross-undici-fetch: 0.1.27
+    crypto-js: 4.1.1
+    humanize-string: 2.1.0
+    jsonwebtoken: 8.5.1
+    jwks-rsa: 2.0.5
+    md5: 2.3.0
+    pascalcase: 1.0.0
+    pino: 7.11.0
+    title-case: 3.0.3
+    uuid: 8.3.2
+  peerDependencies:
+    "@clerk/clerk-sdk-node": 3.4.1
+    "@magic-sdk/admin": 1.4.1
+    firebase-admin: 10.2.0
+  peerDependenciesMeta:
+    "@clerk/clerk-sdk-node":
+      optional: true
+    "@magic-sdk/admin":
+      optional: true
+    firebase-admin:
+      optional: true
+  bin:
+    redwood: dist/bins/redwood.js
+    rw: dist/bins/redwood.js
+    rwfw: dist/bins/rwfw.js
+    tsc: dist/bins/tsc.js
+  checksum: 3fcf8a15cc426733b71804f67bf36402a8bbf5a4cb42502ff0bec793e1ca7ad795a070b4d6348a5337b68ebded6a062db63177ba18a64bc71f896ae4c967fa16
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/api@npm:^1.3.3-canary.120+02113f78":
   version: 1.3.3-canary.120
   resolution: "@redwoodjs/api@npm:1.3.3-canary.120"
   dependencies:
@@ -3846,9 +3883,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/forms@npm:1.3.3-canary.120":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/forms@npm:1.3.3-canary.120"
+"@redwoodjs/forms@npm:1.3.3-canary.121":
+  version: 1.3.3-canary.121
+  resolution: "@redwoodjs/forms@npm:1.3.3-canary.121"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     core-js: 3.22.5
@@ -3857,7 +3894,7 @@ __metadata:
   peerDependencies:
     graphql: 16.5.0
     react: 17.0.2
-  checksum: f57e668c3291a9ee6ffab7fe9471c5a8e7999d4ee6014ede005c38e4efded6350f0cdce5f350c61d9813f3efb5b4c8c982f7645c4bb7baacb7db93cfadeb56b8
+  checksum: e9f5a8b4c4701c7826b27a25c85b5c8de53698b93808a845c004230a1d5214aea86281b11d5a95143ab90ad3453acf7e8efa4eb1b274da19812ac4e2431be7f1
   languageName: node
   linkType: hard
 
@@ -7274,7 +7311,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "api@workspace:api"
   dependencies:
-    "@redwoodjs/api": 1.3.3-canary.120
+    "@redwoodjs/api": 1.3.3-canary.121
     "@redwoodjs/graphql-server": 1.3.3-canary.120
   languageName: unknown
   linkType: soft
@@ -23720,7 +23757,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@redwoodjs/forms": 1.3.3-canary.120
+    "@redwoodjs/forms": 1.3.3-canary.121
     "@redwoodjs/router": 1.3.3-canary.120
     "@redwoodjs/web": 1.3.3-canary.120
     autoprefixer: 9.8.8
