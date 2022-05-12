@@ -3776,9 +3776,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api-server@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/api-server@npm:1.3.3-canary.120"
+"@redwoodjs/api-server@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/api-server@npm:1.3.3-canary.123"
   dependencies:
     "@babel/plugin-transform-runtime": 7.16.7
     "@babel/runtime-corejs3": 7.16.7
@@ -3802,13 +3802,13 @@ __metadata:
     rw-api-server-watch: dist/watch.js
     rw-log-formatter: dist/logFormatter/bin.js
     rw-server: dist/index.js
-  checksum: ce9f75ebca0daae9b7acc6c3dc1e4a143071ae0d459dd9c76ed97714cec948f030332c1043a9cbfa80bd8cc9da383d7b4306d99185d19f22ccde1105d32a467a
+  checksum: d4fd9833effbdfc2ccfcba8a0b55fa5c3f240b12a177ff4f1bb0c7d12f942e191ac3a675ec094373fd2032b6addea4009ce7b5ab24eb437a3380ce103123523b
   languageName: node
   linkType: hard
 
-"@redwoodjs/api@npm:1.3.3-canary.121":
-  version: 1.3.3-canary.121
-  resolution: "@redwoodjs/api@npm:1.3.3-canary.121"
+"@redwoodjs/api@npm:1.3.3-canary.123, @redwoodjs/api@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/api@npm:1.3.3-canary.123"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     "@prisma/client": 3.14.0
@@ -3839,44 +3839,7 @@ __metadata:
     rw: dist/bins/redwood.js
     rwfw: dist/bins/rwfw.js
     tsc: dist/bins/tsc.js
-  checksum: 3fcf8a15cc426733b71804f67bf36402a8bbf5a4cb42502ff0bec793e1ca7ad795a070b4d6348a5337b68ebded6a062db63177ba18a64bc71f896ae4c967fa16
-  languageName: node
-  linkType: hard
-
-"@redwoodjs/api@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/api@npm:1.3.3-canary.120"
-  dependencies:
-    "@babel/runtime-corejs3": 7.16.7
-    "@prisma/client": 3.14.0
-    core-js: 3.22.5
-    cross-undici-fetch: 0.1.27
-    crypto-js: 4.1.1
-    humanize-string: 2.1.0
-    jsonwebtoken: 8.5.1
-    jwks-rsa: 2.0.5
-    md5: 2.3.0
-    pascalcase: 1.0.0
-    pino: 7.11.0
-    title-case: 3.0.3
-    uuid: 8.3.2
-  peerDependencies:
-    "@clerk/clerk-sdk-node": 3.4.1
-    "@magic-sdk/admin": 1.4.1
-    firebase-admin: 10.2.0
-  peerDependenciesMeta:
-    "@clerk/clerk-sdk-node":
-      optional: true
-    "@magic-sdk/admin":
-      optional: true
-    firebase-admin:
-      optional: true
-  bin:
-    redwood: dist/bins/redwood.js
-    rw: dist/bins/redwood.js
-    rwfw: dist/bins/rwfw.js
-    tsc: dist/bins/tsc.js
-  checksum: cb688bb7148c932f0d05f5123a79e7bb60c39f7c35ca15cbb70107fc131a8bfcd9e726d126acdc47231dba62a46bc82f9f21e539759bcaad701e4660e7a3f861
+  checksum: d698d3d1c130095c27bd0fd6ff470287d18f653f376cf1dadc61b5e96bc2f525804a82014bee23d2527a2b2ae5e3606a68b381351d86a336fa1d57b01f67036e
   languageName: node
   linkType: hard
 
@@ -3887,27 +3850,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/auth@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/auth@npm:1.3.3-canary.120"
+"@redwoodjs/auth@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/auth@npm:1.3.3-canary.123"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     core-js: 3.22.5
-  checksum: 6ac214a384cbab84177e598fa554a7f23a8d1047361eb052cbb9fb41d2486453897a751f7d4329ab2623dc72140e847e4e48075136f55c01633000068114f0e1
+  checksum: 19f4a92f01ea22c3f2d1dfa9c7780a4ffdc68094396acd210268aca51105cc2c551aa2b64bb48c81c9e8d97ebdce9c5ced5c9fbd5d7fd477c0fe0df1d64cd1ee
   languageName: node
   linkType: hard
 
-"@redwoodjs/cli@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/cli@npm:1.3.3-canary.120"
+"@redwoodjs/cli@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/cli@npm:1.3.3-canary.123"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     "@prisma/sdk": 3.14.0
-    "@redwoodjs/api-server": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/internal": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/prerender": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/structure": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/telemetry": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/api-server": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/internal": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/prerender": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/structure": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/telemetry": ^1.3.3-canary.123+cd9ba616
     boxen: 5.1.2
     camelcase: 6.3.0
     chalk: 4.1.2
@@ -3940,13 +3903,13 @@ __metadata:
     redwood: dist/index.js
     rw: dist/index.js
     rwfw: dist/rwfw.js
-  checksum: d70002c0e42523bd99524013944538d21592a25a616c126adbd6ffaedcc3d68b79fd52e1b0b559984ac0187be3bbec627eda54f18f46d4f1bf7841c7b93481a2
+  checksum: c49a57914bf808f45ebeb3c199d985382afa16712d176677e7cc5628635304501f08844760c282cee732b8513294df6ddd6712d900d6d6b25329dc30af52403f
   languageName: node
   linkType: hard
 
-"@redwoodjs/core@npm:1.3.3-canary.120":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/core@npm:1.3.3-canary.120"
+"@redwoodjs/core@npm:1.3.3-canary.123":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/core@npm:1.3.3-canary.123"
   dependencies:
     "@babel/cli": 7.16.7
     "@babel/core": 7.16.7
@@ -3962,10 +3925,10 @@ __metadata:
     "@babel/preset-typescript": 7.16.7
     "@babel/runtime-corejs3": 7.16.7
     "@pmmmwh/react-refresh-webpack-plugin": 0.5.6
-    "@redwoodjs/cli": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/eslint-config": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/internal": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/testing": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/cli": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/eslint-config": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/internal": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/testing": ^1.3.3-canary.123+cd9ba616
     babel-loader: 8.2.3
     babel-plugin-auto-import: 1.1.0
     babel-plugin-graphql-tag: 3.3.0
@@ -3977,7 +3940,7 @@ __metadata:
     css-loader: 6.7.1
     css-minimizer-webpack-plugin: 3.4.1
     dotenv-webpack: 7.1.0
-    esbuild: 0.14.38
+    esbuild: 0.14.39
     esbuild-loader: 2.18.0
     fast-glob: 3.2.11
     file-loader: 6.2.0
@@ -4014,18 +3977,18 @@ __metadata:
     rw-gen-watch: dist/bins/rw-gen-watch.js
     rw-log-formatter: dist/bins/rw-log-formatter.js
     rwfw: dist/bins/rwfw.js
-  checksum: 7dc23d6c49227db1c83047d24d97019946b97d5694295765b25a84b7b932d7956590146cb7f1dca794c7e109f8a9b08d6aa27e02abfbe1542f8f64f8bb733dee
+  checksum: 15775363b834dfdd7fefa7d8c63babe65e334e0037073e11dfa2dfff142cd55a6e051d3650aa0ac9514c63d538234f8833c75510d583258602b03e2dda07e5ee
   languageName: node
   linkType: hard
 
-"@redwoodjs/eslint-config@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/eslint-config@npm:1.3.3-canary.120"
+"@redwoodjs/eslint-config@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/eslint-config@npm:1.3.3-canary.123"
   dependencies:
     "@babel/core": 7.16.7
     "@babel/eslint-parser": 7.16.5
     "@babel/eslint-plugin": 7.16.5
-    "@redwoodjs/internal": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/internal": ^1.3.3-canary.123+cd9ba616
     "@typescript-eslint/eslint-plugin": 5.23.0
     "@typescript-eslint/parser": 5.23.0
     eslint: 8.15.0
@@ -4039,13 +4002,13 @@ __metadata:
     eslint-plugin-react: 7.29.4
     eslint-plugin-react-hooks: 4.5.0
     prettier: 2.6.2
-  checksum: b27901f61d99a678455d0286c5a976a6fefabd179dc817a873a71da06f692e3fe476d17b6c4d79dcdd5c35b7a4145023e664ad2abcb905bc2cda75367a50cb1c
+  checksum: 2a627aae8f54d867ec70f57744472b88d0a60dc660e201ed753633c6af2924cca5093cabdd088e49e9d2b65ac6c944c22e937a8bbc7cc20091e6611aa5706eff
   languageName: node
   linkType: hard
 
-"@redwoodjs/forms@npm:1.3.3-canary.121":
-  version: 1.3.3-canary.121
-  resolution: "@redwoodjs/forms@npm:1.3.3-canary.121"
+"@redwoodjs/forms@npm:1.3.3-canary.123":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/forms@npm:1.3.3-canary.123"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     core-js: 3.22.5
@@ -4054,13 +4017,13 @@ __metadata:
   peerDependencies:
     graphql: 16.5.0
     react: 17.0.2
-  checksum: e9f5a8b4c4701c7826b27a25c85b5c8de53698b93808a845c004230a1d5214aea86281b11d5a95143ab90ad3453acf7e8efa4eb1b274da19812ac4e2431be7f1
+  checksum: c37f2664c8220afea0c94a53356dbc7a26e637ae4bf0202c1c75c0d5a82e0519459eecb380f0e80d467ffb95c765ba82140b92756685467152d0ad534c21ba6c
   languageName: node
   linkType: hard
 
-"@redwoodjs/graphql-server@npm:1.3.3-canary.120, @redwoodjs/graphql-server@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/graphql-server@npm:1.3.3-canary.120"
+"@redwoodjs/graphql-server@npm:1.3.3-canary.123, @redwoodjs/graphql-server@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/graphql-server@npm:1.3.3-canary.123"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     "@envelop/depth-limit": 1.5.1
@@ -4073,7 +4036,7 @@ __metadata:
     "@graphql-tools/utils": 8.6.10
     "@graphql-yoga/common": 2.5.0
     "@prisma/client": 3.14.0
-    "@redwoodjs/api": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/api": ^1.3.3-canary.123+cd9ba616
     core-js: 3.22.5
     cross-undici-fetch: 0.1.27
     graphql: 16.5.0
@@ -4082,13 +4045,13 @@ __metadata:
     lodash.merge: 4.6.2
     lodash.omitby: 4.6.0
     uuid: 8.3.2
-  checksum: 21a55742bed4533d0a34582c2e7f42f53bcab88eb9a29c72584323c9234d8d47c7be8cc2863ce12e05af237d71edec1c9013a603815c03fbd52ec75de973d917
+  checksum: 08ff10f8235db91fbf0b4406356ab6b182855af385ffa1402390483c1ef0aafda17eca7c7400fe553eaf4a3e1a5f36ce4da5d259ee342f440812866f2ac39640
   languageName: node
   linkType: hard
 
-"@redwoodjs/internal@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/internal@npm:1.3.3-canary.120"
+"@redwoodjs/internal@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/internal@npm:1.3.3-canary.123"
   dependencies:
     "@babel/parser": 7.16.7
     "@babel/plugin-transform-typescript": 7.16.7
@@ -4102,13 +4065,13 @@ __metadata:
     "@graphql-codegen/typescript-operations": 2.4.0
     "@graphql-codegen/typescript-react-apollo": 3.2.14
     "@graphql-codegen/typescript-resolvers": 2.6.4
-    "@redwoodjs/graphql-server": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/graphql-server": ^1.3.3-canary.123+cd9ba616
     babel-plugin-graphql-tag: 3.3.0
     babel-plugin-polyfill-corejs3: 0.5.0
     chalk: 4.1.2
     core-js: 3.22.5
     deepmerge: 4.2.2
-    esbuild: 0.14.38
+    esbuild: 0.14.39
     fast-glob: 3.2.11
     findup-sync: 5.0.0
     fs-extra: 10.1.0
@@ -4122,20 +4085,20 @@ __metadata:
   bin:
     rw-gen: dist/generate/generate.js
     rw-gen-watch: dist/generate/watch.js
-  checksum: a327d488ea96e453bb5a52cccd8548cc57255aad8e742a0e59798fb46f84ccc769904877339fd4cff8cab446668c3d5db49803f694a3a6fed06181eccb459b1a
+  checksum: 2b0c9be354cf6759d0fa15e112ed7cbdeddea035b68765814234873e72c610106dd890629e81a8f182a250aa6df1cdd1b15cf35b349f927a19cf945915c6337c
   languageName: node
   linkType: hard
 
-"@redwoodjs/prerender@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/prerender@npm:1.3.3-canary.120"
+"@redwoodjs/prerender@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/prerender@npm:1.3.3-canary.123"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
-    "@redwoodjs/auth": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/internal": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/router": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/structure": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/web": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/auth": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/internal": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/router": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/structure": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/web": ^1.3.3-canary.123+cd9ba616
     babel-plugin-ignore-html-and-css-imports: 0.1.0
     cheerio: 1.0.0-rc.10
     core-js: 3.22.5
@@ -4144,30 +4107,30 @@ __metadata:
   peerDependencies:
     react: 17.0.2
     react-dom: 17.0.2
-  checksum: 08ce7ccef4af0ad0b4b448b509b063d4562296d760fced4320376f564b823f38bb3b6cb0fbc506220c78cbd36a7e36fa2e7c478d4bafecd783e949dcb9404bc2
+  checksum: ebf142377e10756de2d0fed8d5806bdc44ddd5045d525057a41ecf088c11d0051ea2b6df9e20e1463a5cb1c38e0a26409bba9e7e2dfa4205426460c2c90e88f6
   languageName: node
   linkType: hard
 
-"@redwoodjs/router@npm:1.3.3-canary.120, @redwoodjs/router@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/router@npm:1.3.3-canary.120"
+"@redwoodjs/router@npm:1.3.3-canary.123, @redwoodjs/router@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/router@npm:1.3.3-canary.123"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     "@reach/skip-nav": 0.16.0
-    "@redwoodjs/auth": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/auth": ^1.3.3-canary.123+cd9ba616
     core-js: 3.22.5
     lodash.isequal: 4.5.0
-  checksum: 01d2bd6a6201a474487a330af706af7a013f17563ad222b69e64ea52f41a94acae107297bbd35b57e5fd2463f9f6a8e112e944ef4e103fc0cc5a05bdd86d9b96
+  checksum: 8aeee0e8434f2aa1b6e3ba6642d874fac95972d938712b6a21c230b0fe7f711700551d9dcdb9a8404e7ac00b8da0a767cb9e7c9fdcf6a60f6eca88cc56d028b3
   languageName: node
   linkType: hard
 
-"@redwoodjs/structure@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/structure@npm:1.3.3-canary.120"
+"@redwoodjs/structure@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/structure@npm:1.3.3-canary.123"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     "@prisma/sdk": 3.14.0
-    "@redwoodjs/internal": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/internal": ^1.3.3-canary.123+cd9ba616
     "@types/line-column": 1.0.0
     camelcase: 6.3.0
     core-js: 3.22.5
@@ -4188,17 +4151,17 @@ __metadata:
     vscode-languageserver-textdocument: 1.0.4
     vscode-languageserver-types: 3.17.0
     yargs-parser: 21.0.1
-  checksum: f95badb55106bfa8a11eb86edd2cdb93e215bd61bf55908ae04660c81e1e334d287e8fd96ee8947f57cbeb66be62404410f026521fcd6e7ac46641f861bdcda7
+  checksum: b8335197a62cfbc0f6eb3960f1f1d1758c5c797691b687eae5414cda2bfb454761704ccc705f806c283a50ec6b9191348b9ae769e3525a829bf8f8e80b3fb83a
   languageName: node
   linkType: hard
 
-"@redwoodjs/telemetry@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/telemetry@npm:1.3.3-canary.120"
+"@redwoodjs/telemetry@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/telemetry@npm:1.3.3-canary.123"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
-    "@redwoodjs/internal": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/structure": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/internal": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/structure": ^1.3.3-canary.123+cd9ba616
     ci-info: 3.3.0
     core-js: 3.22.5
     cross-undici-fetch: 0.1.27
@@ -4206,20 +4169,20 @@ __metadata:
     systeminformation: 5.11.14
     uuid: 8.3.2
     yargs: 17.4.1
-  checksum: be901eebf2e85a83e803f275f81c47aa9f1b08c4242d6883dab1984b0dcff1b029d419c7c09d779f04975232a9524918c1ba7ab7cbd91927ce49bfee2f86738a
+  checksum: ca4e2d961326b017676fcb156e84d56eaa8c82145ace02aa5e3322ec8528457881935b162dfcf432f66f5d89bf699d12349feff6248f71b3967ad007ed8ab130
   languageName: node
   linkType: hard
 
-"@redwoodjs/testing@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/testing@npm:1.3.3-canary.120"
+"@redwoodjs/testing@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/testing@npm:1.3.3-canary.123"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
-    "@redwoodjs/auth": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/graphql-server": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/internal": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/router": ^1.3.3-canary.120+02113f78
-    "@redwoodjs/web": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/auth": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/graphql-server": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/internal": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/router": ^1.3.3-canary.123+cd9ba616
+    "@redwoodjs/web": ^1.3.3-canary.123+cd9ba616
     "@storybook/addon-a11y": 6.4.22
     "@storybook/addon-essentials": 6.4.22
     "@storybook/builder-webpack5": 6.4.22
@@ -4243,17 +4206,17 @@ __metadata:
     msw: 0.39.2
     ts-toolbelt: 9.6.0
     whatwg-fetch: 3.6.2
-  checksum: ccd1024b17d26892db29e3ab1c305d8bf9d81b9a6d3b21d4a640d5eaf1708d6d2d33cd6867d5d5e87c959b2d4d833a9e55caded49d53befc59b96ea4858749de
+  checksum: 61dd3c12b1bbfc0eb80345feb6b286d279f4b045e7dad8bc5fbfe6130a2fbc615a8f7449c881ad557676862f6f57bc63ceb186a644bf3ee40190598b624565b9
   languageName: node
   linkType: hard
 
-"@redwoodjs/web@npm:1.3.3-canary.120, @redwoodjs/web@npm:^1.3.3-canary.120+02113f78":
-  version: 1.3.3-canary.120
-  resolution: "@redwoodjs/web@npm:1.3.3-canary.120"
+"@redwoodjs/web@npm:1.3.3-canary.123, @redwoodjs/web@npm:^1.3.3-canary.123+cd9ba616":
+  version: 1.3.3-canary.123
+  resolution: "@redwoodjs/web@npm:1.3.3-canary.123"
   dependencies:
     "@apollo/client": 3.6.2
     "@babel/runtime-corejs3": 7.16.7
-    "@redwoodjs/auth": ^1.3.3-canary.120+02113f78
+    "@redwoodjs/auth": ^1.3.3-canary.123+cd9ba616
     core-js: 3.22.5
     graphql: 16.5.0
     graphql-tag: 2.12.6
@@ -4275,7 +4238,7 @@ __metadata:
     start-storybook: dist/bins/start-storybook.js
     tsc: dist/bins/tsc.js
     webpack: dist/bins/webpack.js
-  checksum: 244835f1064f9a5d333d57c421f79c104be7e17d08ec75f1423e58e9b2116385b810fcb0e6645d2cd2759a3d9a563feb5e073d665d031e36533fbbd11c08d1dd
+  checksum: 33d6ec8d8baad2da36afa4a3d69ce965c87816d9001a1f6c1e7f200224d4e32d60281235ea791cca48ff98fda23f921e1b2f23e94a0b939c115373ad5dc9f434
   languageName: node
   linkType: hard
 
@@ -7549,8 +7512,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "api@workspace:api"
   dependencies:
-    "@redwoodjs/api": 1.3.3-canary.121
-    "@redwoodjs/graphql-server": 1.3.3-canary.120
+    "@redwoodjs/api": 1.3.3-canary.123
+    "@redwoodjs/graphql-server": 1.3.3-canary.123
   languageName: unknown
   linkType: soft
 
@@ -11697,6 +11660,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-android-64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-android-64@npm:0.14.39"
+  conditions: os=android & cpu=x64
+  languageName: node
+  linkType: hard
+
 "esbuild-android-arm64@npm:0.13.15":
   version: 0.13.15
   resolution: "esbuild-android-arm64@npm:0.13.15"
@@ -11707,6 +11677,13 @@ __metadata:
 "esbuild-android-arm64@npm:0.14.38":
   version: 0.14.38
   resolution: "esbuild-android-arm64@npm:0.14.38"
+  conditions: os=android & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"esbuild-android-arm64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-android-arm64@npm:0.14.39"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
@@ -11725,6 +11702,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-darwin-64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-darwin-64@npm:0.14.39"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
 "esbuild-darwin-arm64@npm:0.13.15":
   version: 0.13.15
   resolution: "esbuild-darwin-arm64@npm:0.13.15"
@@ -11735,6 +11719,13 @@ __metadata:
 "esbuild-darwin-arm64@npm:0.14.38":
   version: 0.14.38
   resolution: "esbuild-darwin-arm64@npm:0.14.38"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"esbuild-darwin-arm64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-darwin-arm64@npm:0.14.39"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -11753,6 +11744,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-freebsd-64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-freebsd-64@npm:0.14.39"
+  conditions: os=freebsd & cpu=x64
+  languageName: node
+  linkType: hard
+
 "esbuild-freebsd-arm64@npm:0.13.15":
   version: 0.13.15
   resolution: "esbuild-freebsd-arm64@npm:0.13.15"
@@ -11763,6 +11761,13 @@ __metadata:
 "esbuild-freebsd-arm64@npm:0.14.38":
   version: 0.14.38
   resolution: "esbuild-freebsd-arm64@npm:0.14.38"
+  conditions: os=freebsd & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"esbuild-freebsd-arm64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-freebsd-arm64@npm:0.14.39"
   conditions: os=freebsd & cpu=arm64
   languageName: node
   linkType: hard
@@ -11781,6 +11786,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-linux-32@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-linux-32@npm:0.14.39"
+  conditions: os=linux & cpu=ia32
+  languageName: node
+  linkType: hard
+
 "esbuild-linux-64@npm:0.13.15":
   version: 0.13.15
   resolution: "esbuild-linux-64@npm:0.13.15"
@@ -11791,6 +11803,13 @@ __metadata:
 "esbuild-linux-64@npm:0.14.38":
   version: 0.14.38
   resolution: "esbuild-linux-64@npm:0.14.38"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"esbuild-linux-64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-linux-64@npm:0.14.39"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -11809,6 +11828,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-linux-arm64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-linux-arm64@npm:0.14.39"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
 "esbuild-linux-arm@npm:0.13.15":
   version: 0.13.15
   resolution: "esbuild-linux-arm@npm:0.13.15"
@@ -11819,6 +11845,13 @@ __metadata:
 "esbuild-linux-arm@npm:0.14.38":
   version: 0.14.38
   resolution: "esbuild-linux-arm@npm:0.14.38"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"esbuild-linux-arm@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-linux-arm@npm:0.14.39"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
@@ -11837,6 +11870,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-linux-mips64le@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-linux-mips64le@npm:0.14.39"
+  conditions: os=linux & cpu=mips64el
+  languageName: node
+  linkType: hard
+
 "esbuild-linux-ppc64le@npm:0.13.15":
   version: 0.13.15
   resolution: "esbuild-linux-ppc64le@npm:0.13.15"
@@ -11851,6 +11891,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-linux-ppc64le@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-linux-ppc64le@npm:0.14.39"
+  conditions: os=linux & cpu=ppc64
+  languageName: node
+  linkType: hard
+
 "esbuild-linux-riscv64@npm:0.14.38":
   version: 0.14.38
   resolution: "esbuild-linux-riscv64@npm:0.14.38"
@@ -11858,9 +11905,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-linux-riscv64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-linux-riscv64@npm:0.14.39"
+  conditions: os=linux & cpu=riscv64
+  languageName: node
+  linkType: hard
+
 "esbuild-linux-s390x@npm:0.14.38":
   version: 0.14.38
   resolution: "esbuild-linux-s390x@npm:0.14.38"
+  conditions: os=linux & cpu=s390x
+  languageName: node
+  linkType: hard
+
+"esbuild-linux-s390x@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-linux-s390x@npm:0.14.39"
   conditions: os=linux & cpu=s390x
   languageName: node
   linkType: hard
@@ -11895,6 +11956,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-netbsd-64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-netbsd-64@npm:0.14.39"
+  conditions: os=netbsd & cpu=x64
+  languageName: node
+  linkType: hard
+
 "esbuild-openbsd-64@npm:0.13.15":
   version: 0.13.15
   resolution: "esbuild-openbsd-64@npm:0.13.15"
@@ -11905,6 +11973,13 @@ __metadata:
 "esbuild-openbsd-64@npm:0.14.38":
   version: 0.14.38
   resolution: "esbuild-openbsd-64@npm:0.14.38"
+  conditions: os=openbsd & cpu=x64
+  languageName: node
+  linkType: hard
+
+"esbuild-openbsd-64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-openbsd-64@npm:0.14.39"
   conditions: os=openbsd & cpu=x64
   languageName: node
   linkType: hard
@@ -11923,6 +11998,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-sunos-64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-sunos-64@npm:0.14.39"
+  conditions: os=sunos & cpu=x64
+  languageName: node
+  linkType: hard
+
 "esbuild-windows-32@npm:0.13.15":
   version: 0.13.15
   resolution: "esbuild-windows-32@npm:0.13.15"
@@ -11933,6 +12015,13 @@ __metadata:
 "esbuild-windows-32@npm:0.14.38":
   version: 0.14.38
   resolution: "esbuild-windows-32@npm:0.14.38"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
+"esbuild-windows-32@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-windows-32@npm:0.14.39"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
@@ -11951,6 +12040,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-windows-64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-windows-64@npm:0.14.39"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
 "esbuild-windows-arm64@npm:0.13.15":
   version: 0.13.15
   resolution: "esbuild-windows-arm64@npm:0.13.15"
@@ -11965,7 +12061,147 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:0.14.38, esbuild@npm:^0.14.6":
+"esbuild-windows-arm64@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild-windows-arm64@npm:0.14.39"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"esbuild@npm:0.14.39":
+  version: 0.14.39
+  resolution: "esbuild@npm:0.14.39"
+  dependencies:
+    esbuild-android-64: 0.14.39
+    esbuild-android-arm64: 0.14.39
+    esbuild-darwin-64: 0.14.39
+    esbuild-darwin-arm64: 0.14.39
+    esbuild-freebsd-64: 0.14.39
+    esbuild-freebsd-arm64: 0.14.39
+    esbuild-linux-32: 0.14.39
+    esbuild-linux-64: 0.14.39
+    esbuild-linux-arm: 0.14.39
+    esbuild-linux-arm64: 0.14.39
+    esbuild-linux-mips64le: 0.14.39
+    esbuild-linux-ppc64le: 0.14.39
+    esbuild-linux-riscv64: 0.14.39
+    esbuild-linux-s390x: 0.14.39
+    esbuild-netbsd-64: 0.14.39
+    esbuild-openbsd-64: 0.14.39
+    esbuild-sunos-64: 0.14.39
+    esbuild-windows-32: 0.14.39
+    esbuild-windows-64: 0.14.39
+    esbuild-windows-arm64: 0.14.39
+  dependenciesMeta:
+    esbuild-android-64:
+      optional: true
+    esbuild-android-arm64:
+      optional: true
+    esbuild-darwin-64:
+      optional: true
+    esbuild-darwin-arm64:
+      optional: true
+    esbuild-freebsd-64:
+      optional: true
+    esbuild-freebsd-arm64:
+      optional: true
+    esbuild-linux-32:
+      optional: true
+    esbuild-linux-64:
+      optional: true
+    esbuild-linux-arm:
+      optional: true
+    esbuild-linux-arm64:
+      optional: true
+    esbuild-linux-mips64le:
+      optional: true
+    esbuild-linux-ppc64le:
+      optional: true
+    esbuild-linux-riscv64:
+      optional: true
+    esbuild-linux-s390x:
+      optional: true
+    esbuild-netbsd-64:
+      optional: true
+    esbuild-openbsd-64:
+      optional: true
+    esbuild-sunos-64:
+      optional: true
+    esbuild-windows-32:
+      optional: true
+    esbuild-windows-64:
+      optional: true
+    esbuild-windows-arm64:
+      optional: true
+  bin:
+    esbuild: bin/esbuild
+  checksum: 49e8212c84d1baafb63726391379faa81f3ac227457d2d4e470103c7a74dcb60739298d57365f6f6b22c329bb940d37601232364afccca4900b5964ff1979835
+  languageName: node
+  linkType: hard
+
+"esbuild@npm:^0.13.4":
+  version: 0.13.15
+  resolution: "esbuild@npm:0.13.15"
+  dependencies:
+    esbuild-android-arm64: 0.13.15
+    esbuild-darwin-64: 0.13.15
+    esbuild-darwin-arm64: 0.13.15
+    esbuild-freebsd-64: 0.13.15
+    esbuild-freebsd-arm64: 0.13.15
+    esbuild-linux-32: 0.13.15
+    esbuild-linux-64: 0.13.15
+    esbuild-linux-arm: 0.13.15
+    esbuild-linux-arm64: 0.13.15
+    esbuild-linux-mips64le: 0.13.15
+    esbuild-linux-ppc64le: 0.13.15
+    esbuild-netbsd-64: 0.13.15
+    esbuild-openbsd-64: 0.13.15
+    esbuild-sunos-64: 0.13.15
+    esbuild-windows-32: 0.13.15
+    esbuild-windows-64: 0.13.15
+    esbuild-windows-arm64: 0.13.15
+  dependenciesMeta:
+    esbuild-android-arm64:
+      optional: true
+    esbuild-darwin-64:
+      optional: true
+    esbuild-darwin-arm64:
+      optional: true
+    esbuild-freebsd-64:
+      optional: true
+    esbuild-freebsd-arm64:
+      optional: true
+    esbuild-linux-32:
+      optional: true
+    esbuild-linux-64:
+      optional: true
+    esbuild-linux-arm:
+      optional: true
+    esbuild-linux-arm64:
+      optional: true
+    esbuild-linux-mips64le:
+      optional: true
+    esbuild-linux-ppc64le:
+      optional: true
+    esbuild-netbsd-64:
+      optional: true
+    esbuild-openbsd-64:
+      optional: true
+    esbuild-sunos-64:
+      optional: true
+    esbuild-windows-32:
+      optional: true
+    esbuild-windows-64:
+      optional: true
+    esbuild-windows-arm64:
+      optional: true
+  bin:
+    esbuild: bin/esbuild
+  checksum: c1ddc5672838eb4ece0c7b182053ba597249c17af2ff454f02358bad1520c56f869fa24b138670cdd81c3a8ace506ca7fe7ffcb66eefda489cfc4e8f35e682ac
+  languageName: node
+  linkType: hard
+
+"esbuild@npm:^0.14.6":
   version: 0.14.38
   resolution: "esbuild@npm:0.14.38"
   dependencies:
@@ -12033,68 +12269,6 @@ __metadata:
   bin:
     esbuild: bin/esbuild
   checksum: 82a41a5315d4289765042c87cc0c9ab9669a0578b861daed24fa3fffe1d3ce1dd078c34eabe1df94176fa789c8f68510d92630feeebe54b828522f117264d75c
-  languageName: node
-  linkType: hard
-
-"esbuild@npm:^0.13.4":
-  version: 0.13.15
-  resolution: "esbuild@npm:0.13.15"
-  dependencies:
-    esbuild-android-arm64: 0.13.15
-    esbuild-darwin-64: 0.13.15
-    esbuild-darwin-arm64: 0.13.15
-    esbuild-freebsd-64: 0.13.15
-    esbuild-freebsd-arm64: 0.13.15
-    esbuild-linux-32: 0.13.15
-    esbuild-linux-64: 0.13.15
-    esbuild-linux-arm: 0.13.15
-    esbuild-linux-arm64: 0.13.15
-    esbuild-linux-mips64le: 0.13.15
-    esbuild-linux-ppc64le: 0.13.15
-    esbuild-netbsd-64: 0.13.15
-    esbuild-openbsd-64: 0.13.15
-    esbuild-sunos-64: 0.13.15
-    esbuild-windows-32: 0.13.15
-    esbuild-windows-64: 0.13.15
-    esbuild-windows-arm64: 0.13.15
-  dependenciesMeta:
-    esbuild-android-arm64:
-      optional: true
-    esbuild-darwin-64:
-      optional: true
-    esbuild-darwin-arm64:
-      optional: true
-    esbuild-freebsd-64:
-      optional: true
-    esbuild-freebsd-arm64:
-      optional: true
-    esbuild-linux-32:
-      optional: true
-    esbuild-linux-64:
-      optional: true
-    esbuild-linux-arm:
-      optional: true
-    esbuild-linux-arm64:
-      optional: true
-    esbuild-linux-mips64le:
-      optional: true
-    esbuild-linux-ppc64le:
-      optional: true
-    esbuild-netbsd-64:
-      optional: true
-    esbuild-openbsd-64:
-      optional: true
-    esbuild-sunos-64:
-      optional: true
-    esbuild-windows-32:
-      optional: true
-    esbuild-windows-64:
-      optional: true
-    esbuild-windows-arm64:
-      optional: true
-  bin:
-    esbuild: bin/esbuild
-  checksum: c1ddc5672838eb4ece0c7b182053ba597249c17af2ff454f02358bad1520c56f869fa24b138670cdd81c3a8ace506ca7fe7ffcb66eefda489cfc4e8f35e682ac
   languageName: node
   linkType: hard
 
@@ -21833,7 +22007,7 @@ __metadata:
     "@layer0/devtools": 4.12
     "@layer0/prefetch": 4.12
     "@layer0/redwood": 4.12
-    "@redwoodjs/core": 1.3.3-canary.120
+    "@redwoodjs/core": 1.3.3-canary.123
   languageName: unknown
   linkType: soft
 
@@ -25043,9 +25217,9 @@ __metadata:
   resolution: "web@workspace:web"
   dependencies:
     "@redwoodjs/auth": 1.3.2
-    "@redwoodjs/forms": 1.3.3-canary.121
-    "@redwoodjs/router": 1.3.3-canary.120
-    "@redwoodjs/web": 1.3.3-canary.120
+    "@redwoodjs/forms": 1.3.3-canary.123
+    "@redwoodjs/router": 1.3.3-canary.123
+    "@redwoodjs/web": 1.3.3-canary.123
     autoprefixer: 10.4.3
     postcss: 8.4.11
     postcss-loader: 6.2.1
