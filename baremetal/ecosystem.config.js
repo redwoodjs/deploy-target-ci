@@ -2,6 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'serve',
+      cwd: 'current',
       script: 'node_modules/.bin/rw',
       args: 'serve',
       instances: 'max',

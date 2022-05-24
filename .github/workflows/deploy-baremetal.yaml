@@ -47,7 +47,7 @@ jobs:
 
       - name: Deploy
         run: |
-          yarn rw deploy baremetal
+          yarn rw deploy baremetal production --first-run
         working-directory: ./baremetal
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
