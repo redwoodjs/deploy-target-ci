@@ -3588,9 +3588,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api-server@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/api-server@npm:2.1.1-canary.29"
+"@redwoodjs/api-server@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/api-server@npm:2.1.1-canary.31"
   dependencies:
     "@babel/plugin-transform-runtime": 7.16.7
     "@babel/runtime-corejs3": 7.16.7
@@ -3602,7 +3602,7 @@ __metadata:
     chokidar: 3.5.3
     core-js: 3.23.4
     fast-json-parse: 1.0.3
-    fastify: 3.29.0
+    fastify: 3.29.1
     fastify-raw-body: 3.2.0
     lodash.escape: 4.0.1
     pretty-bytes: 5.6.0
@@ -3614,13 +3614,13 @@ __metadata:
     rw-api-server-watch: dist/watch.js
     rw-log-formatter: dist/logFormatter/bin.js
     rw-server: dist/index.js
-  checksum: 04a0e33356cf261eaccad2f6efb0030b13de78fd027b813a4df1ee569876de293271a183c8f061c0dc079a9cdde852c3868e3de33bb8b6f7a94a3dc7c4b08d49
+  checksum: 70b7e42e382f93becbc243892f4c31d9f1746218655a5a5a9dd732de454d31f2b1bc84eaa079223361abec26d43badd38d40fe90c0b031b16197d7ef33dc8ca7
   languageName: node
   linkType: hard
 
-"@redwoodjs/api@npm:2.1.1-canary.29, @redwoodjs/api@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/api@npm:2.1.1-canary.29"
+"@redwoodjs/api@npm:2.1.1-canary.31, @redwoodjs/api@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/api@npm:2.1.1-canary.31"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     "@prisma/client": 3.15.2
@@ -3651,7 +3651,7 @@ __metadata:
     rw: dist/bins/redwood.js
     rwfw: dist/bins/rwfw.js
     tsc: dist/bins/tsc.js
-  checksum: faa7401d8f7f97eea271f960ff31b3e1526dbf595e6a891c4d0a63b1376620d1d5cafa78c58d90aaa8d75b71f8859f65ac74a3b50a73997ce2959f648268ff34
+  checksum: 4e97865ac933141ae777de9ab6c321dd8abbc244592cff6c532ac3db9d8a462caa8adffd872e99c2f232df6db5ba7ade9d5b55c23aedff9a26c15a22b932fd90
   languageName: node
   linkType: hard
 
@@ -3665,27 +3665,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/auth@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/auth@npm:2.1.1-canary.29"
+"@redwoodjs/auth@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/auth@npm:2.1.1-canary.31"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     core-js: 3.23.4
-  checksum: 0e21a534e189004e31f24fe5db22069d65df5b86d6669114a9ec2f4883b6b09e18cba73c47d72dd0de10902bf20889afe75b7d86e78ebcbdaeaa7a4f85aa8795
+  checksum: 526681ddcc0948251f996ff8a6ab34293b1f74016f093fb69ab08778c957f5afa479827479441698f9b6d40395bf4189f1a9bf4fca8d6fd3c1bef1f9e129912b
   languageName: node
   linkType: hard
 
-"@redwoodjs/cli@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/cli@npm:2.1.1-canary.29"
+"@redwoodjs/cli@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/cli@npm:2.1.1-canary.31"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     "@prisma/sdk": 3.15.2
-    "@redwoodjs/api-server": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/internal": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/prerender": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/structure": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/telemetry": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/api-server": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/internal": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/prerender": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/structure": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/telemetry": ^2.1.1-canary.31+b3ad264f
     boxen: 5.1.2
     camelcase: 6.3.0
     chalk: 4.1.2
@@ -3719,13 +3719,13 @@ __metadata:
     redwood: dist/index.js
     rw: dist/index.js
     rwfw: dist/rwfw.js
-  checksum: bb75f9d829c3490af30acf75a18ad7667493e0e35f4505f4d35b143a52bca4b337e9a3e253905dfc7b4e520dd0dd0a38ec3e2e21a2b1984aa57bb361f78d0a06
+  checksum: c58ced79c70b1d524dbaedfedca9e06fb7607f5ee123988d40157a0f3b3cf34757858b0a89e1893cc2f1fc0429f484787cad87ed78ce2492072d50bdacc28700
   languageName: node
   linkType: hard
 
-"@redwoodjs/core@npm:2.1.1-canary.29":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/core@npm:2.1.1-canary.29"
+"@redwoodjs/core@npm:2.1.1-canary.31":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/core@npm:2.1.1-canary.31"
   dependencies:
     "@babel/cli": 7.16.7
     "@babel/core": 7.16.7
@@ -3741,10 +3741,10 @@ __metadata:
     "@babel/preset-typescript": 7.16.7
     "@babel/runtime-corejs3": 7.16.7
     "@pmmmwh/react-refresh-webpack-plugin": 0.5.7
-    "@redwoodjs/cli": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/eslint-config": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/internal": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/testing": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/cli": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/eslint-config": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/internal": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/testing": ^2.1.1-canary.31+b3ad264f
     babel-loader: 8.2.3
     babel-plugin-auto-import: 1.1.0
     babel-plugin-graphql-tag: 3.3.0
@@ -3792,18 +3792,18 @@ __metadata:
     rw-gen-watch: dist/bins/rw-gen-watch.js
     rw-log-formatter: dist/bins/rw-log-formatter.js
     rwfw: dist/bins/rwfw.js
-  checksum: 5ef8aac1b413f741d5f9e81834e1705ca2feb1be7e5c17d797025fe72b06195cfaea21836cda4ecb68cd5cb716ace5626f8d413d6f210da6f8bcda774b654a7b
+  checksum: 1f5dd0f07401212083d91963a48a47d67549e12392bf8a20b7880d5ce8b7b235c378b1c92de8e015a63c337d9b05cd84f5819269e5024c1c8b4675da6d92b013
   languageName: node
   linkType: hard
 
-"@redwoodjs/eslint-config@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/eslint-config@npm:2.1.1-canary.29"
+"@redwoodjs/eslint-config@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/eslint-config@npm:2.1.1-canary.31"
   dependencies:
     "@babel/core": 7.16.7
     "@babel/eslint-parser": 7.16.5
     "@babel/eslint-plugin": 7.16.5
-    "@redwoodjs/internal": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/internal": ^2.1.1-canary.31+b3ad264f
     "@typescript-eslint/eslint-plugin": 5.26.0
     "@typescript-eslint/parser": 5.26.0
     eslint: 8.18.0
@@ -3817,13 +3817,13 @@ __metadata:
     eslint-plugin-react: 7.30.0
     eslint-plugin-react-hooks: 4.5.0
     prettier: 2.7.1
-  checksum: cd18343f02125e05f22c04ee927d836b6530cecbb38a335fc9bed7156ab34556bb8357e61d668e255c616e7e7a062595f1a867fc6b1eaf4d158a6a9f0c7bc757
+  checksum: 9396aaa062864b3b7483c1db9291bfbff771f09a692aff275ccc3be68b7d5ab29fad9b538f3f23cc20aa8eb128a55afe474046ebc0e7ee308bbab6736c23d02e
   languageName: node
   linkType: hard
 
-"@redwoodjs/forms@npm:2.1.1-canary.29":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/forms@npm:2.1.1-canary.29"
+"@redwoodjs/forms@npm:2.1.1-canary.31":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/forms@npm:2.1.1-canary.31"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     core-js: 3.23.4
@@ -3832,13 +3832,13 @@ __metadata:
   peerDependencies:
     graphql: 16.5.0
     react: 17.0.2
-  checksum: e746fa69d168380a08bd7e2f408bacf4b968acc3101c94f41e8c66cc2f5bfee04621418eafe184a05c1b1ef739a4317aa8aef58d9eefe18fdce9599846dcba82
+  checksum: a2a2fd2f2c648d36c71c345f8fbe08554ba87321db5a401aef55a49249a9a16336c6df4c6a8e72eab0b288c21950e43d131fde5c537eccf6b596b92e4bff7e8a
   languageName: node
   linkType: hard
 
-"@redwoodjs/graphql-server@npm:2.1.1-canary.29, @redwoodjs/graphql-server@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/graphql-server@npm:2.1.1-canary.29"
+"@redwoodjs/graphql-server@npm:2.1.1-canary.31, @redwoodjs/graphql-server@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/graphql-server@npm:2.1.1-canary.31"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     "@envelop/depth-limit": 1.5.3
@@ -3851,7 +3851,7 @@ __metadata:
     "@graphql-tools/utils": 8.8.0
     "@graphql-yoga/common": 2.7.0
     "@prisma/client": 3.15.2
-    "@redwoodjs/api": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/api": ^2.1.1-canary.31+b3ad264f
     core-js: 3.23.4
     cross-undici-fetch: 0.4.11
     graphql: 16.5.0
@@ -3860,13 +3860,13 @@ __metadata:
     lodash.merge: 4.6.2
     lodash.omitby: 4.6.0
     uuid: 8.3.2
-  checksum: 997f5c12bc26a77f64190e8847dae3e6aa2f3891078e26abab04d50953129d865a59f74daca534edccb4304cd8967bdfb7d3bb308aa26d769e613b5fb84b9ce3
+  checksum: e1ed8ff248bd4a51760f5c0657cc0ff1766c5452f27e27038cd7882b39d75d561ec6749efcb346492a4a8e7ebdd2c04eb148c0f1ec7f4cacd2a26563ca839d7a
   languageName: node
   linkType: hard
 
-"@redwoodjs/internal@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/internal@npm:2.1.1-canary.29"
+"@redwoodjs/internal@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/internal@npm:2.1.1-canary.31"
   dependencies:
     "@babel/parser": 7.16.7
     "@babel/plugin-transform-typescript": 7.16.7
@@ -3880,7 +3880,7 @@ __metadata:
     "@graphql-codegen/typescript-operations": 2.4.2
     "@graphql-codegen/typescript-react-apollo": 3.2.16
     "@graphql-codegen/typescript-resolvers": 2.6.6
-    "@redwoodjs/graphql-server": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/graphql-server": ^2.1.1-canary.31+b3ad264f
     babel-plugin-graphql-tag: 3.3.0
     babel-plugin-polyfill-corejs3: 0.5.0
     chalk: 4.1.2
@@ -3901,20 +3901,20 @@ __metadata:
   bin:
     rw-gen: dist/generate/generate.js
     rw-gen-watch: dist/generate/watch.js
-  checksum: 52dc31bfef5937bfd2d1b5f5a8c4dd9cfa51eb31a5b82082666ffc1ee12839a2fb9a1dfba7fd7fc8c627ddc722ce07aed8cc504ed8abac4bd27700b4cbfb7059
+  checksum: 84db8321c5440d6299026989c386cb937a2abad5ca8fd47ad1046044f52db9a3f598008d8edc013204e0d4f0c1a39842a1d9cb3447da80c0bacef7691736e8b4
   languageName: node
   linkType: hard
 
-"@redwoodjs/prerender@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/prerender@npm:2.1.1-canary.29"
+"@redwoodjs/prerender@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/prerender@npm:2.1.1-canary.31"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
-    "@redwoodjs/auth": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/internal": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/router": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/structure": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/web": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/auth": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/internal": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/router": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/structure": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/web": ^2.1.1-canary.31+b3ad264f
     babel-plugin-ignore-html-and-css-imports: 0.1.0
     cheerio: 1.0.0-rc.11
     core-js: 3.23.4
@@ -3923,30 +3923,30 @@ __metadata:
   peerDependencies:
     react: 17.0.2
     react-dom: 17.0.2
-  checksum: 5a238ca96c07c2ee0b0b8d9ca35462ac07c36eca12d090e32d5c70414949132d3c727f47373c197e6e10e5428e7314fab6a01125513019d451a5e526af950a06
+  checksum: 891b02465550fdc424bec0c8e4857dc1f97e9b407c4eaf14eb3573f778a42b927948ca3b2a0d7382cf02fe5103b1442032a0d1eab06ecd48e9e4a11ada44abd5
   languageName: node
   linkType: hard
 
-"@redwoodjs/router@npm:2.1.1-canary.29, @redwoodjs/router@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/router@npm:2.1.1-canary.29"
+"@redwoodjs/router@npm:2.1.1-canary.31, @redwoodjs/router@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/router@npm:2.1.1-canary.31"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     "@reach/skip-nav": 0.16.0
-    "@redwoodjs/auth": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/auth": ^2.1.1-canary.31+b3ad264f
     core-js: 3.23.4
     lodash.isequal: 4.5.0
-  checksum: 3af093e437bd66de9573d39176fa7aeb6116ebd272c8d41308b947ef85d10f1841d3f07cccacf5e8620e48bc56a7ac53109124d5a08911b65173d523a35609fa
+  checksum: 242cdd41556164962c47892af1a416602a2fc99173a3ef7915caa85df20917ceda2fac9ba0f7e8aba5e1e376bbe8f64d9133eb76db3c21e31ba7e0ffb714554f
   languageName: node
   linkType: hard
 
-"@redwoodjs/structure@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/structure@npm:2.1.1-canary.29"
+"@redwoodjs/structure@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/structure@npm:2.1.1-canary.31"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
     "@prisma/sdk": 3.15.2
-    "@redwoodjs/internal": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/internal": ^2.1.1-canary.31+b3ad264f
     "@types/line-column": 1.0.0
     camelcase: 6.3.0
     core-js: 3.23.4
@@ -3967,17 +3967,17 @@ __metadata:
     vscode-languageserver-textdocument: 1.0.5
     vscode-languageserver-types: 3.17.1
     yargs-parser: 21.0.1
-  checksum: 74f3b8b9407ef2fe56d6c8a23b93996dcf669ac5b99c61774459ce32a7a4c77a58c83fbc4aa8f81f05a2e254ad6da26cdca6d222cded99d49b8adddec6213d9e
+  checksum: b5b3518cd669678a470d98940aa89c504ce98eb7e63bb495daaf729843d5043e8c3388eb56b5c1ec9a61417e52f5d1a64757f19b636dceb0489849972f599813
   languageName: node
   linkType: hard
 
-"@redwoodjs/telemetry@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/telemetry@npm:2.1.1-canary.29"
+"@redwoodjs/telemetry@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/telemetry@npm:2.1.1-canary.31"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
-    "@redwoodjs/internal": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/structure": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/internal": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/structure": ^2.1.1-canary.31+b3ad264f
     ci-info: 3.3.2
     core-js: 3.23.4
     cross-undici-fetch: 0.4.11
@@ -3985,20 +3985,20 @@ __metadata:
     systeminformation: 5.11.21
     uuid: 8.3.2
     yargs: 17.5.1
-  checksum: 8f6f7e7b6af4f50b0c1663e63ffcbac9ae29a78f5802fbb7b4147a05be70e65dd8fb4576f41e59ba389abb6f1870aa484b17af4c441b1caa7e42dcae7138217e
+  checksum: 7747a6a3e10d35c4c618c43f6b0508d7e8c220b65628ee7c2bef05989cd29cf48b8281583d874bf4db22ed1b2ba10de103cc9b51a024654780fb66c4242aad38
   languageName: node
   linkType: hard
 
-"@redwoodjs/testing@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/testing@npm:2.1.1-canary.29"
+"@redwoodjs/testing@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/testing@npm:2.1.1-canary.31"
   dependencies:
     "@babel/runtime-corejs3": 7.16.7
-    "@redwoodjs/auth": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/graphql-server": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/internal": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/router": ^2.1.1-canary.29+16a79181
-    "@redwoodjs/web": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/auth": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/graphql-server": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/internal": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/router": ^2.1.1-canary.31+b3ad264f
+    "@redwoodjs/web": ^2.1.1-canary.31+b3ad264f
     "@storybook/addon-a11y": 6.5.9
     "@storybook/addon-docs": 6.5.9
     "@storybook/addon-essentials": 6.5.9
@@ -4024,17 +4024,17 @@ __metadata:
     msw: 0.40.2
     ts-toolbelt: 9.6.0
     whatwg-fetch: 3.6.2
-  checksum: 59d48e104673262662364215caae33d5c8e23a7944e7d92c278614643820b07dcacce6e4ac86acc87dbf3ed265e1fe6da59cb1fb5a51b2b125016a028b1364d8
+  checksum: 2c0f65f2a1b3df2ab7246de8b85a9c11d47fc9a128a04c303600e727a132a9f9bd7f1d4f70deef6dd40904ee00c5c6aa3739b02f69fb2ee9fc02d1acdfdaf225
   languageName: node
   linkType: hard
 
-"@redwoodjs/web@npm:2.1.1-canary.29, @redwoodjs/web@npm:^2.1.1-canary.29+16a79181":
-  version: 2.1.1-canary.29
-  resolution: "@redwoodjs/web@npm:2.1.1-canary.29"
+"@redwoodjs/web@npm:2.1.1-canary.31, @redwoodjs/web@npm:^2.1.1-canary.31+b3ad264f":
+  version: 2.1.1-canary.31
+  resolution: "@redwoodjs/web@npm:2.1.1-canary.31"
   dependencies:
     "@apollo/client": 3.6.9
     "@babel/runtime-corejs3": 7.16.7
-    "@redwoodjs/auth": ^2.1.1-canary.29+16a79181
+    "@redwoodjs/auth": ^2.1.1-canary.31+b3ad264f
     core-js: 3.23.4
     graphql: 16.5.0
     graphql-tag: 2.12.6
@@ -4056,7 +4056,7 @@ __metadata:
     start-storybook: dist/bins/start-storybook.js
     tsc: dist/bins/tsc.js
     webpack: dist/bins/webpack.js
-  checksum: 0b948bfad306ef098db22466d6ecc6a97b488755ad1badfa5c731775e311281adc9676aaaf20fd1b9c511ee645b1a92ba021cab04589f5b60c4608178686c072
+  checksum: 0fa6549b7d63a1a9e13e4fb3770f37a1b153a9e05c3d0eac0eef2a8323e6a222b93e4cec857f892d26c5f6809021c2c26638b2021834f3c014f9a5f6f4fe2fc4
   languageName: node
   linkType: hard
 
@@ -7226,8 +7226,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "api@workspace:api"
   dependencies:
-    "@redwoodjs/api": 2.1.1-canary.29
-    "@redwoodjs/graphql-server": 2.1.1-canary.29
+    "@redwoodjs/api": 2.1.1-canary.31
+    "@redwoodjs/graphql-server": 2.1.1-canary.31
   languageName: unknown
   linkType: soft
 
@@ -12359,9 +12359,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.29.0":
-  version: 3.29.0
-  resolution: "fastify@npm:3.29.0"
+"fastify@npm:3.29.1":
+  version: 3.29.1
+  resolution: "fastify@npm:3.29.1"
   dependencies:
     "@fastify/ajv-compiler": ^1.0.0
     "@fastify/error": ^2.0.0
@@ -12378,7 +12378,7 @@ __metadata:
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^8.0.1
-  checksum: 9e2727908348671052d8eda3a95e6db666951a8fac0b6364ff9dca4d9f31f16a78b4c10a65c182b61db7429101593cde59526d2b5ab7f2fde8223af5a54cd8ee
+  checksum: 5ffb7f139fc3d6d839ff7642ec3306248c109bd042a3749ab492e83f0fa7c8ac891ce8909365ccdf59d2cda5c2598c5ac48e8d2cd4e1c9773795c51bdc62d216
   languageName: node
   linkType: hard
 
@@ -20922,7 +20922,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@redwoodjs/core": 2.1.1-canary.29
+    "@redwoodjs/core": 2.1.1-canary.31
   languageName: unknown
   linkType: soft
 
@@ -23970,9 +23970,9 @@ __metadata:
   resolution: "web@workspace:web"
   dependencies:
     "@redwoodjs/auth": 2.1.0
-    "@redwoodjs/forms": 2.1.1-canary.29
-    "@redwoodjs/router": 2.1.1-canary.29
-    "@redwoodjs/web": 2.1.1-canary.29
+    "@redwoodjs/forms": 2.1.1-canary.31
+    "@redwoodjs/router": 2.1.1-canary.31
+    "@redwoodjs/web": 2.1.1-canary.31
     autoprefixer: 10.4.3
     postcss: 8.4.11
     postcss-loader: 6.2.1
