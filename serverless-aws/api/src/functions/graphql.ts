@@ -19,7 +19,7 @@ export const handler = createGraphQLHandler({
   sdls,
   services,
   cors: {
-    origin: 'd3j2lmbogvczkg.cloudfront.net',
+    origin: ['d3j2lmbogvczkg.cloudfront.net', 'https://www.kittens.bazinga'],
     credentials: true,
   },
   onException: () => {

@@ -15,6 +15,9 @@ export const handler = createGraphQLHandler({
     logger,
     options: { operationName: true, query: true, requestId: true },
   },
+  cors: {
+    origin: ['https://bazinga.kittens', 'https://www.kittens.bazinga'],
+  },
   directives,
   sdls,
   services,
