@@ -1,0 +1,13 @@
+diff --git a/dist/functions/graphql.js b/dist/functions/graphql.js
+index 835ad627228b7f770bb350aa4044f98c67d3e6eb..dd3c12183187ce08d7b620e0bdc6e2d108973705 100644
+--- a/dist/functions/graphql.js
++++ b/dist/functions/graphql.js
+@@ -270,6 +270,8 @@ const createGraphQLHandler = ({
+ 
+     try {
+       const request = buildRequestObject(event);
++      console.log(`🗯 \n ~ file: graphql.ts ~ line 281 ~ event`, event);
++      console.log(`🗯 \n ~ file: graphql.ts ~ line 281 ~ request`, request);
+       const response = await yoga.handleRequest(request, {
+         event,
+         requestContext: lambdaContext
