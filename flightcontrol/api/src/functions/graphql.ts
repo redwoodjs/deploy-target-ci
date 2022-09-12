@@ -5,23 +5,15 @@ import sdls from 'src/graphql/**/*.sdl.{js,ts}'
 import services from 'src/services/**/*.{js,ts}'
 
 import { getCurrentUser } from 'src/lib/auth'
-
 import { db } from 'src/lib/db'
 import { logger } from 'src/lib/logger'
 
 export const handler = createGraphQLHandler({
   getCurrentUser,
-  loggerConfig: {
-    logger,
-    options: { operationName: true, query: true, requestId: true },
-  },
+  loggerConfig: { logger, options: {} },
   directives,
   sdls,
   services,
-  cors: {
-    origin: [process.env.REDWOOD_WEB_URL],
-    credentials: true,
-  },
   onException: () => {
     // Disconnect from your database with an unhandled exception.
     db.$disconnect()
