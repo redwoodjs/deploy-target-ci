@@ -1,8 +1,12 @@
 import humanize from 'humanize-string'
+import type {
+  DeleteContactMutationVariables,
+  FindContactById,
+} from 'types/graphql'
 
+import { Link, routes, navigate } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
-import { Link, routes, navigate } from '@redwoodjs/router'
 
 const DELETE_CONTACT_MUTATION = gql`
   mutation DeleteContactMutation($id: Int!) {
@@ -23,7 +27,7 @@ const formatEnum = (values: string | string[] | null | undefined) => {
   }
 }
 
-const jsonDisplay = (obj) => {
+const jsonDisplay = (obj: unknown) => {
   return (
     <pre>
       <code>{JSON.stringify(obj, null, 2)}</code>
@@ -31,7 +35,7 @@ const jsonDisplay = (obj) => {
   )
 }
 
-const timeTag = (datetime) => {
+const timeTag = (datetime?: string) => {
   return (
     datetime && (
       <time dateTime={datetime} title={datetime}>
@@ -41,11 +45,15 @@ const timeTag = (datetime) => {
   )
 }
 
-const checkboxInputTag = (checked) => {
+const checkboxInputTag = (checked: boolean) => {
   return <input type="checkbox" checked={checked} disabled />
 }
 
-const Contact = ({ contact }) => {
+interface Props {
+  contact: NonNullable<FindContactById['contact']>
+}
+
+const Contact = ({ contact }: Props) => {
   const [deleteContact] = useMutation(DELETE_CONTACT_MUTATION, {
     onCompleted: () => {
       toast.success('Contact deleted')
@@ -56,7 +64,7 @@ const Contact = ({ contact }) => {
     },
   })
 
-  const onDeleteClick = (id) => {
+  const onDeleteClick = (id: DeleteContactMutationVariables['id']) => {
     if (confirm('Are you sure you want to delete contact ' + id + '?')) {
       deleteContact({ variables: { id } })
     }
