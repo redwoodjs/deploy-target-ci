@@ -10,13 +10,16 @@ import { logger } from 'src/lib/logger'
 
 export const handler = createGraphQLHandler({
   getCurrentUser,
-  loggerConfig: { logger, options: {} },
+  loggerConfig: {
+    logger,
+    options: { operationName: true, query: true, requestId: true },
+  },
   directives,
   sdls,
   services,
   cors: {
      origin: 'http://ec2-52-73-122-38.compute-1.amazonaws.com:8911',
-   },  
+   },
   onException: () => {
     // Disconnect from your database with an unhandled exception.
     db.$disconnect()
