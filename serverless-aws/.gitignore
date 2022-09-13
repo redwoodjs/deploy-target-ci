@@ -1,7 +1,6 @@
 .idea
 .DS_Store
 .env
-.env.production
 .netlify
 .redwood
 dev.db*
@@ -12,9 +11,7 @@ yarn-error.log
 web/public/mockServiceWorker.js
 web/types/graphql.d.ts
 api/types/graphql.d.ts
-
-# Deployment
-.serverless
+api/src/lib/generateGraphiQLHeader.*
 .pnp.*
 .yarn/*
 !.yarn/patches
