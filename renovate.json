@@ -9,8 +9,17 @@
   "packageRules": [
     {
       "ignoreUnstable": false,
-      "packageNames": ["@redwoodjs/core", "@redwoodjs/forms", "@redwoodjs/router", "@redwoodjs/web", "@redwoodjs/api", "@redwoodjs/graphql-server"],
-      "followTag": "next",
+      "packageNames": [
+        "@redwoodjs/core",
+        "@redwoodjs/forms",
+        "@redwoodjs/router",
+        "@redwoodjs/web",
+        "@redwoodjs/api",
+        "@redwoodjs/graphql-server",
+        "@redwoodjs/auth-dbauth-api",
+        "@redwoodjs/auth-dbauth-web"
+      ],
+      "followTag": "rc",
       "labels": ["automerge"]
     }    
   ],
