@@ -1,77 +1,71 @@
-name: 'Build, Lint, Diagnostics, and Tests'
-description: 'Run CI on a Redwood Project'
+name: Build, Lint, Diagnostics, and Tests
+description: Run CI on a Redwood Project
+
 inputs:
   run-lint:
-    description: "run project lint ('yes' or 'no' as string)"
-    required: false
+    description: Run project lint ('yes' or 'no' as string)
     default: 'yes'
   project-directory:
-    description: project directory path 
+    description: Project directory path 
     required: true
-    default: './'
-runs:
-  using: "composite"
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v3
 
-    - name: Setup Node.js v16
-      uses: actions/setup-node@v3
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-node@v3
       with:
         node-version: 18
 
     - name: Set up Postgres
       uses: CasperWA/postgresql-action@v1
       with:
-        postgresql version: '14'
-        postgresql db: 'test'
+        postgresql version: 14
+        postgresql db: test
         postgresql user: test
         postgresql password: password
 
-    # Project is using Yarn 3
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      shell: bash
+      run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
 
-    - name: Cache yarn
-      uses: actions/cache@v3
-      id: yarn-cache
+    - uses: actions/cache@v3
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: yarn-${{ hashFiles('yarn.lock') }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          yarn-    
+          ${{ runner.os }}-yarn-
 
     - name: Set project directory
       id: project-directory
-      run: echo "::set-output name=dir::${{ inputs.project-directory }}"
+      run: echo "dir=${{ inputs.project-directory }}" >> $GITHUB_OUTPUT
       shell: bash
     
     - name: Install dependencies
-      working-directory: ${{ steps.project-directory.outputs.dir }}
       run: yarn install --immutable
       shell: bash
-      
-    - name: Run Build
       working-directory: ${{ steps.project-directory.outputs.dir }}
+      
+    - name: 🏗️ Run build
       run: yarn rw build
       shell: bash
-
-    - name: Run Lint
-      if: ${{ inputs.run-lint == 'yes' }}
       working-directory: ${{ steps.project-directory.outputs.dir }}
+
+    - name: 🔎 Run lint
+      if: ${{ inputs.run-lint == 'yes' }}
       run: yarn rw lint
       shell: bash
-
-    - name: Run Diagnostics
       working-directory: ${{ steps.project-directory.outputs.dir }}
+
+    - name: 🔬 Run diagnostics
       run: yarn rw check
       shell: bash
-      
-    - name: Run Tests
       working-directory: ${{ steps.project-directory.outputs.dir }}
+      
+    - name: 🧪 Run Tests
       run: yarn rw test
+      shell: bash
+      working-directory: ${{ steps.project-directory.outputs.dir }}
       env:
         TEST_DATABASE_URL: postgresql://test:password@localhost:5432/test
-      shell: bash
