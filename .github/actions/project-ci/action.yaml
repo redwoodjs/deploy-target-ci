@@ -18,7 +18,7 @@ runs:
     - name: Setup Node.js v16
       uses: actions/setup-node@v3
       with:
-        node-version: "16"
+        node-version: 18
 
     - name: Set up Postgres
       uses: CasperWA/postgresql-action@v1
