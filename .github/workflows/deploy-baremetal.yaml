@@ -49,7 +49,7 @@ jobs:
 
       - name: Update Deploy Job Status
         if: always()
-        run: echo ${{ job.status }} > status_deploy.txt
+        run: echo ${{ job.status }} > ../status_deploy.txt
 
       - name: Upload file status_deploy.txt as an artifact
         if: always()
