@@ -2,52 +2,46 @@ name: Deploy Layer0
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-deploy:
     if: github.repository == 'redwoodjs/deploy-target-ci'
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./layer0
+
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup node
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: 18
 
-      # Project is using Yarn 3
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
 
-      - name: Cache yarn
-        uses: actions/cache@v3
-        id: yarn-cache
+      - uses: actions/cache@v3
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            yarn-
+            ${{ runner.os }}-yarn-
 
-      - name: Install dependencies
-        run: |
-          yarn install --immutable
-        working-directory: ./layer0
+      - run: yarn install --immutable
 
       # TODO change to `rw deploy layer0` when implemented
       - name: Deploy
-        run: |
-          yarn layer0:deploy --site=redwoodjs-deploy-target-ci --team=redwoodjs --ni --token=$deploy_token
-        working-directory: ./layer0
+        run: yarn layer0:deploy --site=redwoodjs-deploy-target-ci --team=redwoodjs --ni --token=$deploy_token
         env:
           deploy_token: ${{secrets.LAYER0_DEPLOY_TOKEN}}
 
       - name: Update Deploy Job Status
         if: always()
-        run: |
-          echo ${{ job.status }} > status_deploy.txt
+        run: echo ${{ job.status }} > status_deploy.txt
 
       - name: Upload file status_deploy.txt as an artifact
         if: always()
@@ -72,31 +66,25 @@ jobs:
 
       - name: Set the deploy status as output
         id: deploy-status
-        run: |
-          echo "::set-output name=deploy-result::$(<status_deploy.txt)" 
+        run: echo "deploy-result=$(<status_deploy.txt)" >> $GITHUB_OUTPUT
 
       - name: Overwrite deploy status env if failure
         if: ${{ steps.deploy-status.outputs.deploy-result == 'failure' }}
-        run: |
-          echo "DEPLOY_STATUS=Deploy FAILED 🚨" >> $GITHUB_ENV
+        run: echo "DEPLOY_STATUS=Deploy FAILED 🚨" >> $GITHUB_ENV
 
       - name: Overwrite deploy status env if success
         if: ${{ steps.deploy-status.outputs.deploy-result == 'success' }}
-        run: |
-          echo "DEPLOY_STATUS=Deployed Successfully ✅" >> $GITHUB_ENV  
+        run: echo "DEPLOY_STATUS=Deployed Successfully ✅" >> $GITHUB_ENV  
 
       - name: Overwrite deploy status env if something else
         if: ${{ (steps.deploy-status.outputs.deploy-result != 'failure') &&  (steps.deploy-status.outputs.deploy-result != 'success') }}
-        run: |
-          echo "DEPLOY_STATUS=Deploy Cancelled" >> $GITHUB_ENV  
+        run: echo "DEPLOY_STATUS=Deploy Cancelled" >> $GITHUB_ENV  
 
       - name: Prepare commit message payload
         id: commit-message
-        run: |
-          echo "::set-output name=payload::$(echo '${{ github.event.head_commit.message }}' | awk 'NR==1 {print}')"
+        run: echo "payload=$(echo '${{ github.event.head_commit.message }}' | awk 'NR==1 {print}')" >> $GITHUB_OUTPUT
 
       - name: Slack
-        id: slack
         uses: slackapi/slack-github-action@v1
         with:
           payload: |

@@ -12,7 +12,7 @@ services:
   staticPublishPath: ./render-postgres/web/dist
   envVars:
   - key: NODE_VERSION
-    value: 16
+    value: 18
   routes:
   - type: rewrite
     source: /.redwood/functions/*
@@ -33,5 +33,5 @@ services:
   startCommand: cd render-postgres && yarn rw deploy render api --no-prisma --no-data-migrate
   envVars:
   - key: NODE_VERSION
-    value: 16
+    value: 18
 

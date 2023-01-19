@@ -1,7 +1,6 @@
 import type { APIGatewayProxyEvent, Context } from 'aws-lambda'
 
-import { DbAuthHandler } from '@redwoodjs/api'
-import type { DbAuthHandlerOptions } from '@redwoodjs/api'
+import { DbAuthHandler, DbAuthHandlerOptions } from '@redwoodjs/auth-dbauth-api'
 
 import { db } from 'src/lib/db'
 
@@ -119,6 +118,13 @@ export const handler = async (
       })
     },
 
+    // Include any format checks for password here. Return `true` if the
+    // password is valid, otherwise throw a `PasswordValidationError`.
+    // Import the error along with `DbAuthHandler` from `@redwoodjs/api` above.
+    passwordValidation: (_password) => {
+      return true
+    },
+
     errors: {
       // `field` will be either "username" or "password"
       fieldMissing: '${field} is required',
@@ -157,7 +163,7 @@ export const handler = async (
       HttpOnly: true,
       Path: '/',
       SameSite: 'None',
-      Secure: process.env.NODE_ENV !== 'development' ? true : false,
+      Secure: process.env.NODE_ENV !== 'development',
 
       // If you need to allow other domains (besides the api side) access to
       // the dbAuth session cookie:
