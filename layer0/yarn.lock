@@ -21015,12 +21015,55 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:0.2.1":
-  version: 0.2.1
-  resolution: "prettier-plugin-tailwindcss@npm:0.2.1"
+"prettier-plugin-tailwindcss@npm:0.2.2":
+  version: 0.2.2
+  resolution: "prettier-plugin-tailwindcss@npm:0.2.2"
   peerDependencies:
+    "@prettier/plugin-php": "*"
+    "@prettier/plugin-pug": "*"
+    "@shopify/prettier-plugin-liquid": "*"
+    "@shufo/prettier-plugin-blade": "*"
+    "@trivago/prettier-plugin-sort-imports": "*"
     prettier: ">=2.2.0"
-  checksum: bf210da717e491a4cd7c73746acd709d771af29e1d0a42899027351557f2ef91b62af6f326e4e88cc771302154ce4733b04fec4451d2c3c29efa1b5769ec20b1
+    prettier-plugin-astro: "*"
+    prettier-plugin-css-order: "*"
+    prettier-plugin-import-sort: "*"
+    prettier-plugin-jsdoc: "*"
+    prettier-plugin-organize-attributes: "*"
+    prettier-plugin-organize-imports: "*"
+    prettier-plugin-style-order: "*"
+    prettier-plugin-svelte: "*"
+    prettier-plugin-twig-melody: "*"
+  peerDependenciesMeta:
+    "@prettier/plugin-php":
+      optional: true
+    "@prettier/plugin-pug":
+      optional: true
+    "@shopify/prettier-plugin-liquid":
+      optional: true
+    "@shufo/prettier-plugin-blade":
+      optional: true
+    "@trivago/prettier-plugin-sort-imports":
+      optional: true
+    prettier-plugin-astro:
+      optional: true
+    prettier-plugin-css-order:
+      optional: true
+    prettier-plugin-import-sort:
+      optional: true
+    prettier-plugin-jsdoc:
+      optional: true
+    prettier-plugin-organize-attributes:
+      optional: true
+    prettier-plugin-organize-imports:
+      optional: true
+    prettier-plugin-style-order:
+      optional: true
+    prettier-plugin-svelte:
+      optional: true
+    prettier-plugin-twig-melody:
+      optional: true
+  checksum: 78b5d8b33e81f32c60792a22d752af60edd6b75c4fd652005047bc96e580256764c7db6b0621edc732c0f5e7b9cd7b3c59b755e119a034320b9059eaaaf14ee1
   languageName: node
   linkType: hard
 
@@ -25598,7 +25641,7 @@ __metadata:
     humanize-string: 2.1.0
     postcss: 8.4.21
     postcss-loader: 7.0.2
-    prettier-plugin-tailwindcss: 0.2.1
+    prettier-plugin-tailwindcss: 0.2.2
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
