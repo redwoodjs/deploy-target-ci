@@ -3407,16 +3407,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime-corejs3@npm:7.20.6":
-  version: 7.20.6
-  resolution: "@babel/runtime-corejs3@npm:7.20.6"
-  dependencies:
-    core-js-pure: ^3.25.1
-    regenerator-runtime: ^0.13.11
-  checksum: 1fcd0182acd433e8fad4ebcb7169aef7192f6d04051f13c4960fce99671a5965d81349f143489a6be864551fb6ce3277c8c5ba95a6a2d2c7a3fa8f580f11f637
-  languageName: node
-  linkType: hard
-
 "@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.17.7
   resolution: "@babel/runtime@npm:7.17.7"
@@ -6375,13 +6365,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/auth@npm:3.8.0":
-  version: 3.8.0
-  resolution: "@redwoodjs/auth@npm:3.8.0"
+"@redwoodjs/auth@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@redwoodjs/auth@npm:4.0.0"
   dependencies:
-    "@babel/runtime-corejs3": 7.20.6
-    core-js: 3.26.1
-  checksum: deeb715b116bb05704193b3a506b524817316a124d1e6a9b526ae52061e8693db65e1e5274d8312ec8cfe31c960e173e02bbe00148dec52c35ddc0cfeb3ceb8d
+    "@babel/runtime-corejs3": 7.20.13
+    core-js: 3.27.2
+    react: 17.0.2
+  checksum: 7167aa7d2cbb26d405a355a2df4524193aeb5bc637eee8c85a22fa76d2179165c810c68f0f4063df4c3ea5b19804a385686b154a538c24e57d75a78040397914
   languageName: node
   linkType: hard
 
@@ -12754,13 +12745,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:3.26.1, core-js@npm:^3.26.0":
-  version: 3.26.1
-  resolution: "core-js@npm:3.26.1"
-  checksum: 82d36c6f54fc0349998fa7fc67d200ba272f1cd1674c6786dc17f9d259d6555fc05662044528eae73ad6e90f71d503ab5c060ad4745492ef804308209f9aec13
-  languageName: node
-  linkType: hard
-
 "core-js@npm:3.27.2":
   version: 3.27.2
   resolution: "core-js@npm:3.27.2"
@@ -12772,6 +12756,13 @@ __metadata:
   version: 3.22.2
   resolution: "core-js@npm:3.22.2"
   checksum: fe251c248874d0ad09f2aae155060fcf1b63d0c9ca3257259e6696af812377149bbd06bcde8044a5579c85223f9cce36f5116fbbb295aff685d0b86312c4ce4c
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3.26.0":
+  version: 3.26.1
+  resolution: "core-js@npm:3.26.1"
+  checksum: 82d36c6f54fc0349998fa7fc67d200ba272f1cd1674c6786dc17f9d259d6555fc05662044528eae73ad6e90f71d503ab5c060ad4745492ef804308209f9aec13
   languageName: node
   linkType: hard
 
@@ -27304,7 +27295,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@redwoodjs/auth": 3.8.0
+    "@redwoodjs/auth": 4.0.0
     "@redwoodjs/forms": 4.0.0-rc.644
     "@redwoodjs/router": 4.0.0-rc.644
     "@redwoodjs/web": 4.0.0-rc.644
