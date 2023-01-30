@@ -6395,6 +6395,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@redwoodjs/auth@npm:3.8.1-next.51+0a1e8ea80":
+  version: 3.8.1-next.51
+  resolution: "@redwoodjs/auth@npm:3.8.1-next.51"
+  dependencies:
+    "@babel/runtime-corejs3": 7.20.7
+    core-js: 3.26.1
+  checksum: a6a27b03012498563e72282d3c0ecc1366ccdda0049d709cbf117cce0a6dedeb7c592215e79c5e347ad523daeeda7b6e8e3392aacb2f2bea54b8dc1fafdaee76
+  languageName: node
+  linkType: hard
+
 "@redwoodjs/auth@npm:^4.0.0-rc.644+90490a516":
   version: 4.0.0-rc.644
   resolution: "@redwoodjs/auth@npm:4.0.0-rc.644"
@@ -6683,7 +6693,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/router@npm:4.0.0-rc.644, @redwoodjs/router@npm:^4.0.0-rc.644+90490a516":
+"@redwoodjs/router@npm:3.8.1-next.51":
+  version: 3.8.1-next.51
+  resolution: "@redwoodjs/router@npm:3.8.1-next.51"
+  dependencies:
+    "@babel/runtime-corejs3": 7.20.7
+    "@reach/skip-nav": 0.18.0
+    "@redwoodjs/auth": 3.8.1-next.51+0a1e8ea80
+    core-js: 3.26.1
+    lodash.isequal: 4.5.0
+  checksum: d9f853867d34be1123fc421124d7a3b65ec615f9c798a57e197e722a819721f9f11336f6dcfb29248376cb4c08f3d814d0118cc7fde2eab7f4359f8f4f6730bb
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/router@npm:^4.0.0-rc.644+90490a516":
   version: 4.0.0-rc.644
   resolution: "@redwoodjs/router@npm:4.0.0-rc.644"
   dependencies:
@@ -19784,6 +19807,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.isequal@npm:4.5.0":
+  version: 4.5.0
+  resolution: "lodash.isequal@npm:4.5.0"
+  checksum: dfdb2356db19631a4b445d5f37868a095e2402292d59539a987f134a8778c62a2810c2452d11ae9e6dcac71fc9de40a6fedcb20e2952a15b431ad8b29e50e28f
+  languageName: node
+  linkType: hard
+
 "lodash.isplainobject@npm:^4.0.6":
   version: 4.0.6
   resolution: "lodash.isplainobject@npm:4.0.6"
@@ -27316,7 +27346,7 @@ __metadata:
   dependencies:
     "@redwoodjs/auth": 3.8.0
     "@redwoodjs/forms": 3.8.1-next.51
-    "@redwoodjs/router": 4.0.0-rc.644
+    "@redwoodjs/router": 3.8.1-next.51
     "@redwoodjs/web": 4.0.0-rc.644
     autoprefixer: 10.4.3
     postcss: 8.4.11
