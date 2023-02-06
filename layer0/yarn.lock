@@ -3967,7 +3967,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@layer0/core@npm:4.19.8":
+"@layer0/core@npm:4.19.8, @layer0/core@npm:^4.19.8":
   version: 4.19.8
   resolution: "@layer0/core@npm:4.19.8"
   dependencies:
@@ -4009,48 +4009,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@layer0/core@npm:^4.19.7":
-  version: 4.19.7
-  resolution: "@layer0/core@npm:4.19.7"
-  dependencies:
-    "@babel/parser": ^7.18.9
-    "@babel/traverse": ^7.18.9
-    "@types/lodash.clonedeep": ^4.5.6
-    ajv: ^6.12.6
-    babel-loader: ^8.2.2
-    chalk: ^4.1.2
-    chardet: ^1.4.0
-    chokidar: ^3.5.1
-    cls-hooked: ^4.2.2
-    content-type: ^1.0.4
-    cookie: ^0.4.1
-    cross-spawn: ^7.0.3
-    decode-uri-component: ^0.2.0
-    deepmerge: ^4.2.2
-    esbuild: ^0.14.49
-    express: ^4.17.1
-    fs-extra: ^8.1.0
-    globby: ^11.0.2
-    http-proxy: ^1.18.1
-    lodash.clonedeep: ^4.5.0
-    lru-cache: ^6.0.0
-    mime-types: ^2.1.35
-    node-fetch: ^2.6.1
-    path-to-regexp: ^6.2.0
-    pino: ^6.13.3
-    qs: ^6.10.1
-    resolve-package-path: ^4.0.3
-    semver: ^7.3.5
-    shelljs: ^0.8.5
-    slash: ^3.0.0
-    tcp-port-used: ^1.0.2
-    ts-loader: ^8.2.0
-    unixify: ^1.0.0
-    uuid: ^8.3.2
-  checksum: 7288e966d7a66da0931a1bff5b808d11daddb716db52fdf1e0e60f33b3f1bf3cc4c878242eb82a0aa829d86737d9d6fd0425b6168a4af4594f5337a6dac5a087
-  languageName: node
-  linkType: hard
-
 "@layer0/devtools@npm:4.19.8":
   version: 4.19.8
   resolution: "@layer0/devtools@npm:4.19.8"
@@ -4064,11 +4022,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@layer0/prefetch@npm:4.19.7":
-  version: 4.19.7
-  resolution: "@layer0/prefetch@npm:4.19.7"
+"@layer0/prefetch@npm:4.19.8":
+  version: 4.19.8
+  resolution: "@layer0/prefetch@npm:4.19.8"
   dependencies:
-    "@layer0/core": ^4.19.7
+    "@layer0/core": ^4.19.8
     cheerio: ^1.0.0-rc.3
     json-query: ^2.2.2
     workbox-cacheable-response: ^5.1.2
@@ -4079,7 +4037,7 @@ __metadata:
     workbox-strategies: ^5.1.2
   peerDependencies:
     "@layer0/devtools": ^4.0.0
-  checksum: 51c1b77cb58d74b2d1bddf4a10e675a5c2e2dd6c6084ee94e933dbb8bf9d0d4ebf257e65ed13d05cfdbe0bddd88fa42a6155923cc1110efc681f086e832ba2b0
+  checksum: 7aa6ecdbe5acec08e28d7cc41fc43ba031cd1501f7f67c2022e9384848ad729536d8c764f180eb63035df97488968a90aef86c7bfb0ea6f7508c3c26e28d22c8
   languageName: node
   linkType: hard
 
@@ -22850,7 +22808,7 @@ __metadata:
     "@layer0/cli": 4.19.8
     "@layer0/core": 4.19.8
     "@layer0/devtools": 4.19.8
-    "@layer0/prefetch": 4.19.7
+    "@layer0/prefetch": 4.19.8
     "@layer0/redwood": 4.19.7
     "@redwoodjs/core": 4.0.2-next.264
   languageName: unknown
