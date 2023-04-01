@@ -9,6 +9,8 @@ jobs:
   netlifyCI:
     name: Netlify
     runs-on: ubuntu-latest
+    env:
+      REDWOOD_CI: 1
     steps:
       - name: Run Netlify CI
         uses: redwoodjs/project-ci-action@main
@@ -19,6 +21,8 @@ jobs:
   vercelCI:
     name: Vercel
     runs-on: ubuntu-latest
+    env:
+      REDWOOD_CI: 1    
     steps:
       - name: Run Vercel CI
         uses: redwoodjs/project-ci-action@main
@@ -29,6 +33,8 @@ jobs:
   renderPostgresCI:
     name: Render-Postgres
     runs-on: ubuntu-latest
+    env:
+      REDWOOD_CI: 1    
     steps:
       - name: Run Render-Postgres CI
         uses: redwoodjs/project-ci-action@main
@@ -36,19 +42,11 @@ jobs:
           project-directory: './render-postgres'
           run-lint: 'no'
 
-  serverlessAwsCI:
-    name: Serverless-AWS
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Serverless-AWS CI
-        uses: redwoodjs/project-ci-action@main
-        with:
-          project-directory: './serverless-aws'
-          run-lint: 'no' 
-
   baremetal:
     name: baremetal
     runs-on: ubuntu-latest
+    env:
+      REDWOOD_CI: 1    
     steps:
       - name: Run Baremetal CI
         uses: redwoodjs/project-ci-action@main
@@ -59,6 +57,8 @@ jobs:
   flightcontrol:
     name: Flightcontrol
     runs-on: ubuntu-latest
+    env:
+      REDWOOD_CI: 1    
     steps:
       - name: Run Flightcontrol CI
         uses: redwoodjs/project-ci-action@main
@@ -69,6 +69,8 @@ jobs:
   layer0:
     name: layer0
     runs-on: ubuntu-latest
+    env:
+      REDWOOD_CI: 1    
     steps:
       - name: Run Layer0 CI
         uses: redwoodjs/project-ci-action@main
