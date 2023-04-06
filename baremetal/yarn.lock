@@ -7241,6 +7241,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^18.11.18":
+  version: 18.15.11
+  resolution: "@types/node@npm:18.15.11"
+  checksum: 670deb1a9daa812dc86b1e8964c0c6b0bef7c32672833c10578c1e5dd2682f2bd99b86d814fde86a5dd4a3da48ea039f41db30a835b245aa7c34c62fa1f23f0d
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.1
   resolution: "@types/normalize-package-data@npm:2.4.1"
@@ -7413,6 +7420,15 @@ __metadata:
   version: 0.1.2
   resolution: "@types/source-list-map@npm:0.1.2"
   checksum: 0538ce317294febf40ed3fc3a2e483fa4aee8ba85584a66e5ed9c0af9ea48a348960bc467076643cb56aeafdd7d2252e90c75e68ef664c0477ec87ea0554ffdc
+  languageName: node
+  linkType: hard
+
+"@types/ssh2@npm:^1.11.9":
+  version: 1.11.9
+  resolution: "@types/ssh2@npm:1.11.9"
+  dependencies:
+    "@types/node": ^18.11.18
+  checksum: bc4101d132e415531edcaa6e929e5dcf8baf0d966081980c1ae1682abfda51a191d7fcbf6aaa34b7953132cd53c108e5a8afae744b6d951add60db43e3ac401f
   languageName: node
   linkType: hard
 
@@ -11310,14 +11326,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cpu-features@npm:0.0.3":
-  version: 0.0.3
-  resolution: "cpu-features@npm:0.0.3"
+"cpu-features@npm:~0.0.4":
+  version: 0.0.4
+  resolution: "cpu-features@npm:0.0.4"
   dependencies:
     buildcheck: 0.0.3
     nan: ^2.15.0
     node-gyp: latest
-  checksum: 86043df8c4e8042818e32bbaae24f6033dc208696309a73067aaaa0a0b93d80ade6a8b9128192a0a90a1777f95aa301d9742a8b8492671d1fae07b05fa2290f6
+  checksum: 54fde5d7f4504ec247c8afdc6a3f7b8a53e7f718667e78f7f2ff76c0608d37623b15e6ed55100e8435506109550ef14ae44267f36f9a96284c632a669024a96e
   languageName: node
   linkType: hard
 
@@ -18856,6 +18872,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nan@npm:^2.16.0":
+  version: 2.17.0
+  resolution: "nan@npm:2.17.0"
+  dependencies:
+    node-gyp: latest
+  checksum: 4a231a62dba025f4c4fa814c1e6ffeb450c5cd0852b780f19fe4ea22b86ba0f1f394406dfd628c67fb7f0987e982fa230da1fbd3632258f927b8defd7046c1ad
+  languageName: node
+  linkType: hard
+
 "nanoid@npm:^3.3.1, nanoid@npm:^3.3.4":
   version: 3.3.4
   resolution: "nanoid@npm:3.3.4"
@@ -19103,17 +19128,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-ssh@npm:13.0.1":
-  version: 13.0.1
-  resolution: "node-ssh@npm:13.0.1"
+"node-ssh@npm:13.1.0":
+  version: 13.1.0
+  resolution: "node-ssh@npm:13.1.0"
   dependencies:
+    "@types/ssh2": ^1.11.9
     is-stream: ^2.0.0
     make-dir: ^3.1.0
     sb-promise-queue: ^2.1.0
     sb-scandir: ^3.1.0
     shell-escape: ^0.2.0
-    ssh2: ^1.5.0
-  checksum: f2ac2cb4860ae9b3a6a4453e0c923e904ada76134c62fe95c74ce7fe57805c9df13246442c8737ecd74d07d091fd22a91bcced5ccc35dcb2be13c5f11da6e3e8
+    ssh2: ^1.11.0
+  checksum: 243a9cc6da41d4f0709a1e9d12517a8bb98fc02dafc198b38d91fd009fabcfc7df9ce903b554a0abd24d709aa4629b92e241d5f03a0af0514ea7c7d8ac2bdd85
   languageName: node
   linkType: hard
 
@@ -22285,7 +22311,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@redwoodjs/core": 4.4.2-next.1
-    node-ssh: 13.0.1
+    node-ssh: 13.1.0
   languageName: unknown
   linkType: soft
 
@@ -23209,20 +23235,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ssh2@npm:^1.5.0":
-  version: 1.8.0
-  resolution: "ssh2@npm:1.8.0"
+"ssh2@npm:^1.11.0":
+  version: 1.11.0
+  resolution: "ssh2@npm:1.11.0"
   dependencies:
     asn1: ^0.2.4
     bcrypt-pbkdf: ^1.0.2
-    cpu-features: 0.0.3
-    nan: ^2.15.0
+    cpu-features: ~0.0.4
+    nan: ^2.16.0
   dependenciesMeta:
     cpu-features:
       optional: true
     nan:
       optional: true
-  checksum: 3977ee8b83366d0f1d4241f2884ea42bfe03ba6eae639535fe985e246563d253e67c710bffbcbf87dc8d9ec24780a30373e2ffcc2aeed0002f6e72978db8ed17
+  checksum: f51a18287c827ee44420653ea192d60caf9962c7c43c021b63c2edb1fd133449e1f0d9f256c2da42b9141cb8644beb250998163088f84af9ef29330702c47bc3
   languageName: node
   linkType: hard
 
