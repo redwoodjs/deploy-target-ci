@@ -1,0 +1,49 @@
+name: Deploy Serverless AWS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    if: github.repository == 'redwoodjs/deploy-target-ci'
+    runs-on: ubuntu-latest
+    env:
+       REDWOOD_CI: 1   
+
+    defaults:
+      run:
+        working-directory: ./serverless-aws
+
+    env:
+      DATABASE_URL: ${{ secrets.SERVERLESS_DATABASE_URL }}
+      API_URL: ${{ secrets.SERVERLESS_API_URL}}
+      SESSION_SECRET: ${{ secrets.SERVERLESS_SESSION_SECRET}}
+      SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - run: yarn install --immutable
+
+      - name: Build
+        run: yarn rw deploy serverless --pack-only
+
+      - name: Deploy
+        run: yarn rw deploy serverless
+ 
