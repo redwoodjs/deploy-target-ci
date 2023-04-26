@@ -27,7 +27,7 @@ web:
     command: ["yarn", "rw", "serve", "web"]
   dev:
     command: ["yarn", "rw", "dev", "web", "--fwd=\"--allowed-hosts all\""]
-  build: ["yarn", "rw", "build", "web"]
+  build: ["yarn", "rw", "build", "web", "--no-prerender"]
   local_packages: ["node_modules"]
 
   system:
