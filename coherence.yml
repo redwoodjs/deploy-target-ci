@@ -1,6 +1,6 @@
 api:
   type: backend
-  repo_path: coherence/api
+  repo_path: coherence
   url_path: "/api"
   prod:
     command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "serve", "api"]
@@ -21,7 +21,7 @@ api:
 
 web:
   type: frontend
-  repo_path: coherence/web
+  repo_path: coherence
   assets_path: "web/dist"
   prod:
     command: ["yarn", "rw", "serve", "web"]
