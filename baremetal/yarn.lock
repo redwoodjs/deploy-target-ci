@@ -5402,15 +5402,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/auth-dbauth-web@npm:5.0.0-rc.756":
-  version: 5.0.0-rc.756
-  resolution: "@redwoodjs/auth-dbauth-web@npm:5.0.0-rc.756"
+"@redwoodjs/auth-dbauth-web@npm:4.5.1-next.5":
+  version: 4.5.1-next.5
+  resolution: "@redwoodjs/auth-dbauth-web@npm:4.5.1-next.5"
   dependencies:
     "@babel/runtime-corejs3": 7.21.0
-    "@redwoodjs/auth": 5.0.0-rc.756+fc278f916
-    "@simplewebauthn/browser": 7.2.0
-    core-js: 3.30.1
-  checksum: 1556fea62bd1c3937d2d3bde83a6f774130ce194cd8f940248ef9cc976bfd976b61695ee11d9504ec9d12e8d999ed7ebc944495e98a5c2eeeddfcc4ce9d44053
+    "@redwoodjs/auth": 4.5.1-next.5+4f77f0c88
+    "@simplewebauthn/browser": 6.2.2
+    core-js: 3.30.0
+  checksum: be16972b1b86710bec73a75bf5456b0b8ad7ee7b9d9d0b1f81efb0fea3b28805d9af9f86aa065e3936f35599d8f1d2f08737cf54cc94c1e0b3cc16b29e2c7726
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/auth@npm:4.5.1-next.5+4f77f0c88":
+  version: 4.5.1-next.5
+  resolution: "@redwoodjs/auth@npm:4.5.1-next.5"
+  dependencies:
+    "@babel/runtime-corejs3": 7.21.0
+    core-js: 3.30.0
+    react: 17.0.2
+  checksum: 85a8162525b16500239d14781dd54f0d3a0830328940913057fa48bc523cffa5bf31a0d51ec2b5391a07d051f30432bc81e6ed6446b0954048d83047d8349183
   languageName: node
   linkType: hard
 
@@ -5869,19 +5880,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@simplewebauthn/browser@npm:7.2.0":
-  version: 7.2.0
-  resolution: "@simplewebauthn/browser@npm:7.2.0"
-  dependencies:
-    "@simplewebauthn/typescript-types": "*"
-  checksum: 7a12b06bb20e1f6214524603b5d030ec110c85dee1399946400315ee4fb9e1fcc79809a41851445b7f09513b56fb6e6fca5c78365e04dee7244e19b985672cb4
-  languageName: node
-  linkType: hard
-
-"@simplewebauthn/typescript-types@npm:*":
-  version: 7.0.0
-  resolution: "@simplewebauthn/typescript-types@npm:7.0.0"
-  checksum: 4682a353bace25f195b6621d4b96e9db48562edc68a005785230519c71838028de20154a842c4c1859f605562668ff689ab532b0afdce926d5720e7573160da4
+"@simplewebauthn/browser@npm:6.2.2":
+  version: 6.2.2
+  resolution: "@simplewebauthn/browser@npm:6.2.2"
+  checksum: 9863a954709f151a32a35bf370e33a2dc18f94cb55e8b8af96b557431952689df4cd857e130b07d1b069b1a6ab86b697d4264c46a59c3332b86708d853c92187
   languageName: node
   linkType: hard
 
@@ -22515,6 +22517,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react@npm:17.0.2":
+  version: 17.0.2
+  resolution: "react@npm:17.0.2"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+  checksum: 07ae8959acf1596f0550685102fd6097d461a54a4fd46a50f88a0cd7daaa97fdd6415de1dcb4bfe0da6aa43221a6746ce380410fa848acc60f8ac41f6649c148
+  languageName: node
+  linkType: hard
+
 "react@npm:18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
@@ -26473,7 +26485,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@redwoodjs/auth-dbauth-web": 5.0.0-rc.756
+    "@redwoodjs/auth-dbauth-web": 4.5.1-next.5
     "@redwoodjs/forms": 4.5.1-next.5
     "@redwoodjs/router": 5.0.0-rc.756
     "@redwoodjs/web": 5.0.0-rc.756
