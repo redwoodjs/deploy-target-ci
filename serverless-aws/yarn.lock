@@ -77,6 +77,42 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@apollo/client@npm:3.7.5":
+  version: 3.7.5
+  resolution: "@apollo/client@npm:3.7.5"
+  dependencies:
+    "@graphql-typed-document-node/core": ^3.1.1
+    "@wry/context": ^0.7.0
+    "@wry/equality": ^0.5.0
+    "@wry/trie": ^0.3.0
+    graphql-tag: ^2.12.6
+    hoist-non-react-statics: ^3.3.2
+    optimism: ^0.16.1
+    prop-types: ^15.7.2
+    response-iterator: ^0.2.6
+    symbol-observable: ^4.0.0
+    ts-invariant: ^0.10.3
+    tslib: ^2.3.0
+    zen-observable-ts: ^1.2.5
+  peerDependencies:
+    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    graphql-ws: ^5.5.5
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    subscriptions-transport-ws: ^0.9.0 || ^0.11.0
+  peerDependenciesMeta:
+    graphql-ws:
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+    subscriptions-transport-ws:
+      optional: true
+  checksum: 833820835bf91d9a17318c0f89ffd876ed2a689ce0e7d017aa0c0f5266468ed7335752a9e4f39319e99ae2f741fa7bfe830fd64568b36d9514b365044639cb9c
+  languageName: node
+  linkType: hard
+
 "@apollo/protobufjs@npm:1.2.7":
   version: 1.2.7
   resolution: "@apollo/protobufjs@npm:1.2.7"
@@ -6272,6 +6308,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@redwoodjs/auth@npm:4.5.1-next.5+4f77f0c88":
+  version: 4.5.1-next.5
+  resolution: "@redwoodjs/auth@npm:4.5.1-next.5"
+  dependencies:
+    "@babel/runtime-corejs3": 7.21.0
+    core-js: 3.30.0
+    react: 17.0.2
+  checksum: 85a8162525b16500239d14781dd54f0d3a0830328940913057fa48bc523cffa5bf31a0d51ec2b5391a07d051f30432bc81e6ed6446b0954048d83047d8349183
+  languageName: node
+  linkType: hard
+
 "@redwoodjs/auth@npm:5.0.0-rc.756+fc278f916":
   version: 5.0.0-rc.756
   resolution: "@redwoodjs/auth@npm:5.0.0-rc.756"
@@ -6688,7 +6735,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/web@npm:5.0.0-rc.756, @redwoodjs/web@npm:5.0.0-rc.756+fc278f916":
+"@redwoodjs/web@npm:4.5.1-next.5":
+  version: 4.5.1-next.5
+  resolution: "@redwoodjs/web@npm:4.5.1-next.5"
+  dependencies:
+    "@apollo/client": 3.7.5
+    "@babel/runtime-corejs3": 7.21.0
+    "@redwoodjs/auth": 4.5.1-next.5+4f77f0c88
+    core-js: 3.30.0
+    graphql: 16.6.0
+    graphql-tag: 2.12.6
+    react-helmet-async: 1.3.0
+    react-hot-toast: 2.4.0
+    stacktracey: 2.1.8
+    ts-toolbelt: 9.6.0
+  peerDependencies:
+    prop-types: 15.8.1
+    react: 17.0.2
+    react-dom: 17.0.2
+  bin:
+    build-storybook: dist/bins/build-storybook.js
+    cross-env: dist/bins/cross-env.js
+    msw: dist/bins/msw.js
+    redwood: dist/bins/redwood.js
+    rw: dist/bins/redwood.js
+    rwfw: dist/bins/rwfw.js
+    start-storybook: dist/bins/start-storybook.js
+    tsc: dist/bins/tsc.js
+    webpack: dist/bins/webpack.js
+  checksum: 204002c6b9f1a30e072b98845ca8076260c678e74a1a7bf0907cb261bfc8b8562837c0963e6194795ac0f02ad3b03e822afe1692cf1019b4a8a51028a268c672
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/web@npm:5.0.0-rc.756+fc278f916":
   version: 5.0.0-rc.756
   resolution: "@redwoodjs/web@npm:5.0.0-rc.756"
   dependencies:
@@ -13168,6 +13247,13 @@ __metadata:
   version: 3.25.5
   resolution: "core-js-pure@npm:3.25.5"
   checksum: 47c84be3d06c4e1d49e7e9f191368dda4d2d4cb4cb94929e6e8caf2230b87b1a944a0d64d767ea9e7c540853082ad7e68f9310800d79809a4cd9feb3a0c00269
+  languageName: node
+  linkType: hard
+
+"core-js@npm:3.30.0":
+  version: 3.30.0
+  resolution: "core-js@npm:3.30.0"
+  checksum: b96be6526e025f8b3382d6e7823c406987425c72d24efb27f64d7c4c38372b47dddb80ccf44cf4e198ab27765e8fa680f30e251b4758426701f252c2a0c49b4e
   languageName: node
   linkType: hard
 
@@ -22477,7 +22563,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"optimism@npm:^0.16.2":
+"optimism@npm:^0.16.1, optimism@npm:^0.16.2":
   version: 0.16.2
   resolution: "optimism@npm:0.16.2"
   dependencies:
@@ -24614,6 +24700,16 @@ __metadata:
     shallowequal: ^1.1.0
     throttle-debounce: ^3.0.1
   checksum: e6b336bbc1e9de78de5c7177afd398f6ea14c4284af698475f08d34389e9307cbc36c0125a61b158e026f182ae4dd17b13c28683bbc1a371792bccd1e51cccff
+  languageName: node
+  linkType: hard
+
+"react@npm:17.0.2":
+  version: 17.0.2
+  resolution: "react@npm:17.0.2"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+  checksum: 07ae8959acf1596f0550685102fd6097d461a54a4fd46a50f88a0cd7daaa97fdd6415de1dcb4bfe0da6aa43221a6746ce380410fa848acc60f8ac41f6649c148
   languageName: node
   linkType: hard
 
@@ -28971,7 +29067,7 @@ __metadata:
     "@redwoodjs/auth-dbauth-web": 5.0.0-rc.756
     "@redwoodjs/forms": 5.0.0-rc.756
     "@redwoodjs/router": 5.0.0-rc.756
-    "@redwoodjs/web": 5.0.0-rc.756
+    "@redwoodjs/web": 4.5.1-next.5
     autoprefixer: 10.4.13
     humanize-string: 2.1.0
     postcss: 8.4.21
