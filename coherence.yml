@@ -3,9 +3,9 @@ api:
   repo_path: coherence
   url_path: "/api"
   prod:
-    command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "serve", "api"]
+    command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "serve", "api", "--apiRootPath=/api"]
   dev:
-    command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "dev", "api"]
+    command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "dev", "api", "--apiRootPath=/api"]
   local_packages: ["node_modules"]
 
   system:
