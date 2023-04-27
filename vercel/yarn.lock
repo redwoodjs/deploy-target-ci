@@ -5396,6 +5396,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@redwoodjs/auth@npm:4.5.1-next.5+4f77f0c88":
+  version: 4.5.1-next.5
+  resolution: "@redwoodjs/auth@npm:4.5.1-next.5"
+  dependencies:
+    "@babel/runtime-corejs3": 7.21.0
+    core-js: 3.30.0
+    react: 17.0.2
+  checksum: 85a8162525b16500239d14781dd54f0d3a0830328940913057fa48bc523cffa5bf31a0d51ec2b5391a07d051f30432bc81e6ed6446b0954048d83047d8349183
+  languageName: node
+  linkType: hard
+
 "@redwoodjs/auth@npm:5.0.0-rc.756+fc278f916":
   version: 5.0.0-rc.756
   resolution: "@redwoodjs/auth@npm:5.0.0-rc.756"
@@ -5707,7 +5718,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/router@npm:5.0.0-rc.756, @redwoodjs/router@npm:5.0.0-rc.756+fc278f916":
+"@redwoodjs/router@npm:4.5.1-next.5":
+  version: 4.5.1-next.5
+  resolution: "@redwoodjs/router@npm:4.5.1-next.5"
+  dependencies:
+    "@babel/runtime-corejs3": 7.21.0
+    "@reach/skip-nav": 0.18.0
+    "@redwoodjs/auth": 4.5.1-next.5+4f77f0c88
+    core-js: 3.30.0
+  peerDependencies:
+    react: 17.0.2
+    react-dom: 17.0.2
+  checksum: aa4b688d38bb47da1c2ab48ca055a5ff6e57769dd5bcc21f7d550c43981162b93cc12ddea1153aa1484ee1b7ff90b874cd560264d926b306e36b4974c4b14f40
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/router@npm:5.0.0-rc.756+fc278f916":
   version: 5.0.0-rc.756
   resolution: "@redwoodjs/router@npm:5.0.0-rc.756"
   dependencies:
@@ -22339,6 +22365,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react@npm:17.0.2":
+  version: 17.0.2
+  resolution: "react@npm:17.0.2"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+  checksum: 07ae8959acf1596f0550685102fd6097d461a54a4fd46a50f88a0cd7daaa97fdd6415de1dcb4bfe0da6aa43221a6746ce380410fa848acc60f8ac41f6649c148
+  languageName: node
+  linkType: hard
+
 "react@npm:18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
@@ -26228,7 +26264,7 @@ __metadata:
   dependencies:
     "@redwoodjs/auth-dbauth-web": 5.0.0-rc.756
     "@redwoodjs/forms": 4.5.1-next.5
-    "@redwoodjs/router": 5.0.0-rc.756
+    "@redwoodjs/router": 4.5.1-next.5
     "@redwoodjs/web": 5.0.0-rc.756
     autoprefixer: 10.4.13
     humanize-string: 2.1.0
