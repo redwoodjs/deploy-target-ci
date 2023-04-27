@@ -17,6 +17,15 @@ constructs:
   web:
     type: static-website
     path: dist
+    extensions: {
+      bucket: {
+        Properties: {
+          PublicAccessBlockConfiguration: {
+            BlockPublicPolicy: false,
+          }
+        }
+      }
+    }
 
 provider:
   name: aws
