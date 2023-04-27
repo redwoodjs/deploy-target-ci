@@ -18,6 +18,7 @@ api:
       engine: postgres
       version: 13
       type: database
+      adapter: postgresql
   
   migration: ["yarn", "rw", "prisma", "migrate", "deploy"]
 
