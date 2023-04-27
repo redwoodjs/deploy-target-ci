@@ -18,7 +18,8 @@ api:
       engine: postgres
       version: 13
       type: database
-      migration: ["yarn", "rw", "prisma", "migrate", "dev"]
+  
+  migration: ["yarn", "rw", "prisma", "migrate", "dev"]
 
 web:
   type: frontend
