@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     # env:
       # DATABASE_URL: ${{ secrets.BAREMETAL_DATABASE_URL }}
-
+    env:
+      REDWOOD_CI: 1
+      
     defaults:
       run:
         working-directory: ./baremetal

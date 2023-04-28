@@ -8,6 +8,8 @@ jobs:
   build:
     if: github.repository == 'redwoodjs/deploy-target-ci'
     runs-on: ubuntu-latest
+    env:
+       REDWOOD_CI: 1   
 
     defaults:
       run:
