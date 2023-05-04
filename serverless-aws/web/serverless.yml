@@ -5,8 +5,8 @@ service: serverless-aws-web
 # deployment with the Serverless dashboard, or run `yarn serverless` in ./web to be
 # prompted to connect to an app and these will be filled in for you.
 # See https://www.serverless.com/framework/docs/dashboard/ for more details.
-org: redwoodjs
-app: serverless-aws-web
+# org: redwoodjs
+# app: serverless-aws-web
 
 useDotenv: true
 
@@ -30,4 +30,4 @@ constructs:
 provider:
   name: aws
   runtime: nodejs16.x
-  region: us-east-1 # AWS region where the service will be deployed, defaults to N. Virgina
+  region: us-west-2 # AWS region where the service will be deployed, defaults to N. Virgina
