@@ -5288,7 +5288,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api-server@npm:5.0.6-next.69, @redwoodjs/api-server@npm:5.0.6-next.69+26bf73645":
+"@redwoodjs/api-server@npm:5.0.6-next.69":
   version: 5.0.6-next.69
   resolution: "@redwoodjs/api-server@npm:5.0.6-next.69"
   dependencies:
@@ -5316,6 +5316,37 @@ __metadata:
     rw-log-formatter: dist/logFormatter/bin.js
     rw-server: dist/index.js
   checksum: f2477924b2283ad0be97df0e4485b28ffe6d98bc694573c5cdc004516ab1ee7951fd14dc0cd74c1b44364397eb1c5c81035695ddff88daf7f73cd65c06e3af51
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/api-server@patch:@redwoodjs/api-server@npm%3A5.0.6-next.69#./.yarn/patches/@redwoodjs-api-server-npm-5.0.6-next.69-9bcdac9163.patch::locator=root-workspace-0b6124%40workspace%3A.":
+  version: 5.0.6-next.69
+  resolution: "@redwoodjs/api-server@patch:@redwoodjs/api-server@npm%3A5.0.6-next.69#./.yarn/patches/@redwoodjs-api-server-npm-5.0.6-next.69-9bcdac9163.patch::version=5.0.6-next.69&hash=4b524b&locator=root-workspace-0b6124%40workspace%3A."
+  dependencies:
+    "@babel/plugin-transform-runtime": 7.21.4
+    "@babel/runtime-corejs3": 7.21.5
+    "@fastify/http-proxy": 9.1.0
+    "@fastify/static": 6.10.1
+    "@fastify/url-data": 5.3.1
+    "@redwoodjs/project-config": 5.0.6-next.69+26bf73645
+    ansi-colors: 4.1.3
+    chalk: 4.1.2
+    chokidar: 3.5.3
+    core-js: 3.30.1
+    fast-json-parse: 1.0.3
+    fastify: 4.17.0
+    fastify-raw-body: 4.2.0
+    lodash.escape: 4.0.1
+    pretty-bytes: 5.6.0
+    pretty-ms: 7.0.1
+    qs: 6.11.1
+    split2: 4.2.0
+    yargs: 17.7.2
+  bin:
+    rw-api-server-watch: dist/watch.js
+    rw-log-formatter: dist/logFormatter/bin.js
+    rw-server: dist/index.js
+  checksum: 017052a195c13ba59cd3e532008723953087533b3d0bf160406c14392144a4dddabfe50f5807935a6d7deb98cb45b7ab7d93756c0c631d9b3ca97b4fede9046c
   languageName: node
   linkType: hard
 

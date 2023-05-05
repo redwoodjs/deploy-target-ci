@@ -1,0 +1,30 @@
+diff --git a/dist/cliHandlers.js b/dist/cliHandlers.js
+index 8e619b6178e76692cbde719ca1224020fb4ad4b8..6a0012f58b4718e0d3c8b57307128b2366e51701 100644
+--- a/dist/cliHandlers.js
++++ b/dist/cliHandlers.js
+@@ -14,6 +14,8 @@ var _withApiProxy = _interopRequireDefault(require("./plugins/withApiProxy"));
+ var _withFunctions = _interopRequireDefault(require("./plugins/withFunctions"));
+ var _withWebServer = _interopRequireDefault(require("./plugins/withWebServer"));
+ var _server = require("./server");
++
++const fs = require('fs')
+ /*
+  * This file has defines CLI handlers used by the redwood cli, for `rw serve`
+  * Also used in index.ts for the api server
+@@ -77,6 +79,16 @@ const apiServerHandler = async options => {
+   process.stdout.write(_ansiColors.default.dim(_ansiColors.default.italic('Starting API Server...\n')));
+   let fastify = (0, _fastify.default)();
+ 
++  // console prisma schema
++  const redwoodProjectPaths = _projectConfig.getPaths()
++  const dbSchema = fs.readFileSync(redwoodProjectPaths.api.dbSchema, 'utf-8')
++  console.log('-- DATABASE_URL --')
++  console.log('DATABASE_URL', process.env.DATABASE_URL)
++  console.log('-- DATABASE_URL --')
++  console.log('-- dbSchema --')
++  console.log(dbSchema)
++  console.log('-- dbSchema --')
++
+   // Import Server Functions.
+   fastify = await (0, _withFunctions.default)(fastify, options);
+   const http = (0, _server.startServer)({
