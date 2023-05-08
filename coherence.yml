@@ -31,7 +31,7 @@ web:
   dev:
     command: ["yarn", "rw", "dev", "web", "--fwd=\"--allowed-hosts all\""]
   # (curl -o /dev/null -s -w "%{http_code}" $COHERENCE_ENVIRONMENT_DOMAIN/api/graphql | grep -q "200") && ARG="" || ARG="--no-prerender"; yarn rw build web $ARG
-  build: ["(", "curl", "-o", "/dev/null", "-s", "-w", "\"%{http_code}\"", "$COHERENCE_ENVIRONMENT_DOMAIN/api/graphql", "|", "grep", "-q", "\"200\"", ")", "&&", "ARG=\"\"", "||", "ARG=\"--no-prerender\"", ";", "yarn", "rw", "build", "web", "$ARG"]
+  build: ["(curl -o /dev/null -s -w \"%{http_code}\" $COHERENCE_ENVIRONMENT_DOMAIN/api/graphql | grep -q \"200\")", "&&", "ARG=\"\"", "||", "ARG=\"--no-prerender\"", ";", "yarn", "rw", "build", "web", "$ARG"]
   local_packages: ["node_modules"]
 
   system:
