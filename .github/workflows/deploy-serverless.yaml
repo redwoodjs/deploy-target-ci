@@ -9,17 +9,15 @@ jobs:
     if: github.repository == 'redwoodjs/deploy-target-ci'
     runs-on: ubuntu-latest
     env:
-       REDWOOD_CI: 1   
-
-    defaults:
-      run:
-        working-directory: ./serverless-aws
-
-    env:
+      REDWOOD_CI: 1   
       DATABASE_URL: ${{ secrets.SERVERLESS_DATABASE_URL }}
       API_URL: ${{ secrets.SERVERLESS_API_URL}}
       SESSION_SECRET: ${{ secrets.SERVERLESS_SESSION_SECRET}}
       SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+
+    defaults:
+      run:
+        working-directory: ./serverless-aws
 
     steps:
       - uses: actions/checkout@v3
