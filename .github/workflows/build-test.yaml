@@ -76,4 +76,16 @@ jobs:
         uses: redwoodjs/project-ci-action@main
         with:
           project-directory: './layer0'
-          run-lint: 'no'                               
+          run-lint: 'no'   
+
+  serverlessAws:
+    name: serverless-aws
+    runs-on: ubuntu-latest
+    env:
+      REDWOOD_CI: 1    
+    steps:
+      - name: Run Layer0 CI
+        uses: redwoodjs/project-ci-action@main
+        with:
+          project-directory: './serverless-aws'
+          run-lint: 'no'   
