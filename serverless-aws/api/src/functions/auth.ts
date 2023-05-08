@@ -152,7 +152,7 @@ export const handler = async (
       resetTokenExpiresAt: 'resetTokenExpiresAt',
     },
     cors: {
-      origin: 'd3j2lmbogvczkg.cloudfront.net',
+      origin: 'd1nqrl4z14qxd1.cloudfront.net',
       credentials: true,
     },
 
@@ -161,7 +161,7 @@ export const handler = async (
     cookie: {
       HttpOnly: true,
       Path: '/',
-      SameSite: 'None',
+      SameSite: process.env.NODE_ENV === 'development' ? 'Strict' : 'None',
       Secure: process.env.NODE_ENV !== 'development',
 
       // If you need to allow other domains (besides the api side) access to

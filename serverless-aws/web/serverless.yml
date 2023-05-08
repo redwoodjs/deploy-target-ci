@@ -13,12 +13,17 @@ useDotenv: true
 plugins:
   - serverless-lift
 
+# constructs:
+#   web:
+#     type: static-website
+#     path: dist
+
 constructs:
-  web:
-    type: static-website
+  landing:
+    type: single-page-app
     path: dist
 
 provider:
   name: aws
-  runtime: nodejs16.x
+  runtime: nodejs18.x
   region: us-east-1 # AWS region where the service will be deployed, defaults to N. Virgina
