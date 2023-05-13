@@ -5624,7 +5624,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/prerender@npm:5.1.5-next.40+c415b7580":
+"@redwoodjs/prerender@npm:5.1.5-next.40":
   version: 5.1.5-next.40
   resolution: "@redwoodjs/prerender@npm:5.1.5-next.40"
   dependencies:
@@ -5645,6 +5645,30 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
   checksum: 93ccd488d1b278b700f2d2022f12d958e84d470c860c1904f680d89cdb30c37e907a78fd6edfa2ad2f9d3bfd958cb53865a964dc914e232403c6821237ba833e
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/prerender@patch:@redwoodjs/prerender@npm%3A5.1.5-next.40#./.yarn/patches/@redwoodjs-prerender-npm-5.1.5-next.40-97610f43bb.patch::locator=root-workspace-0b6124%40workspace%3A.":
+  version: 5.1.5-next.40
+  resolution: "@redwoodjs/prerender@patch:@redwoodjs/prerender@npm%3A5.1.5-next.40#./.yarn/patches/@redwoodjs-prerender-npm-5.1.5-next.40-97610f43bb.patch::version=5.1.5-next.40&hash=67c4a6&locator=root-workspace-0b6124%40workspace%3A."
+  dependencies:
+    "@babel/runtime-corejs3": 7.21.5
+    "@redwoodjs/auth": 5.1.5-next.40+c415b7580
+    "@redwoodjs/internal": 5.1.5-next.40+c415b7580
+    "@redwoodjs/project-config": 5.1.5-next.40+c415b7580
+    "@redwoodjs/router": 5.1.5-next.40+c415b7580
+    "@redwoodjs/structure": 5.1.5-next.40+c415b7580
+    "@redwoodjs/web": 5.1.5-next.40+c415b7580
+    "@whatwg-node/fetch": 0.8.8
+    babel-plugin-ignore-html-and-css-imports: 0.1.0
+    cheerio: 1.0.0-rc.12
+    core-js: 3.30.2
+    graphql: 16.6.0
+    mime-types: 2.1.35
+  peerDependencies:
+    react: 18.2.0
+    react-dom: 18.2.0
+  checksum: c0e24dbd03448ad0dbfef6d0cb0dea791d4b6f8f29b8df3e8c4c0bef48883944e4700e8b6440703d9c9cfb5b319c116dcdde36f4dddc00c19f0e471f027b772d
   languageName: node
   linkType: hard
 
