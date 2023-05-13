@@ -1,0 +1,26 @@
+diff --git a/dist/index.js b/dist/index.js
+index 07c798bde49c3eac5cd4c703fa129fd4fbe7b4b5..61a173f3820ed10b2ec2fe439693b28110b813b4 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -90,12 +90,21 @@ process.env.RWJS_CWD = cwd;
+ //
+ // This should be done as early as possible, and the earliest we can do it is after setting `cwd`.
+ 
++console.log('-------------------------')
++console.log('before dotenv')
++console.log('DATABASE_URL', process.env.DATABASE_URL)
++
+ (0, _dotenvDefaults.config)({
+   path: _path.default.join((0, _lib.getPaths)().base, '.env'),
+   defaults: _path.default.join((0, _lib.getPaths)().base, '.env.defaults'),
+   multiline: true
+ });
+ 
++console.log('-------------------------')
++console.log('after dotenv')
++console.log('DATABASE_URL', process.env.DATABASE_URL)
++console.log('-------------------------')
++
+ // # Build the CLI and run it
+ (0, _yargs.default)((0, _helpers.hideBin)(process.argv))
+ // Config
