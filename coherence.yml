@@ -20,6 +20,7 @@ api:
       type: database
       adapter: postgresql
 
+  # If you use data migrations, add "&&", "yarn", "rw" "data-migrate" "up".
   migration: ["yarn", "rw", "prisma", "migrate", "deploy"]
 
 web:
@@ -30,8 +31,10 @@ web:
     command: ["yarn", "rw", "serve", "web"]
   dev:
     command: ["yarn", "rw", "dev", "web", "--fwd=\"--allowed-hosts all\""]
-  # (curl -o /dev/null -s -w "%{http_code}" $COHERENCE_ENVIRONMENT_DOMAIN/api/graphql | grep -q "200") && ARG="" || ARG="--no-prerender"; yarn rw build web $ARG
-  build: ["/bin/bash", "-c", "\"(curl -o /dev/null -s -w \"%{http_code}\" $COHERENCE_ENVIRONMENT_DOMAIN/api/graphql | grep -q \"200\") && ARG=\"\" || ARG=\"--no-prerender\"; yarn rw build web $ARG\""]
+  # Heads up: Redwood's prerender doesn't work with Coherence yet.
+  # For current status and updates, see https://github.com/redwoodjs/redwood/issues/8333.
+  build: ["yarn", "rw", "build", "web", "--no-prerender"]
+  # build: ["/bin/bash", "-c", "\"(curl -o /dev/null -s -w \"%{http_code}\" $COHERENCE_ENVIRONMENT_DOMAIN/api/graphql | grep -q \"200\") && ARG=\"\" || ARG=\"--no-prerender\"; yarn rw build web $ARG\""]
   local_packages: ["node_modules"]
 
   system:
