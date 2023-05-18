@@ -89,3 +89,15 @@ jobs:
         with:
           project-directory: './serverless-aws'
           run-lint: 'no'   
+
+  coherence:
+    name: coherence
+    runs-on: ubuntu-latest
+    env:
+      REDWOOD_CI: 1    
+    steps:
+      - name: Run Coherence CI
+        uses: redwoodjs/project-ci-action@main
+        with:
+          project-directory: './coherence'
+          run-lint: 'no'   
