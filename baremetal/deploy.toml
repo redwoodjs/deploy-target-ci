@@ -23,8 +23,11 @@ path = "/var/www/deploy-target-ci/baremetal"
 processNames = ["serve"]
 repo = "https://github.com/redwoodjs/deploy-target-ci.git"
 branch = "main"
-keepReleases = 5
+keepReleases = 1
 
 [before]
 # the app is in a subdirectory so we need to move it to the root before proceeding
 symlinkEnv = 'shopt -s dotglob && rm -rf !("baremetal") && cp -R baremetal/* . && rm -rf baremetal'
+
+[after]
+install = 'yarn cache clean'
