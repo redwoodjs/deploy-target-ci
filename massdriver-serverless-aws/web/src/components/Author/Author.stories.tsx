@@ -11,7 +11,7 @@
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import type { ComponentMeta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 
 import Author from './Author'
 
@@ -27,4 +27,4 @@ export const generated = () => {
 export default {
   title: 'Components/Author',
   component: Author,
-} as ComponentMeta<typeof Author>
+} as Meta<typeof Author>
