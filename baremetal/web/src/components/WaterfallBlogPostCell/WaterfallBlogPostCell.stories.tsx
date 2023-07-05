@@ -1,4 +1,4 @@
-import type { StoryObj, StoryFn } from '@storybook/react'
+import type { StoryObj } from '@storybook/react'
 
 import { Loading, Empty, Failure, Success } from './WaterfallBlogPostCell'
 import { standard } from './WaterfallBlogPostCell.mock'
