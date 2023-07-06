@@ -20,9 +20,9 @@ export const handler = createGraphQLHandler({
   sdls,
   services,
   cors: {
-     origin: [process.env.REDWOOD_WEB_URL],
-     credentials: true,
-   },
+    origin: [process.env.REDWOOD_WEB_URL],
+    credentials: true,
+  },
   onException: () => {
     // Disconnect from your database with an unhandled exception.
     db.$disconnect()

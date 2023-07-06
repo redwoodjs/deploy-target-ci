@@ -9,13 +9,11 @@ describe('ProfilePage', () => {
     //   id: 84849020,
     //   roles: 'BAZINGA',
     // })
-
     // await waitFor(async () => {
     //   expect(() => {
     //     render(<ProfilePage />)
     //   }).not.toThrow()
     // })
-
     // expect(await screen.findByText('danny@bazinga.com')).toBeInTheDocument()
   })
 })

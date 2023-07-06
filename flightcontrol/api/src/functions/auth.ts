@@ -138,7 +138,7 @@ export const handler = async (
 
     cors: {
       origin: process.env.REDWOOD_WEB_URL,
-      credentials: true
+      credentials: true,
     },
 
     // The name of the property you'd call on `db` to access your user table.
