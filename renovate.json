@@ -1,11 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
   "extends": ["config:base", ":disableRateLimiting"],
+
   "semanticCommits": "disabled",
   "rebaseWhen": "conflicted",
   "rangeStrategy": "pin",
   "automerge": true,
   "prHourlyLimit": 0,
+
   "packageRules": [
     {
       "ignoreUnstable": false,
@@ -23,7 +26,9 @@
       "labels": ["automerge"]
     }    
   ],
+
   "ignoreDeps": [
+    "@netlify/zip-it-and-ship-it",
     "prop-types",
     "react",
     "react-dom",
