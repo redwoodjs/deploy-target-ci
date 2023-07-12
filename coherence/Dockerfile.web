@@ -34,5 +34,5 @@ COPY redwood.toml .
 # -> this one... just for dev really?
 COPY graphql.config.js .
 
-RUN yarn rw build web --no-prerender
-# RUN node_modules/.bin/redwood build web --no-prerender
+# RUN yarn rw build web --no-prerender
+RUN node_modules/.bin/redwood build web --no-prerender
