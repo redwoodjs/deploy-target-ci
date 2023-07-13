@@ -1,39 +1,29 @@
-# Base, or "dependencies". Where we yarn install
-# ------------------------------------------------
-# -> slim, not alpine? https://snyk.io/blog/choosing-the-best-node-js-docker-image/
 FROM node:18-slim as base
 
-# -> more to do here, but for a @parcel/watcher build error
-# -> from https://github.com/nodejs/docker-node/issues/1385
 RUN apt-get update || : && apt-get install -y \
     python3 \
     build-essential
 
-# -> I've seen this in some Dockerfiles. why and why this early?
 RUN yarn cache clean
 
 WORKDIR /app
 
-# -> missing anything?
-# -> order? seems generally correct?
 COPY .yarn/releases .yarn/releases
 COPY .yarnrc.yml .yarnrc.yml
 COPY .yarn/plugins .yarn/plugins
 COPY package.json package.json
-COPY api/package.json api/package.json
 COPY web/package.json web/package.json
 COPY yarn.lock yarn.lock
 
-# -> Aditya explains here https://community.redwoodjs.com/t/dockerize-redwoodjs/2291/40
-# -> this can be changed by the user in .yarnrc.yml, so maybe we need a step to find it? `yarn config get cacheFolder`
 RUN --mount=type=cache,target=/root/.yarn/berry/cache \
     --mount=type=cache,target=/root/.cache \
     yarn install --immutable --inline-builds
 
 COPY redwood.toml .
-# -> this one... just for dev really?
 COPY graphql.config.js .
-COPY web/vite.config.ts web/vite.config.ts
 
-# RUN yarn rw build web --no-prerender
+FROM base as web_build
+
+COPY web web
+
 RUN node_modules/.bin/redwood build web --no-prerender
