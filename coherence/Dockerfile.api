@@ -48,6 +48,7 @@ COPY .yarn/releases .yarn/releases
 COPY .yarnrc.yml .yarnrc.yml
 COPY .yarn/plugins .yarn/plugins
 COPY api/package.json .
+COPY web/package.json .
 COPY yarn.lock yarn.lock
 
 # COPY --from=api_build /root/.yarn/berry/cache /root/.yarn/berry/cache
