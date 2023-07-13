@@ -1943,22 +1943,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-runtime@npm:7.22.5":
-  version: 7.22.5
-  resolution: "@babel/plugin-transform-runtime@npm:7.22.5"
-  dependencies:
-    "@babel/helper-module-imports": ^7.22.5
-    "@babel/helper-plugin-utils": ^7.22.5
-    babel-plugin-polyfill-corejs2: ^0.4.3
-    babel-plugin-polyfill-corejs3: ^0.8.1
-    babel-plugin-polyfill-regenerator: ^0.5.0
-    semver: ^6.3.0
-  peerDependencies:
-    "@babel/core": ^7.0.0-0
-  checksum: 2dcd59bbf14622c2cc088a311a16073b777e34abe733a940c4df6d48fd58900fb7cb22aa2a4645939162cc717618f8e55e96c227ad61f9ae9bca098078aa7345
-  languageName: node
-  linkType: hard
-
 "@babel/plugin-transform-runtime@npm:7.22.7":
   version: 7.22.7
   resolution: "@babel/plugin-transform-runtime@npm:7.22.7"
@@ -2436,16 +2420,6 @@ __metadata:
   version: 0.8.0
   resolution: "@babel/regjsgen@npm:0.8.0"
   checksum: 4f3ddd8c7c96d447e05c8304c1d5ba3a83fcabd8a716bc1091c2f31595cdd43a3a055fff7cb5d3042b8cb7d402d78820fcb4e05d896c605a7d8bcf30f2424c4a
-  languageName: node
-  linkType: hard
-
-"@babel/runtime-corejs3@npm:7.22.5":
-  version: 7.22.5
-  resolution: "@babel/runtime-corejs3@npm:7.22.5"
-  dependencies:
-    core-js-pure: ^3.30.2
-    regenerator-runtime: ^0.13.11
-  checksum: efd5218f63707b569c01946dc2e88a7ce1f76b1d43bdae0a493b865c56b1d4aa09574463f281b9fc9a46e5abc9f2bea89b6a3e4d2af065931fe703f4daaf6490
   languageName: node
   linkType: hard
 
@@ -5166,7 +5140,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api-server@npm:6.0.0-rc.617+a647d1fb4":
+"@redwoodjs/api-server@npm:6.0.0-rc.617, @redwoodjs/api-server@npm:6.0.0-rc.617+a647d1fb4":
   version: 6.0.0-rc.617
   resolution: "@redwoodjs/api-server@npm:6.0.0-rc.617"
   dependencies:
@@ -5195,38 +5169,6 @@ __metadata:
     rw-log-formatter: dist/logFormatter/bin.js
     rw-server: dist/index.js
   checksum: bbd9dc7e5ceab656cf776c1201d95459db0c6b0daee03a590abad5837795ef9840d9945fce76842bb4442760fe540b0a679a009ca7431fa217b9e0e0f653ffdc
-  languageName: node
-  linkType: hard
-
-"@redwoodjs/api-server@npm:^5.4.3":
-  version: 5.4.3
-  resolution: "@redwoodjs/api-server@npm:5.4.3"
-  dependencies:
-    "@babel/plugin-transform-runtime": 7.22.5
-    "@babel/runtime-corejs3": 7.22.5
-    "@fastify/http-proxy": 9.2.1
-    "@fastify/static": 6.10.2
-    "@fastify/url-data": 5.3.1
-    "@redwoodjs/project-config": 5.4.3
-    ansi-colors: 4.1.3
-    chalk: 4.1.2
-    chokidar: 3.5.3
-    core-js: 3.31.0
-    fast-glob: 3.2.12
-    fast-json-parse: 1.0.3
-    fastify: 4.18.0
-    fastify-raw-body: 4.2.0
-    lodash: 4.17.21
-    pretty-bytes: 5.6.0
-    pretty-ms: 7.0.1
-    qs: 6.11.2
-    split2: 4.2.0
-    yargs: 17.7.2
-  bin:
-    rw-api-server-watch: dist/watch.js
-    rw-log-formatter: dist/logFormatter/bin.js
-    rw-server: dist/index.js
-  checksum: 472ad813938936d3555b33c479c9bd98b256e358c9e80e2234f4d6a79d419bcf1032e65d27469eb91a74ac6e947c381cec8cdc0b7e169e9baf8f4cda6832d253
   languageName: node
   linkType: hard
 
@@ -5642,18 +5584,6 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
   checksum: 2e029812ef78ebf5dc7b09522e3b7d75a00646efce1ee34aea561847af58c2d850cf76ee827c1351fd45db99585008ad0f5386cc2ab98a2cad64add137625432
-  languageName: node
-  linkType: hard
-
-"@redwoodjs/project-config@npm:5.4.3":
-  version: 5.4.3
-  resolution: "@redwoodjs/project-config@npm:5.4.3"
-  dependencies:
-    "@iarna/toml": 2.2.5
-    deepmerge: 4.3.1
-    fast-glob: 3.2.12
-    string-env-interpolation: 1.0.1
-  checksum: f18213365a8cf8a7a933db2adbf32a07b2a3b8fe48014d32272c14403742fb4aeadbbfa81dac0bab85c0d327814cfa20bee0333dbea40f44289fa939c001bf77
   languageName: node
   linkType: hard
 
@@ -8863,7 +8793,7 @@ __metadata:
   resolution: "api@workspace:api"
   dependencies:
     "@redwoodjs/api": 6.0.0-rc.617
-    "@redwoodjs/api-server": ^5.4.3
+    "@redwoodjs/api-server": 6.0.0-rc.617
     "@redwoodjs/auth-dbauth-api": 6.0.0-rc.617
     "@redwoodjs/graphql-server": 6.0.0-rc.617
   languageName: unknown
@@ -11230,17 +11160,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:3.31.0, core-js@npm:^3.30.2":
-  version: 3.31.0
-  resolution: "core-js@npm:3.31.0"
-  checksum: 6216c7ada80b2468b1297d844fa99a99da97d6156cb05270b3627d8c463fb8c17baeff74ef204ef1c905712930fe82740ba2a74e2f957e4909fd241416fe5735
-  languageName: node
-  linkType: hard
-
 "core-js@npm:3.31.1":
   version: 3.31.1
   resolution: "core-js@npm:3.31.1"
   checksum: 17b44ddc675d7e924ecf0da21dcae3dc9e26758048e3275ba05fcd1a8805d45e6bacee1335b781e9d59d0c38302d5cbfc49073ef33232387459f432852fb6cd9
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3.30.2":
+  version: 3.31.0
+  resolution: "core-js@npm:3.31.0"
+  checksum: 6216c7ada80b2468b1297d844fa99a99da97d6156cb05270b3627d8c463fb8c17baeff74ef204ef1c905712930fe82740ba2a74e2f957e4909fd241416fe5735
   languageName: node
   linkType: hard
 
@@ -13582,30 +13512,6 @@ __metadata:
     raw-body: ^2.5.1
     secure-json-parse: ^2.4.0
   checksum: 7e71fe5dcffa2cf66afad2a884b5395e146f4ea6f566c428a8b501fbfb4665919fef18743b6ab80a66bedb644caf8580e2cf08f41494d00a172aa85607a1b27b
-  languageName: node
-  linkType: hard
-
-"fastify@npm:4.18.0":
-  version: 4.18.0
-  resolution: "fastify@npm:4.18.0"
-  dependencies:
-    "@fastify/ajv-compiler": ^3.5.0
-    "@fastify/error": ^3.2.0
-    "@fastify/fast-json-stringify-compiler": ^4.3.0
-    abstract-logging: ^2.0.1
-    avvio: ^8.2.1
-    fast-content-type-parse: ^1.0.0
-    fast-json-stringify: ^5.7.0
-    find-my-way: ^7.6.0
-    light-my-request: ^5.9.1
-    pino: ^8.12.0
-    process-warning: ^2.2.0
-    proxy-addr: ^2.0.7
-    rfdc: ^1.3.0
-    secure-json-parse: ^2.5.0
-    semver: ^7.5.0
-    tiny-lru: ^11.0.1
-  checksum: 9a8b7e17fc337a5ddd0145e47b054d20ba7f1b7f62f21e5a015047ad770fe0149b8fbb0b9b5582eda045facef74a6120a6e8aa431ad06b5c9d73cecef8289aeb
   languageName: node
   linkType: hard
 
