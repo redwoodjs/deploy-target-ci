@@ -1,23 +1,15 @@
-# Base, or "dependencies". Where we yarn install
-# ------------------------------------------------
-# -> slim, not alpine? https://snyk.io/blog/choosing-the-best-node-js-docker-image/
 FROM node:18-slim as base
 
 ENV CI=1
 
-# -> more to do here, but for a @parcel/watcher build error
-# -> from https://github.com/nodejs/docker-node/issues/1385
 RUN apt-get update || : && apt-get install -y \
     python3 \
     build-essential
 
-# -> I've seen this in some Dockerfiles. why and why this early?
 RUN yarn cache clean
 
 WORKDIR /app
 
-# -> missing anything?
-# -> order? seems generally correct?
 COPY .yarn/releases .yarn/releases
 COPY .yarnrc.yml .yarnrc.yml
 COPY .yarn/plugins .yarn/plugins
@@ -26,14 +18,11 @@ COPY api/package.json api/package.json
 COPY web/package.json web/package.json
 COPY yarn.lock yarn.lock
 
-# -> Aditya explains here https://community.redwoodjs.com/t/dockerize-redwoodjs/2291/40
-# -> this can be changed by the user in .yarnrc.yml, so maybe we need a step to find it? `yarn config get cacheFolder`
 RUN --mount=type=cache,target=/root/.yarn/berry/cache \
     --mount=type=cache,target=/root/.cache \
     yarn install --immutable --inline-builds
 
 COPY redwood.toml .
-# -> this one... just for dev really?
 COPY graphql.config.js .
 
 # api build
@@ -41,9 +30,6 @@ COPY graphql.config.js .
 FROM base as api_build
 
 COPY api api
-# -> reasons to avoid yarn here? And do `./node_modules/.bin/rw build api` instead?
-# -> Josh has `ENTRYPOINT [ "/bin/sh", "-c", "yarn rw build api" ]` here instead of `RUN`. pros cons?
-# RUN yarn rw build api
 RUN node_modules/.bin/redwood build api
 
 # serve api
@@ -53,8 +39,8 @@ FROM node:18-slim as serve_api
 RUN apt-get update || : && apt-get install -y \
     openssl
 
-# -> should we set this earlier?
 ENV NODE_ENV production
+ENV CI=1
 
 WORKDIR /app
 
@@ -65,14 +51,11 @@ COPY api/package.json .
 COPY yarn.lock yarn.lock
 
 # COPY --from=api_build /root/.yarn/berry/cache /root/.yarn/berry/cache
-COPY --from=api_build /root/.cache /root/.cache
-COPY --from=api_build /app/node_modules /app/node_modules
+# COPY --from=api_build /root/.cache /root/.cache
 
-# RUN --mount=type=cache,target=/root/.yarn/berry/cache \
-#     --mount=type=cache,target=/root/.cache \
-#     yarn workspaces focus api
-    # -> why add deps after installing?
-    # yarn install --inline-builds && yarn add react react-dom @redwoodjs/api-server @redwoodjs/internal prisma
+RUN --mount=type=cache,target=/root/.yarn/berry/cache \
+    --mount=type=cache,target=/root/.cache \
+    yarn workspaces focus api --production
 
 COPY redwood.toml .
 COPY graphql.config.js .
@@ -81,7 +64,5 @@ COPY --from=api_build /app/api/dist /app/api/dist
 COPY --from=api_build /app/api/db /app/api/db
 COPY --from=api_build /app/node_modules/.prisma /app/node_modules/.prisma
 
-# -> need to `EXPOSE` ports?
-# -> reasons to avoid yarn here?
 # CMD ["yarn", "rw-server"]
 CMD [ "node_modules/.bin/rw-server", "api" ]
