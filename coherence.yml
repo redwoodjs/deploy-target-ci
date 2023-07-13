@@ -23,7 +23,7 @@ api:
       adapter: postgresql
 
   # If you use data migrations, add "&&", "yarn", "rw" "data-migrate" "up".
-  migration: ["yarn", "rw", "prisma", "migrate", "deploy"]
+  migration: ["node_modules/.bin/rw", "prisma", "migrate", "deploy"]
 
 web:
   type: frontend

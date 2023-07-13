@@ -3,6 +3,8 @@
 # -> slim, not alpine? https://snyk.io/blog/choosing-the-best-node-js-docker-image/
 FROM node:18-slim as base
 
+ENV CI=1
+
 # -> more to do here, but for a @parcel/watcher build error
 # -> from https://github.com/nodejs/docker-node/issues/1385
 RUN apt-get update || : && apt-get install -y \
