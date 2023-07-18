@@ -2024,22 +2024,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-runtime@npm:7.22.7":
-  version: 7.22.7
-  resolution: "@babel/plugin-transform-runtime@npm:7.22.7"
-  dependencies:
-    "@babel/helper-module-imports": ^7.22.5
-    "@babel/helper-plugin-utils": ^7.22.5
-    "@nicolo-ribaudo/semver-v6": ^6.3.3
-    babel-plugin-polyfill-corejs2: ^0.4.4
-    babel-plugin-polyfill-corejs3: ^0.8.2
-    babel-plugin-polyfill-regenerator: ^0.5.1
-  peerDependencies:
-    "@babel/core": ^7.0.0-0
-  checksum: e0768cedf474c3744bedb28f073ef1630f7d1ac33467033ae8ead6a9586cdf007c9d0a63b5d1941c5f29dc95568d700ea0672e17bacb0eb21bf81a49f83346c8
-  languageName: node
-  linkType: hard
-
 "@babel/plugin-transform-runtime@npm:7.22.9":
   version: 7.22.9
   resolution: "@babel/plugin-transform-runtime@npm:7.22.9"
@@ -5493,39 +5477,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api-server@npm:6.0.0-rc.617":
-  version: 6.0.0-rc.617
-  resolution: "@redwoodjs/api-server@npm:6.0.0-rc.617"
-  dependencies:
-    "@babel/plugin-transform-runtime": 7.22.7
-    "@babel/runtime-corejs3": 7.22.6
-    "@fastify/http-proxy": 9.2.1
-    "@fastify/static": 6.10.2
-    "@fastify/url-data": 5.3.1
-    "@redwoodjs/project-config": 6.0.0-rc.617+a647d1fb4
-    ansi-colors: 4.1.3
-    chalk: 4.1.2
-    chokidar: 3.5.3
-    core-js: 3.31.1
-    fast-glob: 3.2.12
-    fast-json-parse: 1.0.3
-    fastify: 4.19.2
-    fastify-raw-body: 4.2.0
-    lodash: 4.17.21
-    pretty-bytes: 5.6.0
-    pretty-ms: 7.0.1
-    qs: 6.11.2
-    split2: 4.2.0
-    yargs: 17.7.2
-  bin:
-    rw-api-server-watch: dist/watch.js
-    rw-log-formatter: dist/logFormatter/bin.js
-    rw-server: dist/index.js
-  checksum: bbd9dc7e5ceab656cf776c1201d95459db0c6b0daee03a590abad5837795ef9840d9945fce76842bb4442760fe540b0a679a009ca7431fa217b9e0e0f653ffdc
-  languageName: node
-  linkType: hard
-
-"@redwoodjs/api-server@npm:6.0.0-rc.638+0715f9eb7":
+"@redwoodjs/api-server@npm:6.0.0-rc.638, @redwoodjs/api-server@npm:6.0.0-rc.638+0715f9eb7":
   version: 6.0.0-rc.638
   resolution: "@redwoodjs/api-server@npm:6.0.0-rc.638"
   dependencies:
@@ -5969,18 +5921,6 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
   checksum: 53ac1f3849967cbf813748184782aad6aae90727e79d5cf98f0a20f4874bef7e8107b59f7c52134683d695c6ced78758c07e44ba7198a66e5b0288cd1a4795b5
-  languageName: node
-  linkType: hard
-
-"@redwoodjs/project-config@npm:6.0.0-rc.617+a647d1fb4":
-  version: 6.0.0-rc.617
-  resolution: "@redwoodjs/project-config@npm:6.0.0-rc.617"
-  dependencies:
-    "@iarna/toml": 2.2.5
-    deepmerge: 4.3.1
-    fast-glob: 3.2.12
-    string-env-interpolation: 1.0.1
-  checksum: 75fce74b35ccb3b78998f469292fdbcaee7b01d8d6c065f0abbc28dcd4969ed7c2e7b30b0f83d777e93595a35744597baf6f8b393845c991cad63cbfd1eb0251
   languageName: node
   linkType: hard
 
@@ -9200,7 +9140,7 @@ __metadata:
   resolution: "api@workspace:api"
   dependencies:
     "@redwoodjs/api": 6.0.0-rc.638
-    "@redwoodjs/api-server": 6.0.0-rc.617
+    "@redwoodjs/api-server": 6.0.0-rc.638
     "@redwoodjs/auth-dbauth-api": 6.0.0-rc.638
     "@redwoodjs/graphql-server": 6.0.0-rc.638
   languageName: unknown
