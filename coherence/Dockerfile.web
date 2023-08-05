@@ -1,32 +1,32 @@
-FROM node:18-slim as base
+# base
+# ------------------------------------------------
+FROM node:18-bookworm-slim as base
 
-ENV CI=1
+RUN apt-get update && apt-get install -y \
+    openssl \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update || : && apt-get install -y \
-    python3 \
-    build-essential
+USER node
+WORKDIR /home/node/app
 
-RUN yarn cache clean
+COPY --chown=node:node .yarn/plugins .yarn/plugins
+COPY --chown=node:node .yarn/releases .yarn/releases
+COPY --chown=node:node .yarnrc.yml .
+COPY --chown=node:node package.json .
+COPY --chown=node:node api/package.json api/
+COPY --chown=node:node web/package.json web/
+COPY --chown=node:node yarn.lock .
 
-WORKDIR /app
+RUN --mount=type=cache,target=/home/node/.yarn/berry/cache,uid=1000 \
+    --mount=type=cache,target=/home/node/.cache,uid=1000 \
+    CI=1 yarn install
 
-COPY .yarn/releases .yarn/releases
-COPY .yarnrc.yml .yarnrc.yml
-COPY .yarn/plugins .yarn/plugins
-COPY package.json package.json
-COPY api/package.json api/package.json
-COPY web/package.json web/package.json
-COPY yarn.lock yarn.lock
+COPY --chown=node:node redwood.toml .
+COPY --chown=node:node graphql.config.js .
 
-RUN --mount=type=cache,target=/root/.yarn/berry/cache \
-    --mount=type=cache,target=/root/.cache \
-    yarn install --immutable --inline-builds
-
-COPY redwood.toml .
-COPY graphql.config.js .
-
+# web build
+# ------------------------------------------------
 FROM base as web_build
 
-COPY web web
-
-RUN node_modules/.bin/redwood build web --no-prerender
+COPY --chown=node:node web web
+RUN yarn redwood build web --no-prerender

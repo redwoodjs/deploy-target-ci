@@ -18,11 +18,10 @@ api:
   resources:
     - name: coherence-db
       engine: postgres
-      version: 13
+      version: 15
       type: database
       adapter: postgresql
 
-  # If you use data migrations, add "&&", "yarn", "rw" "data-migrate" "up".
   migration: ["npx", "prisma", "migrate", "deploy", "--schema=api/db/schema.prisma"]
 
 web:
