@@ -26,7 +26,7 @@ api:
       type: database
       adapter: postgresql
 
-  migration: ["npx", "prisma", "migrate", "deploy", "--schema=api/db/schema.prisma"]
+  migration: [ "npx", "prisma", "migrate", "deploy", "--schema=api/db/schema.prisma", "&&", "npx", "prisma", "db", "seed", "--schema=api/db/schema.prisma" ]
 
 web:
   type: frontend
