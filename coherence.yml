@@ -36,6 +36,8 @@ web:
   prod:
     dockerfile: Dockerfile.web
 
+  build: ["yarn", "rw", "build", "web", "--no-prerender"]
+
   dev:
     command: ["yarn", "rw", "dev", "web", "--fwd=\"--allowed-hosts all\""]
     dockerfile: Dockerfile.dev
