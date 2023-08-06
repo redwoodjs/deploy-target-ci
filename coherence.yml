@@ -1,12 +1,16 @@
 api:
   type: backend
   repo_path: coherence
-  url_path: "/api"
+
+  url_path: /api
+
   prod:
     command: ["node_modules/.bin/rw-server", "api", "--apiRootPath=/api"]
-    dockerfile: "Dockerfile.api"
-  # dev:
-  #   command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "dev", "api", "--apiRootPath=/api"]
+    dockerfile: Dockerfile.api
+
+  dev:
+    command: ["yarn", "rw", "dev", "api", "--apiRootPath=/api"]
+    dockerfile: Dockerfile.dev
 
   local_packages: ["node_modules"]
 
@@ -27,17 +31,15 @@ api:
 web:
   type: frontend
   repo_path: coherence
-  assets_path: "web/dist"
+  assets_path: web/dist
+
   prod:
     dockerfile: Dockerfile.web
-  # prod:
-  #   command: ["yarn", "rw", "serve", "web"]
-  # dev:
-  #   command: ["yarn", "rw", "dev", "web", "--fwd=\"--allowed-hosts all\""]
-  # Heads up: Redwood's prerender doesn't work with Coherence yet.
-  # For current status and updates, see https://github.com/redwoodjs/redwood/issues/8333.
-  build: ["yarn", "rw", "build", "web", "--no-prerender"]
-  # build: ["/bin/bash", "-c", "\"(curl -o /dev/null -s -w \"%{http_code}\" $COHERENCE_ENVIRONMENT_DOMAIN/api/graphql | grep -q \"200\") && ARG=\"\" || ARG=\"--no-prerender\"; yarn rw build web $ARG\""]
+
+  dev:
+    command: ["yarn", "rw", "dev", "web", "--fwd=\"--allowed-hosts all\""]
+    dockerfile: Dockerfile.dev
+
   local_packages: ["node_modules"]
 
   system:

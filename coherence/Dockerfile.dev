@@ -1,0 +1,31 @@
+# dev
+# ------------------------------------------------
+FROM node:18-bookworm-slim as dev
+
+RUN apt-get update && apt-get install -y \
+    openssl \
+    && rm -rf /var/lib/apt/lists/*
+
+USER node
+WORKDIR /home/node/app
+
+COPY --chown=node:node .yarn/plugins .yarn/plugins
+COPY --chown=node:node .yarn/releases .yarn/releases
+COPY --chown=node:node .yarnrc.yml .
+COPY --chown=node:node package.json .
+COPY --chown=node:node api/package.json api/
+COPY --chown=node:node web/package.json web/
+COPY --chown=node:node yarn.lock .
+
+RUN --mount=type=cache,target=/home/node/.yarn/berry/cache,uid=1000 \
+    --mount=type=cache,target=/home/node/.cache,uid=1000 \
+    CI=1 yarn install
+
+COPY --chown=node:node redwood.toml .
+COPY --chown=node:node graphql.config.js .
+
+COPY --chown=node:node api api
+COPY --chown=node:node web web
+COPY --chown=node:node scripts scripts
+
+CMD [ "yarn", "rw", "dev" ]
