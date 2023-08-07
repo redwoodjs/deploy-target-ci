@@ -9,7 +9,7 @@ api:
     dockerfile: Dockerfile.api
 
   dev:
-    command: ["yarn", "rw", "dev", "api", "--apiRootPath=/api"]
+    command: ["yarn", "rw", "dev"]
     dockerfile: Dockerfile.dev
 
   local_packages: ["node_modules"]
@@ -26,7 +26,8 @@ api:
       type: database
       adapter: postgresql
 
-  migration: [ "npx", "prisma", "migrate", "deploy", "--schema=api/db/schema.prisma", "&&", "npx", "prisma", "db", "seed", "--schema=api/db/schema.prisma" ]
+  migration: [ "npx", "prisma", "migrate", "deploy", "--schema=api/db/schema.prisma" ]
+  # seed: [ "npx", "prisma", "db", "seed", "--schema=api/db/schema.prisma" ]
 
 web:
   type: frontend
@@ -39,7 +40,7 @@ web:
   build: ["yarn", "rw", "build", "web", "--no-prerender"]
 
   dev:
-    command: ["yarn", "rw", "dev", "web", "--fwd=\"--allowed-hosts all\""]
+    command: ["yarn", "rw", "dev"]
     dockerfile: Dockerfile.dev
 
   local_packages: ["node_modules"]
