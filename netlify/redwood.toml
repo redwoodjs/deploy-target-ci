@@ -6,6 +6,7 @@
 # https://redwoodjs.com/docs/app-configuration-redwood-toml
 
 [web]
+  bundler = "webpack"
   title = "Redwood App"
   port = "${WEB_DEV_PORT:8910}"
   apiUrl = "/.netlify/functions"
