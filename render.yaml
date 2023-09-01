@@ -24,7 +24,7 @@ services:
     destination: https://render-postgres-api-f0b3.onrender.com/*
   - type: rewrite
     source: /*
-    destination: /index.html
+    destination: /200.html
 - name: render-postgres-api
   type: web
   env: node
