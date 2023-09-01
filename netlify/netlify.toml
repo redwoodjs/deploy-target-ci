@@ -1,7 +1,7 @@
 [build]
-command = "yarn rw deploy netlify"
-publish = "web/dist"
-functions = "api/dist/functions"
+  command = "yarn rw deploy netlify"
+  publish = "web/dist"
+  functions = "api/dist/functions"
 
 [dev]
   # To use [Netlify Dev](https://www.netlify.com/products/dev/),
@@ -17,5 +17,5 @@ functions = "api/dist/functions"
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/200.html"
   status = 200
