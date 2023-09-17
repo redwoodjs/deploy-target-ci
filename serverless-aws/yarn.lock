@@ -7324,14 +7324,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@serverless/dashboard-plugin@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "@serverless/dashboard-plugin@npm:7.0.1"
+"@serverless/dashboard-plugin@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "@serverless/dashboard-plugin@npm:7.0.2"
   dependencies:
     "@aws-sdk/client-cloudformation": ^3.410.0
     "@aws-sdk/client-sts": ^3.410.0
     "@serverless/event-mocks": ^1.1.1
-    "@serverless/platform-client": ^4.3.2
+    "@serverless/platform-client": ^4.4.0
     "@serverless/utils": ^6.8.2
     child-process-ext: ^3.0.1
     chokidar: ^3.5.3
@@ -7351,7 +7351,7 @@ __metadata:
     type: ^2.7.2
     uuid: ^8.3.2
     yamljs: ^0.3.0
-  checksum: 987620da449a901502e3173656ab259c664293aa622c13a1fc1f63e1af1b2daf17da670df4947d0605528aee0537e8cbfc1f1e12fec340827cc8bbbd30c57e54
+  checksum: 83f14392eef59884ebe403f7ac916b4901c73cc7fe192882d2c133c790d30ad8ec97dc59edcf7ba6fe3594b6ebbaa21a6548e5e647b274468e5294beb5ee6ce5
   languageName: node
   linkType: hard
 
@@ -7362,29 +7362,6 @@ __metadata:
     "@types/lodash": ^4.14.123
     lodash: ^4.17.11
   checksum: 2e09f11349a05e0efac49db17b8b909d4b1b45cc027733c9656d34b0d7612bad5622cfb3ed46389e213615eaf1ecd6150768620209f78ddaa57ad7356d7fd58f
-  languageName: node
-  linkType: hard
-
-"@serverless/platform-client@npm:^4.3.2":
-  version: 4.3.2
-  resolution: "@serverless/platform-client@npm:4.3.2"
-  dependencies:
-    adm-zip: ^0.5.5
-    archiver: ^5.3.0
-    axios: ^0.21.1
-    fast-glob: ^3.2.7
-    https-proxy-agent: ^5.0.0
-    ignore: ^5.1.8
-    isomorphic-ws: ^4.0.1
-    js-yaml: ^3.14.1
-    jwt-decode: ^2.2.0
-    minimatch: ^3.0.4
-    querystring: ^0.2.1
-    run-parallel-limit: ^1.1.0
-    throat: ^5.0.0
-    traverse: ^0.6.6
-    ws: ^7.5.3
-  checksum: 2a1724c189101f8c7de527fc2ae6ebe1241e3124632ca6fa44439341ca853e81007eb6a0d31f2170d1f331efeb81497a4dbcc12fb61e91cf07804fed0ca362b6
   languageName: node
   linkType: hard
 
@@ -11141,7 +11118,7 @@ __metadata:
     "@redwoodjs/api": 6.2.3-next.33
     "@redwoodjs/auth-dbauth-api": 6.2.3-next.33
     "@redwoodjs/graphql-server": 6.2.3-next.33
-    serverless: 3.35.1
+    serverless: 3.35.2
   languageName: unknown
   linkType: soft
 
@@ -25208,7 +25185,7 @@ __metadata:
     "@vercel/nft": 0.23.1
     archiver: 5.3.1
     fs-extra: 10.0.0
-    serverless: 3.35.1
+    serverless: 3.35.2
     serverless-lift: 1.27.0
   languageName: unknown
   linkType: soft
@@ -25637,11 +25614,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serverless@npm:3.35.1":
-  version: 3.35.1
-  resolution: "serverless@npm:3.35.1"
+"serverless@npm:3.35.2":
+  version: 3.35.2
+  resolution: "serverless@npm:3.35.2"
   dependencies:
-    "@serverless/dashboard-plugin": ^7.0.1
+    "@serverless/dashboard-plugin": ^7.0.2
     "@serverless/platform-client": ^4.4.0
     "@serverless/utils": ^6.13.1
     abort-controller: ^3.0.0
@@ -25700,7 +25677,7 @@ __metadata:
   bin:
     serverless: bin/serverless.js
     sls: bin/serverless.js
-  checksum: 7115235c95aac948ff2b90d31ea36f0960417f0fbfd84eeef306bbf06eaca1653e3eb4fe71329f1a3a96edcd3e8c8f76a8fb672e81c335a8aeb0c963015b048a
+  checksum: 37353f70154a50fe324ab47c78365554039da55b7b6f01852679dee60169aca7e41401536cc728bb50d3548ce9d5b2ba3d72355ee85df34a3922c80526c05b12
   languageName: node
   linkType: hard
 
@@ -28444,7 +28421,7 @@ __metadata:
     prop-types: 15.8.1
     react: 18.2.0
     react-dom: 18.2.0
-    serverless: 3.35.1
+    serverless: 3.35.2
     tailwindcss: 3.3.3
   languageName: unknown
   linkType: soft
