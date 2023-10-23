@@ -6091,15 +6091,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@serverless/dashboard-plugin@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "@serverless/dashboard-plugin@npm:7.0.2"
+"@serverless/dashboard-plugin@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "@serverless/dashboard-plugin@npm:7.1.0"
   dependencies:
     "@aws-sdk/client-cloudformation": "npm:^3.410.0"
     "@aws-sdk/client-sts": "npm:^3.410.0"
     "@serverless/event-mocks": "npm:^1.1.1"
     "@serverless/platform-client": "npm:^4.4.0"
-    "@serverless/utils": "npm:^6.8.2"
+    "@serverless/utils": "npm:^6.14.0"
     child-process-ext: "npm:^3.0.1"
     chokidar: "npm:^3.5.3"
     flat: "npm:^5.0.2"
@@ -6118,7 +6118,7 @@ __metadata:
     type: "npm:^2.7.2"
     uuid: "npm:^8.3.2"
     yamljs: "npm:^0.3.0"
-  checksum: 8c0/83f14392eef59884ebe403f7ac916b4901c73cc7fe192882d2c133c790d30ad8ec97dc59edcf7ba6fe3594b6ebbaa21a6548e5e647b274468e5294beb5ee6ce5
+  checksum: 74148308548bcbe98b4f597eaa109dbf3aa5192e18f4f55947e9c03a2cc48e69eda334bd9ce0a3c7e0eb35d040e8d39e7d48567399b6c1b5213d69ea5c6f1978
   languageName: node
   linkType: hard
 
@@ -6155,7 +6155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@serverless/utils@npm:^6.13.1, @serverless/utils@npm:^6.8.2":
+"@serverless/utils@npm:^6.13.1":
   version: 6.13.1
   resolution: "@serverless/utils@npm:6.13.1"
   dependencies:
@@ -6193,6 +6193,47 @@ __metadata:
     uuid: "npm:^8.3.2"
     write-file-atomic: "npm:^4.0.2"
   checksum: 8c0/d725bd5728f9c6adcba51f1e6bd31eaaa04e9a5203d2c600f6446a40ff999442ef732fa60db8f7df22f7953cdbaae286c575ccafc7543a6bce1439995c73f29a
+  languageName: node
+  linkType: hard
+
+"@serverless/utils@npm:^6.14.0":
+  version: 6.15.0
+  resolution: "@serverless/utils@npm:6.15.0"
+  dependencies:
+    archive-type: "npm:^4.0.0"
+    chalk: "npm:^4.1.2"
+    ci-info: "npm:^3.8.0"
+    cli-progress-footer: "npm:^2.3.2"
+    content-disposition: "npm:^0.5.4"
+    d: "npm:^1.0.1"
+    decompress: "npm:^4.2.1"
+    event-emitter: "npm:^0.3.5"
+    ext: "npm:^1.7.0"
+    ext-name: "npm:^5.0.0"
+    file-type: "npm:^16.5.4"
+    filenamify: "npm:^4.3.0"
+    get-stream: "npm:^6.0.1"
+    got: "npm:^11.8.6"
+    inquirer: "npm:^8.2.5"
+    js-yaml: "npm:^4.1.0"
+    jwt-decode: "npm:^3.1.2"
+    lodash: "npm:^4.17.21"
+    log: "npm:^6.3.1"
+    log-node: "npm:^8.0.3"
+    make-dir: "npm:^4.0.0"
+    memoizee: "npm:^0.4.15"
+    ms: "npm:^2.1.3"
+    ncjsm: "npm:^4.3.2"
+    node-fetch: "npm:^2.6.11"
+    open: "npm:^8.4.2"
+    p-event: "npm:^4.2.0"
+    supports-color: "npm:^8.1.1"
+    timers-ext: "npm:^0.1.7"
+    type: "npm:^2.7.2"
+    uni-global: "npm:^1.0.0"
+    uuid: "npm:^8.3.2"
+    write-file-atomic: "npm:^4.0.2"
+  checksum: b0f507e9f5b76b63df2aa5e94248a212129249a27128bf9340ca73bae5bf17b51c01e4ec40d542ea31defb80b4b85e9d59b7a180b9afa5ea383c2d18dcf25dca
   languageName: node
   linkType: hard
 
@@ -9824,7 +9865,7 @@ __metadata:
     "@redwoodjs/api": "npm:6.3.2-next.37"
     "@redwoodjs/auth-dbauth-api": "npm:6.3.2-next.37"
     "@redwoodjs/graphql-server": "npm:6.3.2-next.37"
-    serverless: "npm:3.35.2"
+    serverless: "npm:3.36.0"
   languageName: unknown
   linkType: soft
 
@@ -23273,7 +23314,7 @@ __metadata:
     "@vercel/nft": "npm:0.24.3"
     archiver: "npm:5.3.1"
     fs-extra: "npm:10.0.0"
-    serverless: "npm:3.35.2"
+    serverless: "npm:3.36.0"
     serverless-lift: "npm:1.28.0"
   languageName: unknown
   linkType: soft
@@ -23673,11 +23714,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serverless@npm:3.35.2":
-  version: 3.35.2
-  resolution: "serverless@npm:3.35.2"
+"serverless@npm:3.36.0":
+  version: 3.36.0
+  resolution: "serverless@npm:3.36.0"
   dependencies:
-    "@serverless/dashboard-plugin": "npm:^7.0.2"
+    "@serverless/dashboard-plugin": "npm:^7.1.0"
     "@serverless/platform-client": "npm:^4.4.0"
     "@serverless/utils": "npm:^6.13.1"
     abort-controller: "npm:^3.0.0"
@@ -23736,7 +23777,7 @@ __metadata:
   bin:
     serverless: bin/serverless.js
     sls: bin/serverless.js
-  checksum: 8c0/37353f70154a50fe324ab47c78365554039da55b7b6f01852679dee60169aca7e41401536cc728bb50d3548ce9d5b2ba3d72355ee85df34a3922c80526c05b12
+  checksum: 38108dd44e087ef9b8cbaa933250e61dd3207127e7eee403faaca77a9ac52db2d4fbdbab220a677f1f0172a71a993a80b445ff291b2acd21ed7eceec8ca1790d
   languageName: node
   linkType: hard
 
@@ -26471,7 +26512,7 @@ __metadata:
     prop-types: "npm:15.8.1"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
-    serverless: "npm:3.35.2"
+    serverless: "npm:3.36.0"
     tailwindcss: "npm:3.3.3"
   languageName: unknown
   linkType: soft
