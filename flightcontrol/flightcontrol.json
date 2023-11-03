@@ -12,6 +12,7 @@
           "id": "redwood-api",
           "name": "Redwood API",
           "type": "fargate",
+          "buildType": "nixpacks",
           "cpu": 0.25,
           "memory": 0.5,
           "port": 8911,
@@ -30,6 +31,7 @@
           "id": "redwood-web",
           "name": "Redwood Web",
           "type": "static",
+          "buildType": "nixpacks",
           "singlePageApp": true,
           "installCommand": "yarn set version stable && cd flightcontrol && NODE_ENV=development yarn install --immutable",
           "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol web",
@@ -38,7 +40,7 @@
             "REDWOOD_API_URL": {
               "fromService": { "id": "redwood-api", "value": "origin" }
             }
-          }          
+          }
         }
       ]
     }
