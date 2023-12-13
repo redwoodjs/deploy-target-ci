@@ -9719,13 +9719,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/nft@npm:0.24.4":
-  version: 0.24.4
-  resolution: "@vercel/nft@npm:0.24.4"
+"@vercel/nft@npm:0.26.0":
+  version: 0.26.0
+  resolution: "@vercel/nft@npm:0.26.0"
   dependencies:
     "@mapbox/node-pre-gyp": "npm:^1.0.5"
     "@rollup/pluginutils": "npm:^4.0.0"
     acorn: "npm:^8.6.0"
+    acorn-import-attributes: "npm:^1.9.2"
     async-sema: "npm:^3.1.1"
     bindings: "npm:^1.4.0"
     estree-walker: "npm:2.0.2"
@@ -9736,7 +9737,7 @@ __metadata:
     resolve-from: "npm:^5.0.0"
   bin:
     nft: out/cli.js
-  checksum: 1a845a8c1587d0595d2981a750b1f579ae99c11db821b8530129c7f8b45c5d059993244b697baaf5ccd537641c0038bd1768534f302ef46f97db981833172109
+  checksum: 71c8183ec36c8f0271af1c2437e3eb9e5a9b87923c18d4dba642da44c052d57737b7b6250534195bfec059e5a9eb3bd802144ec14e4d33f50c65918e724830a7
   languageName: node
   linkType: hard
 
@@ -10426,6 +10427,15 @@ __metadata:
   peerDependencies:
     acorn: ^8
   checksum: 8c0/3b4a194e128efdc9b86c2b1544f623aba4c1aa70d638f8ab7dc3971a5b4aa4c57bd62f99af6e5325bb5973c55863b4112e708a6f408bad7a138647ca72283afe
+  languageName: node
+  linkType: hard
+
+"acorn-import-attributes@npm:^1.9.2":
+  version: 1.9.2
+  resolution: "acorn-import-attributes@npm:1.9.2"
+  peerDependencies:
+    acorn: ^8
+  checksum: adbe756dcd3479368e4aa2100d03d5a836958635a4a6ca33e0916c45a4f1ea11aaec33564cdedc11fa3037bd46c3cdda91f703c79f1413a874af6b18a87753aa
   languageName: node
   linkType: hard
 
@@ -24785,7 +24795,7 @@ __metadata:
   dependencies:
     "@redwoodjs/cli-storybook": "npm:6.5.2-next.14"
     "@redwoodjs/core": "npm:6.5.2-next.14"
-    "@vercel/nft": "npm:0.24.4"
+    "@vercel/nft": "npm:0.26.0"
     archiver: "npm:5.3.1"
     fs-extra: "npm:10.0.0"
     serverless: "npm:3.38.0"
