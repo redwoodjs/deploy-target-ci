@@ -47,7 +47,7 @@ jobs:
 
       - name: Upload file status_deploy.txt as an artifact
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pass_status_deploy_job
           path: ./status_deploy.txt
