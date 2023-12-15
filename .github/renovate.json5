@@ -8,7 +8,10 @@
     "yarnDedupeHighest"
   ],
 
-  "extends": ["config:base", ":disableRateLimiting"],
+  "extends": [
+    "config:base",
+    ":disableRateLimiting"
+  ],
 
   "semanticCommits": "disabled",
   "rebaseWhen": "conflicted",
@@ -19,12 +22,16 @@
   "packageRules": [
     {
       "groupName": "Redwood",
-      "matchPackagePatterns": ["^@redwoodjs/"],
+      "matchPackagePatterns": [
+        "^@redwoodjs/"
+      ],
 
       "followTag": "next",
       "ignoreUnstable": false,
 
-      "labels": ["automerge"]
+      "labels": [
+        "automerge"
+      ]
     }    
   ],
 
@@ -40,11 +47,11 @@
 
     "humanize-string",
 
-    "prettier-plugin-tailwindcss"
+    "prettier-plugin-tailwindcss",
 
     "prop-types",
 
     "react",
-    "react-dom",
+    "react-dom"
   ]
 }
