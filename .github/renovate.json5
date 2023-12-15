@@ -1,5 +1,12 @@
+// Renovate supports JSON5 (see https://docs.renovatebot.com/configuration-options/#configuration-options)
+// which allows comments (finally). See https://json5.org/.
+
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "postUpdateOptions": [
+    "yarnDedupeHighest"
+  ],
 
   "extends": ["config:base", ":disableRateLimiting"],
 
@@ -11,33 +18,33 @@
 
   "packageRules": [
     {
-      "ignoreUnstable": false,
-      "packageNames": [
-        "@redwoodjs/core",
-        "@redwoodjs/forms",
-        "@redwoodjs/router",
-        "@redwoodjs/web",
-        "@redwoodjs/api",
-        "@redwoodjs/graphql-server",
-        "@redwoodjs/auth-dbauth-api",
-        "@redwoodjs/auth-dbauth-web",
-        "@redwoodjs/vite",
-        "@redwoodjs/cli-storybook"
-      ],
+      "groupName": "Redwood",
+      "matchPackagePatterns": ["^@redwoodjs/"],
+
       "followTag": "next",
+      "ignoreUnstable": false,
+
       "labels": ["automerge"]
     }    
   ],
 
+  // See https://github.com/renovatebot/renovate/discussions/26080.
   "ignoreDeps": [
     "@netlify/zip-it-and-ship-it",
+
+    "archiver",
+
+    "fs-extra",
+
+    "node",
+
+    "humanize-string",
+
+    "prettier-plugin-tailwindcss"
+
     "prop-types",
+
     "react",
     "react-dom",
-    "archiver",
-    "fs-extra",
-    "node",
-    "humanize-string",
-    "prettier-plugin-tailwindcss"
   ]
 }
