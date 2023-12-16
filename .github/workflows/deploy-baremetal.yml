@@ -3,7 +3,10 @@ name: 🤘 Deploy Baremetal
 on:
   push:
     branches: [main]
-    paths: ['baremetal/**']
+    paths: [
+      'baremetal/**',
+      '.github/workflows/deploy-baremetal.yml'
+    ]
 
 jobs:
   deploy-baremetal:

@@ -3,7 +3,10 @@ name: 🍰 Deploy Layer0
 on:
   push:
     branches: [main]
-    paths: ['layer0/**']
+    paths: [
+      'layer0/**',
+      '.github/workflows/deploy-layer0.yml'
+    ]
 
 jobs:
   deploy-layer0:

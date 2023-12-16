@@ -3,7 +3,10 @@ name: Deploy Serverless AWS
 on:
   push:
     branches: [main]
-    paths: ['serverless-aws/**']
+    paths: [
+      'serverless-aws/**',
+      '.github/workflows/deploy-serverless-aws.yml'
+    ]
 
 jobs:
   deploy-serverless-aws:
