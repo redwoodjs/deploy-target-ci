@@ -5,19 +5,17 @@ api:
   url_path: /api
 
   prod:
-    command: ["node_modules/.bin/rw-server", "api", "--apiRootPath=/api"]
-    dockerfile: Dockerfile.api
+    command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "serve", "api", "--apiRootPath=/api"]
 
   dev:
-    command: ["yarn", "rw", "dev"]
-    dockerfile: Dockerfile.dev
+    command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "dev", "api", "--apiRootPath=/api"]
 
   local_packages: ["node_modules"]
 
   system:
     cpu: 2
     memory: 2G
-    health_check: "/health"
+    health_check: "/api/health"
 
   resources:
     - name: coherence-db
@@ -26,22 +24,20 @@ api:
       type: database
       adapter: postgresql
 
-  migration: [ "npx", "prisma", "migrate", "deploy", "--schema=api/db/schema.prisma" ]
-  # seed: [ "npx", "prisma", "db", "seed", "--schema=api/db/schema.prisma" ]
+  migration: ["yarn", "rw", "prisma", "migrate", "deploy"]
 
 web:
   type: frontend
   repo_path: coherence
+
+  build: ["yarn", "rw", "build", "web", "--no-prerender"]
   assets_path: web/dist
 
   prod:
-    dockerfile: Dockerfile.web
-
-  build: ["yarn", "rw", "build", "web", "--no-prerender"]
+    command: ["yarn", "rw", "serve", "web"]
 
   dev:
-    command: ["yarn", "rw", "dev"]
-    dockerfile: Dockerfile.dev
+    command: ["yarn", "rw", "dev", "web", "--fwd=\\"--allowed-hosts all\\""]
 
   local_packages: ["node_modules"]
 
