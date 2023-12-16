@@ -24,7 +24,7 @@ api:
       type: database
       adapter: postgresql
 
-  migration: ["yarn", "rw", "prisma", "migrate", "deploy", "&&", "yarn", "rw", "prisma", "db", "seed"]
+  migration: ["yarn", "rw", "prisma", "generate", "&&", "yarn", "rw", "prisma", "db", "seed"]
 
 web:
   type: frontend

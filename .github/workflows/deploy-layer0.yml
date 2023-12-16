@@ -63,12 +63,12 @@ jobs:
               jq -r .${{ needs.deploy-layer0.result }}
           )
 
-          echo $RW_DEPLOY_STATUS >> $GITHUB_ENV
+          echo "RW_DEPLOY_STATUS=$RW_DEPLOY_STATUS" >> $GITHUB_ENV
 
       - name: Get `deploy_commit`
         run: |
           RW_DEPLOY_COMMIT=$(echo '${{ github.event.head_commit.message }}' | awk 'NR==1 {print}')
-          echo $RW_DEPLOY_COMMIT >> $GITHUB_ENV
+          echo "RW_DEPLOY_COMMIT=$RW_DEPLOY_COMMIT" >> $GITHUB_ENV
 
       - name: 💬 Message Slack
         uses: slackapi/slack-github-action@v1
