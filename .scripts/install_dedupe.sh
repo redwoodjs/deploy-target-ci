@@ -2,7 +2,7 @@
 
 set -x -eu -o pipefail
 
-# Toggle to step through.
+# Uncomment to step through this script.
 # trap '(read -p "[$BASH_SOURCE:$LINENO] $BASH_COMMAND")' DEBUG
 
 cd ../
