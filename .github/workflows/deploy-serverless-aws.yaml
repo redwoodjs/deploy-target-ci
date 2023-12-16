@@ -3,11 +3,15 @@ name: Deploy Serverless AWS
 on:
   push:
     branches: [main]
+    paths: ['./serverless-aws/**']
 
 jobs:
-  build:
+  deploy-serverless-aws:
     if: github.repository == 'redwoodjs/deploy-target-ci'
+
+    name: Deploy Serverless AWS
     runs-on: ubuntu-latest
+
     env:
       REDWOOD_CI: 1   
       DATABASE_URL: ${{ secrets.SERVERLESS_DATABASE_URL }}
@@ -22,26 +26,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      # - name: Enable Corepack
+      #   run: corepack enable
+
+      - name: ⬢ Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+      - name: 🐈 Yarn install
+        run: yarn install --inline-builds
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
-      - uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - run: yarn install --immutable
-
-      - name: Build
+      - name: 🏗️ Build
         run: yarn rw deploy serverless --pack-only
 
-      - name: Deploy
+      - name: 🚀 Deploy
         run: yarn rw deploy serverless
  

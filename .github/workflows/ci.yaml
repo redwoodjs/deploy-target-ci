@@ -1,0 +1,42 @@
+name: 🔄 CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Cancel in-progress runs of this workflow.
+# See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-only-cancel-in-progress-jobs-or-runs-for-the-current-workflow.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env: 
+  REDWOOD_CI: 1
+
+jobs:
+  ci:
+    name: 🔄 CI
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        project: [
+          './baremetal',
+          './coherence',
+          './flightcontrol',
+          './layer0',
+          './netlify',
+          './render-postgres',
+          './serverless-aws',
+          './vercel',
+        ]
+      fail-fast: false
+
+    steps:
+      - name: 🔄 CI / ${{ matrix.project }}
+        uses: redwoodjs/project-ci-action@main
+        with:
+          project-directory: ${{ matrix.project }}
+          run-lint: 'no'
