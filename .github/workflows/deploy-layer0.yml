@@ -76,8 +76,8 @@ jobs:
           payload: |
             {
               "deploy_target": "Layer0 🍰",
-              "deploy_status": "$RW_DEPLOY_STATUS",
-              "deploy_commit": "$RW_DEPLOY_COMMIT"
+              "deploy_status": ${{ env.RW_DEPLOY_STATUS }},
+              "deploy_commit": ${{ env.RW_DEPLOY_COMMIT }}
             }            
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
