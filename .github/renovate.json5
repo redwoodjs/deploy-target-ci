@@ -3,21 +3,20 @@
 
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-
-  "postUpdateOptions": [
-    "yarnDedupeHighest"
-  ],
+  "configMigration": true,
 
   "extends": [
-    "config:base",
+    "config:recommended"
     ":disableRateLimiting"
   ],
 
-  "semanticCommits": "disabled",
-  "rebaseWhen": "conflicted",
-  "rangeStrategy": "pin",
   "automerge": true,
-  "prHourlyLimit": 0,
+  "postUpdateOptions": [
+    "yarnDedupeHighest"
+  ],
+  "rangeStrategy": "pin",
+  "rebaseWhen": "conflicted",
+  "semanticCommits": "disabled",
 
   "packageRules": [
     {
@@ -27,30 +26,18 @@
       ],
 
       "followTag": "next",
-      "ignoreUnstable": false,
-
-      "labels": [
-        "automerge"
-      ]
+      "ignoreUnstable": false
     }    
   ],
 
-  // See https://github.com/renovatebot/renovate/discussions/26080.
   "ignoreDeps": [
     "@netlify/zip-it-and-ship-it",
-
     "archiver",
-
     "fs-extra",
-
     "node",
-
     "humanize-string",
-
     "prettier-plugin-tailwindcss",
-
     "prop-types",
-
     "react",
     "react-dom"
   ]

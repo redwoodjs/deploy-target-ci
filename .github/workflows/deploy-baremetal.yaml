@@ -1,15 +1,17 @@
-name: Deploy baremetal
+name: 🤘 Deploy Baremetal
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
+    paths: ['./baremetal/**']
 
 jobs:
-  build-deploy:
+  deploy-baremetal:
     if: github.repository == 'redwoodjs/deploy-target-ci'
+
+    name: 🤘 Deploy Baremetal
     runs-on: ubuntu-latest
-    # env:
-      # DATABASE_URL: ${{ secrets.BAREMETAL_DATABASE_URL }}
+
     env:
       REDWOOD_CI: 1
       
@@ -20,90 +22,65 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      # - name: Enable Corepack
+      #   run: corepack enable
+
+      - name: ⬢ Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+      - name: 🐈 Yarn install
+        run: yarn install --inline-builds
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
-      - uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - run: yarn install --immutable
-
-      - name: Setup SSH Keys and known_hosts
+      - name: 🔑 Setup SSH Keys and known_hosts
         run: |
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY_BAREMETAL }}"
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
 
-      - name: Deploy
+      - name: 🚀 Deploy
         run: yarn rw deploy baremetal production
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-
-      - name: Update Deploy Job Status
-        if: always()
-        run: echo ${{ job.status }} > ../status_deploy.txt
-
-      - name: Upload file status_deploy.txt as an artifact
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: pass_status_deploy_job
-          path: status_deploy.txt          
           
-# Slack Notifications for deploy success/fail
-# https://github.com/marketplace/actions/slack-send
-  slack-notification:
-    name: Slack Notification
-    runs-on: ubuntu-latest
-    needs: build-deploy
+  message-slack:
+    needs: deploy-baremetal
     if: always()
 
+    name: 💬 Message Slack
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Download deploy status artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: pass_status_deploy_job
-
-      - name: Set the deploy status as output
-        id: deploy-status
+      - name: Get `deploy_status`
         run: |
-          echo "deploy-result=$(<status_deploy.txt)" >> $GITHUB_OUTPUT
+          RW_DEPLOY_STATUS=$(echo '{
+            "failure": "Deploy failed 🚨",
+            "success": "Deploy successful ✅",
+            "cancelled": "Deploy cancelled 🔘",
+            "skipped": "Deploy skipped 🔘"
+            }' | \
+              jq .${{ needs.deploy-baremetal.result }}
+          )
 
-      - name: Overwrite deploy status env if failure
-        if: ${{ steps.deploy-status.outputs.deploy-result == 'failure' }}
-        run: echo "DEPLOY_STATUS=Deploy FAILED 🚨" >> $GITHUB_ENV
+          echo $RW_DEPLOY_STATUS >> $GITHUB_ENV
 
-      - name: Overwrite deploy status env if success
-        if: ${{ steps.deploy-status.outputs.deploy-result == 'success' }}
-        run: echo "DEPLOY_STATUS=Deployed Successfully ✅" >> $GITHUB_ENV  
+      - name: Get `deploy_commit`
+        run: |
+          RW_DEPLOY_COMMIT=$(echo '${{ github.event.head_commit.message }}' | awk 'NR==1 {print}')
+          echo $RW_DEPLOY_COMMIT >> $GITHUB_ENV
 
-      - name: Overwrite deploy status env if something else
-        if: ${{ (steps.deploy-status.outputs.deploy-result != 'failure') &&  (steps.deploy-status.outputs.deploy-result != 'success') }}
-        run: echo "DEPLOY_STATUS=Deploy Cancelled" >> $GITHUB_ENV
-
-      - name: Prepare commit message payload
-        id: commit-message
-        run: echo "payload=$(echo '${{ github.event.head_commit.message }}' | awk 'NR==1 {print}')" >> $GITHUB_OUTPUT
-
-      - name: Slack
-        id: slack
+      - name: 💬 Message Slack
         uses: slackapi/slack-github-action@v1
         with:
           payload: |
             {
-              "deploy_target": "baremetal 🤘",
-              "deploy_status": "${{ env.DEPLOY_STATUS }}",
-              "deploy_commit": "${{ steps.commit-message.outputs.payload }}"
+              "deploy_target": "Baremetal 🤘",
+              "deploy_status": "$RW_DEPLOY_STATUS",
+              "deploy_commit": "$RW_DEPLOY_COMMIT"
             }            
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
