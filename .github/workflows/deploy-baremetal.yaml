@@ -63,7 +63,7 @@ jobs:
             "cancelled": "Deploy cancelled 🔘",
             "skipped": "Deploy skipped 🔘"
             }' | \
-              jq .${{ needs.deploy-baremetal.result }}
+              jq -r .${{ needs.deploy-baremetal.result }}
           )
 
           echo $RW_DEPLOY_STATUS >> $GITHUB_ENV

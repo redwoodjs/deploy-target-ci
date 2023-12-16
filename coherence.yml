@@ -37,7 +37,7 @@ web:
     command: ["yarn", "rw", "serve", "web"]
 
   dev:
-    command: ["yarn", "rw", "dev", "web", "--fwd=\\"--allowed-hosts all\\""]
+    command: ["yarn", "rw", "dev", "web", "--fwd=\"--allowed-hosts all\""]
 
   local_packages: ["node_modules"]
 

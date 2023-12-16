@@ -57,7 +57,7 @@ jobs:
             "cancelled": "Deploy cancelled 🔘",
             "skipped": "Deploy skipped 🔘"
             }' | \
-              jq .${{ needs.deploy-layer0.result }}
+              jq -r .${{ needs.deploy-layer0.result }}
           )
 
           echo $RW_DEPLOY_STATUS >> $GITHUB_ENV
