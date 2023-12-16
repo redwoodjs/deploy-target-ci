@@ -81,7 +81,7 @@ export default async () => {
 
     // Note: if using PostgreSQL, using `createMany` to insert multiple records is much faster
     // @see: https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany
-    Promise.all(
+    await Promise.all(
       //
       // Change to match your data model and seeding needs
       //
@@ -95,14 +95,14 @@ export default async () => {
     // and associated `salt` to their record. Here's how to create them using
     // the same algorithm that dbAuth uses internally:
     //
-    //   import { hashPassword } from '@redwoodjs/auth-providers-api'
+    //   import { hashPassword } from '@redwoodjs/auth-dbauth-api'
     //
     //   const users = [
     //     { name: 'john', email: 'john@example.com', password: 'secret1' },
     //     { name: 'jane', email: 'jane@example.com', password: 'secret2' }
     //   ]
     //
-    //   for (user of users) {
+    //   for (const user of users) {
     //     const [hashedPassword, salt] = hashPassword(user.password)
     //     await db.user.create({
     //       data: {
