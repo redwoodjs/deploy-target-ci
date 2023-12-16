@@ -23,7 +23,7 @@ jobs:
         working-directory: ./baremetal
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # - name: Enable Corepack
       #   run: corepack enable
@@ -35,8 +35,6 @@ jobs:
 
       - name: 🐈 Yarn install
         run: yarn install --inline-builds
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
 
       - name: 🔑 Setup SSH Keys and known_hosts
         run: |
@@ -82,8 +80,8 @@ jobs:
           payload: |
             {
               "deploy_target": "Baremetal 🤘",
-              "deploy_status": ${{ env.RW_DEPLOY_STATUS }},
-              "deploy_commit": ${{ env.RW_DEPLOY_COMMIT }}
+              "deploy_status": "${{ env.RW_DEPLOY_STATUS }}",
+              "deploy_commit": "${{ env.RW_DEPLOY_COMMIT }}"
             }            
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
