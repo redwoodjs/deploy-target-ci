@@ -3,7 +3,7 @@ name: 🍰 Deploy Layer0
 on:
   push:
     branches: [main]
-    paths: ['./layer0/**']
+    paths: ['layer0/**']
 
 jobs:
   deploy-layer0:
