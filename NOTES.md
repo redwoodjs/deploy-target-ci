@@ -18,3 +18,5 @@ Expect them to be incomplete.
   https://github.com/redwoodjs/deploy-target-ci/assets/32992335/98730db3-86d3-49fd-b39d-95fc18c90422
 
 - when adding new deploy target CI projects (e.g. fly), we'd copy the test project from the redwood monorepo. so the absence of pages like "DoublePage" in baremetal etc. is going to be overhead. maybe we should add it then.
+
+- i think, for automerge to work, we can't require that prs be up to date to be merged and tell renovate to only rebase when conflicted
