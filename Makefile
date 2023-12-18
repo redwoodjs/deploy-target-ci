@@ -2,17 +2,41 @@ SCRIPTS_DIR := .scripts
 
 clean:
 	git clean -fxd -e .env
+	psql -t -c "SELECT datname FROM pg_database WHERE datname LIKE 'deploy-target-%' AND datistemplate = false;" | \
+		xargs dropdb
 
 install-dedupe:
 	cd $(SCRIPTS_DIR) && ./install_dedupe.sh
 
-local-ci:
+ci:
 	cd $(SCRIPTS_DIR) && ./local_ci.sh
 
+# Open a file across all deploy target CI projects:
+# 
 # ```
 # make open FILE=.env.defaults
 # ```
 open:
 	find . -name '$(FILE)' | xargs code
 
-# TODO: diff
+# Diff a deploy target CI project with the test project.
+# Requires [Beyond Compare](https://www.scootersoftware.com).
+#
+# ```
+# make diff COMPARE_TARGET=(test-project|crwa) PROJECT=./baremetal
+# ```
+diff:
+	cd $(SCRIPTS_DIR) && ./diff.sh $(COMPARE_TARGET) $(PROJECT)
+
+# Gets a project into working shape:
+#
+# ```
+# make workon PROJECT=baremetal
+# cd baremetal
+# yarn rw dev
+# ```
+workon: clean
+	cd $(PROJECT) && \
+		yarn install && \
+		yarn rw prisma migrate dev && \
+		echo "SESSION_SECRET=$$(yarn rw g secret --raw)" > .env

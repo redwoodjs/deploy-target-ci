@@ -1,7 +1,7 @@
-# Deploy target CI
+# Deploy Target CI
 
-Redwood's Deploy target CI.
-End to end tests for our deploy providers using the test project.
+Redwood's deploy target CI.
+End to end tests for our deploy targets using the test project.
 We test every `@next` release.
 
 | Target                      | Preview                                                                     |
@@ -12,9 +12,6 @@ We test every `@next` release.
 | Layer0                      | https://redwoodjs-redwoodjs-deploy-target-ci-default.layer0-limelight.link/ |
 | Netlify                     | https://rwjs-deploy-target-ci.netlify.app                                   |
 | Render                      | https://render-postgres-web.onrender.com                                    |
-| Serverless AWS (Deprecated) | https://d1nqrl4z14qxd1.cloudfront.net                                       |
 | Vercel                      | https://rwjs-deploy-target-ci.vercel.app                                    |
 
-`heroku` and `massdriver` aren't set up yet.
-
-See the Makefile or the GitHub workflows for more details.
+See the [Makefile](./Makefile) or the [GitHub workflows](./.github/workflows) for more details.
