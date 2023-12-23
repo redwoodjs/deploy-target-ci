@@ -39,4 +39,4 @@ jobs:
         uses: redwoodjs/project-ci-action@main
         with:
           project-directory: ${{ matrix.project }}
-          run-lint: 'no'
+          run-lint: false
