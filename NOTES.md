@@ -20,3 +20,9 @@ Expect them to be incomplete.
 - when adding new deploy target CI projects (e.g. fly), we'd copy the test project from the redwood monorepo. so the absence of pages like "DoublePage" in baremetal etc. is going to be overhead. maybe we should add it then.
 
 - i think, for automerge to work, we can't require that prs be up to date to be merged and tell renovate to only rebase when conflicted
+
+- there seems to be a bug in vercel when it comes to enabling corepack and configuring the root directory:
+
+  > Warning: Could not enable corepack because package.json is missing "packageManager" property
+
+  it doesn't seem to to be looking at the root directory's `package.json`. i've gotten around it for now by adding a `package.json` to the root directory with the `packageManager` property.
