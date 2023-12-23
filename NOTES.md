@@ -26,3 +26,9 @@ Expect them to be incomplete.
   > Warning: Could not enable corepack because package.json is missing "packageManager" property
 
   it doesn't seem to to be looking at the root directory's `package.json`. i've gotten around it for now by adding a `package.json` to the root directory with the `packageManager` property.
+
+- after a lot of trial and error, i've got flightcontrol working. it required both `NIXPACKS_VERSION=1.18.0` and `corepack enable` in the `installCommand`:
+
+  ```json
+  "installCommand": "cd flightcontrol && corepack enable && yarn install",
+  ```
