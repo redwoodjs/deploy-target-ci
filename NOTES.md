@@ -32,3 +32,5 @@ Expect them to be incomplete.
   ```json
   "installCommand": "cd flightcontrol && corepack enable && yarn install",
   ```
+
+  update on this: coherence's nixpacks version is 1.20.0 and it just seems to work. i tried that on flightcontrol, that is just setting nixpacks version to 1.20.0 but not corepack enable, and it didn't work. it could be that coherence handles monorepos better
