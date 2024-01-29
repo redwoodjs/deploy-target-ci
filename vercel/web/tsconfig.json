@@ -7,6 +7,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "baseUrl": "./",
+    "skipLibCheck": false,
     "rootDirs": [
       "./src",
       "../.redwood/types/mirror/web/src",
@@ -24,12 +25,13 @@
       "types/*": ["./types/*", "../types/*"],
       "@redwoodjs/testing": ["../node_modules/@redwoodjs/testing/web"]
     },
-    "typeRoots": ["../node_modules/@types", "./node_modules/@types"],
-    "types": ["jest", "@testing-library/jest-dom"],
-    "jsx": "preserve",
+    "typeRoots": ["../node_modules/@types", "./node_modules/@types", "../node_modules/@testing-library"],
+    "types": ["jest", "jest-dom"],
+    "jsx": "preserve"
   },
   "include": [
     "src",
+    "config",
     "../.redwood/types/includes/all-*",
     "../.redwood/types/includes/web-*",
     "../types",
