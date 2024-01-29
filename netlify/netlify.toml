@@ -3,6 +3,10 @@
   publish = "web/dist"
   functions = "api/dist/functions"
 
+[build.environment]
+    NODE_VERSION = "20"
+
+
 [dev]
   # To use [Netlify Dev](https://www.netlify.com/products/dev/),
   # install netlify-cli from https://docs.netlify.com/cli/get-started/#installation

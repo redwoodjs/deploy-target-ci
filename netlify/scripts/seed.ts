@@ -48,13 +48,17 @@ export default async () => {
       },
     ]
 
-    await Promise.all(
-      posts.map(async (post) => {
-        const newPost = await db.post.create({ data: post })
+    if ((await db.post.count()) === 0) {
+      await Promise.all(
+        posts.map(async (post) => {
+          const newPost = await db.post.create({ data: post })
 
-        console.log(newPost)
-      })
-    )
+          console.log(newPost)
+        })
+      )
+    } else {
+      console.log('Posts already seeded')
+    }
   } catch (error) {
     console.error(error)
   }

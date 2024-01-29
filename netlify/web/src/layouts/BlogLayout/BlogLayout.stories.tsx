@@ -1,14 +1,13 @@
-import type { StoryObj, Meta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
 import BlogLayout from './BlogLayout'
 
-export const generated: StoryObj<typeof BlogLayout> = {
-  render: (args) => {
-    return <BlogLayout {...args} />
-  },
+const meta: Meta<typeof BlogLayout> = {
+  component: BlogLayout,
 }
 
-export default {
-  title: 'Layouts/BlogLayout',
-  component: BlogLayout,
-} as Meta<typeof BlogLayout>
+export default meta
+
+type Story = StoryObj<typeof BlogLayout>
+
+export const Primary: Story = {}
