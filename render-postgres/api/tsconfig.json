@@ -6,6 +6,7 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "skipLibCheck": false,
     "baseUrl": "./",
     "rootDirs": [
       "./src",
@@ -24,6 +25,7 @@
       "./node_modules/@types"
     ],
     "types": ["jest"],
+    "jsx": "react-jsx"
   },
   "include": [
     "src",
