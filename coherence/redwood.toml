@@ -9,8 +9,11 @@
   title = "Redwood App"
   host = "0.0.0.0"
   port = "${PORT:8910}"
-  apiUrl = "/api" # you can customise graphql and dbauth urls individually too: see https://redwoodjs.com/docs/app-configuration-redwood-toml#api-paths
-  includeEnvironmentVariables = [] # any ENV vars that should be available to the web side, see https://redwoodjs.com/docs/environment-variables#web
+  apiUrl = "/api" # You can customize graphql and dbauth urls individually too: see https://redwoodjs.com/docs/app-configuration-redwood-toml#api-paths
+  includeEnvironmentVariables = [
+    # Add any ENV vars that should be available to the web side to this array
+    # See https://redwoodjs.com/docs/environment-variables#web
+  ]
 [api]
   host = "0.0.0.0"
   port = "${PORT:8911}"
