@@ -22,26 +22,3 @@ const App = () => (
 )
 
 export default App
-
-// If this doesn't deploy, we may need to add back this config:
-//
-// ```tsx
-// const App = () => (
-//   <FatalErrorBoundary page={FatalErrorPage}>
-//     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
-//     <AuthProvider
-//          type="dbAuth"
-//          config={{ fetchConfig: { credentials: 'include' } }}
-//        >
-//          <RedwoodApolloProvider
-//            graphQLClientConfig={{
-//              httpLinkConfig: { credentials: 'include' },
-//            }}
-//          >
-//           <Routes />
-//         </RedwoodApolloProvider>
-//       </AuthProvider>
-//     </RedwoodProvider>
-//   </FatalErrorBoundary>
-// )
-// ```

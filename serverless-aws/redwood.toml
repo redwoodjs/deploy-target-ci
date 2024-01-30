@@ -8,7 +8,7 @@
 [web]
   title = "Redwood App"
   port = "${WEB_DEV_PORT:8910}"
-  apiUrl = "${API_URL:/api}"       # Set API_URL in production to the Serverless deploy endpoint of your api service, see https://redwoodjs.com/docs/deploy/serverless-deploy
+  apiUrl = "${API_URL:/api}"
   includeEnvironmentVariables = [
     # Add any ENV vars that should be available to the web side to this array
     # See https://redwoodjs.com/docs/environment-variables#web

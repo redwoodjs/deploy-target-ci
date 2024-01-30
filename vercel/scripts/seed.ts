@@ -48,13 +48,17 @@ export default async () => {
       },
     ]
 
-    await Promise.all(
-      posts.map(async (post) => {
-        const newPost = await db.post.create({ data: post })
+    if ((await db.post.count()) === 0) {
+      await Promise.all(
+        posts.map(async (post) => {
+          const newPost = await db.post.create({ data: post })
 
-        console.log(newPost)
-      })
-    )
+          console.log(newPost)
+        })
+      )
+    } else {
+      console.log('Posts already seeded')
+    }
   } catch (error) {
     console.error(error)
   }
@@ -79,17 +83,21 @@ export default async () => {
       "\nUsing the default './scripts/seed.{js,ts}' template\nEdit the file to add seed data\n"
     )
 
-    // Note: if using PostgreSQL, using `createMany` to insert multiple records is much faster
-    // @see: https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany
-    await Promise.all(
-      //
-      // Change to match your data model and seeding needs
-      //
-      data.map(async (data: Prisma.UserExampleCreateArgs['data']) => {
-        const record = await db.userExample.create({ data })
-        console.log(record)
-      })
-    )
+    if ((await db.userExample.count()) === 0) {
+      // Note: if using PostgreSQL, using `createMany` to insert multiple records is much faster
+      // @see: https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany
+      await Promise.all(
+        //
+        // Change to match your data model and seeding needs
+        //
+        data.map(async (data: Prisma.UserExampleCreateArgs['data']) => {
+          const record = await db.userExample.create({ data })
+          console.log(record)
+        })
+      )
+    } else {
+      console.log('Users already seeded')
+    }
 
     // If using dbAuth and seeding users, you'll need to add a `hashedPassword`
     // and associated `salt` to their record. Here's how to create them using

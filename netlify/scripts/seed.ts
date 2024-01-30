@@ -20,11 +20,11 @@ export default async () => {
       },
     ]
 
-    await Promise.all(
-      users.map(async (user) => {
-        const newUser = await db.user.create({ data: user })
-      })
-    )
+    if ((await db.user.count()) === 0) {
+      await Promise.all(users.map((user) => db.user.create({ data: user })))
+    } else {
+      console.log('Users already seeded')
+    }
   } catch (error) {
     console.error(error)
   }
@@ -83,30 +83,34 @@ export default async () => {
       "\nUsing the default './scripts/seed.{js,ts}' template\nEdit the file to add seed data\n"
     )
 
-    // Note: if using PostgreSQL, using `createMany` to insert multiple records is much faster
-    // @see: https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany
-    Promise.all(
-      //
-      // Change to match your data model and seeding needs
-      //
-      data.map(async (data: Prisma.UserExampleCreateArgs['data']) => {
-        const record = await db.userExample.create({ data })
-        console.log(record)
-      })
-    )
+    if ((await db.userExample.count()) === 0) {
+      // Note: if using PostgreSQL, using `createMany` to insert multiple records is much faster
+      // @see: https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany
+      await Promise.all(
+        //
+        // Change to match your data model and seeding needs
+        //
+        data.map(async (data: Prisma.UserExampleCreateArgs['data']) => {
+          const record = await db.userExample.create({ data })
+          console.log(record)
+        })
+      )
+    } else {
+      console.log('Users already seeded')
+    }
 
     // If using dbAuth and seeding users, you'll need to add a `hashedPassword`
     // and associated `salt` to their record. Here's how to create them using
     // the same algorithm that dbAuth uses internally:
     //
-    //   import { hashPassword } from '@redwoodjs/auth-providers-api'
+    //   import { hashPassword } from '@redwoodjs/auth-dbauth-api'
     //
     //   const users = [
     //     { name: 'john', email: 'john@example.com', password: 'secret1' },
     //     { name: 'jane', email: 'jane@example.com', password: 'secret2' }
     //   ]
     //
-    //   for (user of users) {
+    //   for (const user of users) {
     //     const [hashedPassword, salt] = hashPassword(user.password)
     //     await db.user.create({
     //       data: {
