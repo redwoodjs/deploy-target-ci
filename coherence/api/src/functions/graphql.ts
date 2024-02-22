@@ -22,6 +22,8 @@ export const handler = createGraphQLHandler({
   sdls,
   services,
 
+  allowGraphiQL: true,
+
   realtime,
 
   onException: () => {
