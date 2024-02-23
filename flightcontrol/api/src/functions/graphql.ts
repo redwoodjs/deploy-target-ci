@@ -8,20 +8,27 @@ import services from 'src/services/**/*.{js,ts}'
 import { cookieName, getCurrentUser } from 'src/lib/auth'
 import { db } from 'src/lib/db'
 import { logger } from 'src/lib/logger'
+import { realtime } from 'src/lib/realtime'
 
 const authDecoder = createAuthDecoder(cookieName)
 
 export const handler = createGraphQLHandler({
   authDecoder,
   getCurrentUser,
+
   loggerConfig: { logger, options: {} },
+
   directives,
   sdls,
   services,
+
   cors: {
     origin: [process.env.REDWOOD_WEB_URL],
     credentials: true,
   },
+
+  realtime,
+
   onException: () => {
     // Disconnect from your database with an unhandled exception.
     db.$disconnect()
