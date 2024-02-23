@@ -5321,7 +5321,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/cli@npm:7.0.3-next.10+b6eace21c":
+"@redwoodjs/cli@npm:7.0.3-next.10":
   version: 7.0.3-next.10
   resolution: "@redwoodjs/cli@npm:7.0.3-next.10"
   dependencies:
@@ -5384,6 +5384,72 @@ __metadata:
     rw: dist/index.js
     rwfw: dist/rwfw.js
   checksum: 10c0/0480f3d3cf5d70df4310f92afe12168e2bef6418d90eb37ae20b250a6fbc6b7d19aebd4a5ce326a90efc771ec08f651cac7660732cccf8c2e8fc8499d9dcd7f6
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/cli@patch:@redwoodjs/cli@npm%3A7.0.3-next.10#~/.yarn/patches/@redwoodjs-cli-npm-7.0.3-next.10-aec0f35148.patch":
+  version: 7.0.3-next.10
+  resolution: "@redwoodjs/cli@patch:@redwoodjs/cli@npm%3A7.0.3-next.10#~/.yarn/patches/@redwoodjs-cli-npm-7.0.3-next.10-aec0f35148.patch::version=7.0.3-next.10&hash=d9994b"
+  dependencies:
+    "@babel/runtime-corejs3": "npm:7.23.9"
+    "@iarna/toml": "npm:2.2.5"
+    "@opentelemetry/api": "npm:1.7.0"
+    "@opentelemetry/core": "npm:1.18.1"
+    "@opentelemetry/exporter-trace-otlp-http": "npm:0.45.1"
+    "@opentelemetry/resources": "npm:1.18.1"
+    "@opentelemetry/sdk-trace-node": "npm:1.18.1"
+    "@opentelemetry/semantic-conventions": "npm:1.18.1"
+    "@prisma/internals": "npm:5.9.1"
+    "@redwoodjs/api-server": "npm:7.0.3-next.10+b6eace21c"
+    "@redwoodjs/cli-helpers": "npm:7.0.3-next.10+b6eace21c"
+    "@redwoodjs/fastify-web": "npm:7.0.3-next.10+b6eace21c"
+    "@redwoodjs/internal": "npm:7.0.3-next.10+b6eace21c"
+    "@redwoodjs/prerender": "npm:7.0.3-next.10+b6eace21c"
+    "@redwoodjs/project-config": "npm:7.0.3-next.10+b6eace21c"
+    "@redwoodjs/structure": "npm:7.0.3-next.10+b6eace21c"
+    "@redwoodjs/telemetry": "npm:7.0.3-next.10+b6eace21c"
+    "@redwoodjs/web-server": "npm:7.0.3-next.10+b6eace21c"
+    archiver: "npm:6.0.1"
+    boxen: "npm:5.1.2"
+    camelcase: "npm:6.3.0"
+    chalk: "npm:4.1.2"
+    ci-info: "npm:4.0.0"
+    concurrently: "npm:8.2.2"
+    configstore: "npm:3.1.5"
+    core-js: "npm:3.35.1"
+    cross-env: "npm:7.0.3"
+    decamelize: "npm:5.0.1"
+    dotenv-defaults: "npm:5.0.2"
+    enquirer: "npm:2.4.1"
+    envinfo: "npm:7.11.0"
+    execa: "npm:5.1.1"
+    fast-glob: "npm:3.3.2"
+    fs-extra: "npm:11.2.0"
+    humanize-string: "npm:2.1.0"
+    jscodeshift: "npm:0.15.0"
+    latest-version: "npm:5.1.0"
+    listr2: "npm:6.6.1"
+    lodash: "npm:4.17.21"
+    param-case: "npm:3.0.4"
+    pascalcase: "npm:1.0.0"
+    pluralize: "npm:8.0.0"
+    portfinder: "npm:1.0.32"
+    prettier: "npm:2.8.8"
+    prisma: "npm:5.9.1"
+    prompts: "npm:2.4.2"
+    rimraf: "npm:5.0.5"
+    semver: "npm:7.5.4"
+    string-env-interpolation: "npm:1.0.1"
+    systeminformation: "npm:5.21.20"
+    terminal-link: "npm:2.1.1"
+    title-case: "npm:3.0.3"
+    uuid: "npm:9.0.1"
+    yargs: "npm:17.7.2"
+  bin:
+    redwood: dist/index.js
+    rw: dist/index.js
+    rwfw: dist/rwfw.js
+  checksum: 10c0/6c3f5c04633304dde6a604b34b5206192b3d2d416f6006aab6956ce1bc5927d7e56fe2bac938c06b86b786640fc80317a8d2dd71db5eb44dcbdd36baa10e9532
   languageName: node
   linkType: hard
 

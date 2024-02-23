@@ -1,12 +1,12 @@
 diff --git a/dist/commands/deploy/flightcontrol.js b/dist/commands/deploy/flightcontrol.js
-index 5e6c81118081393344de3f55623713e7c57459b9..6bd9aec8032c71d87435e1c63bde57ad341554fb 100644
+index 5e6c81118081393344de3f55623713e7c57459b9..ce3773dc26ab2784d586e19010ad732684cfc788 100644
 --- a/dist/commands/deploy/flightcontrol.js
 +++ b/dist/commands/deploy/flightcontrol.js
 @@ -8,18 +8,17 @@ _Object$defineProperty(exports, "__esModule", {
  exports.handler = exports.description = exports.command = exports.builder = exports.alias = void 0;
  var _path = _interopRequireDefault(require("path"));
  var _execa = _interopRequireDefault(require("execa"));
-+var _fsExtra = require("fs-extra");
++var _fsExtra = _interopRequireDefault(require("fs-extra"));
  var _terminalLink = _interopRequireDefault(require("terminal-link"));
 -var _apiCLIConfigHandler = require("@redwoodjs/api-server/dist/apiCLIConfigHandler");
  var _cliHelpers = require("@redwoodjs/cli-helpers");
@@ -68,7 +68,7 @@ index 5e6c81118081393344de3f55623713e7c57459b9..6bd9aec8032c71d87435e1c63bde57ad
 +      return;
 +    }
 +    const serverFilePath = _path.default.join(rwjsPaths.api.dist, 'server.js');
-+    const hasServerFile = _fsExtra.fs.pathExistsSync(serverFilePath);
++    const hasServerFile = _fsExtra.default.pathExistsSync(serverFilePath);
 +    if (hasServerFile) {
 +      (0, _execa.default)(`yarn node ${serverFilePath}`, execaConfig);
      } else {
