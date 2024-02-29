@@ -5,8 +5,7 @@ api:
   url_path: /api
 
   prod:
-    command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "serve", "api", "--apiRootPath=/api"]
-
+    command: ["yarn", "rw", "build", "api", "&&", "yarn", "node", "api/dist/server.js", "--apiRootPath=/api"]
   dev:
     command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "dev", "api", "--apiRootPath=/api"]
 
