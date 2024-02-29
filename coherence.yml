@@ -5,7 +5,7 @@ api:
   url_path: /api
 
   prod:
-    command: ["yarn", "rw", "build", "api", "&&", "yarn", "node", "api/dist/server.js", "--apiRootPath=/api"]
+    command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "serve", "api", "--apiRootPath=/api"]
 
   dev:
     command: ["yarn", "rw", "build", "api", "&&", "yarn", "rw", "dev", "api", "--apiRootPath=/api"]
@@ -24,7 +24,12 @@ api:
       type: database
       adapter: postgresql
 
-  migration: ["yarn", "rw", "prisma", "generate", "&&", "yarn", "rw", "prisma", "db", "seed"]
+  # If you use data migrations, use the following instead:
+  # migration: ["yarn", "rw", "prisma", "migrate", "deploy", "&&", "yarn", "rw", "data-migrate", "up"]
+  # 
+  # To seed the database, use the following instead:
+  # migration: ["yarn", "rw", "prisma", "generate", "&&", "yarn", "rw", "prisma", "db", "seed"]
+  migration: ["yarn", "rw", "prisma", "migrate", "deploy"]
 
 web:
   type: frontend
