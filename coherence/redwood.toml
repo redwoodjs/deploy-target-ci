@@ -6,6 +6,7 @@
 # https://redwoodjs.com/docs/app-configuration-redwood-toml
 
 [web]
+  host = "0.0.0.0"
   title = "Redwood App"
   port = "${PORT:8910}"
   apiUrl = "/api"
@@ -14,6 +15,7 @@
     # See https://redwoodjs.com/docs/environment-variables#web
   ]
 [api]
+  host = "0.0.0.0"
   port = "${PORT:8911}"
 [browser]
   open = true

@@ -7,8 +7,8 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/cli-storybook": "7.0.3-next.10",
-    "@redwoodjs/core": "7.0.3-next.10"
+    "@redwoodjs/cli-storybook": "7.0.5-next.27",
+    "@redwoodjs/core": "7.0.5-next.27"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
@@ -20,8 +20,5 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@4.1.0",
-  "resolutions": {
-    "@redwoodjs/cli@npm:7.0.3-next.10+b6eace21c": "patch:@redwoodjs/cli@npm%3A7.0.3-next.10#~/.yarn/patches/@redwoodjs-cli-npm-7.0.3-next.10-aec0f35148.patch"
-  }
+  "packageManager": "yarn@4.1.0"
 }

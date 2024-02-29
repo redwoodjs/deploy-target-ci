@@ -1,8 +1,8 @@
 # Deploy Target CI
 
 Redwood's deploy target CI.
-End to end tests for our deploy targets using the test project.
-We test every `@next` release.
+End-to-end tests for our deploy targets using variants of the [test project](https://github.com/redwoodjs/redwood/tree/main/__fixtures__/test-project).
+We test every `@next` release (push to the next branch).
 
 | Target                      | Preview                                                                     |
 | --------------------------- | --------------------------------------------------------------------------- |
@@ -15,3 +15,7 @@ We test every `@next` release.
 | Vercel                      | https://rwjs-deploy-target-ci.vercel.app                                    |
 
 See the [Makefile](./Makefile) or the [GitHub workflows](./.github/workflows) for more details.
+
+## Notes
+
+- The [package.json](./package.json) file in the root is a workaround for Vercel and Corepack in monorepos

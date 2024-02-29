@@ -24,7 +24,10 @@
           "healthCheckPath": "/graphql/health",
           "envVariables": {
             "REDWOOD_WEB_URL": {
-              "fromService": { "id": "redwood-web", "value": "origin" }
+              "fromService": {
+                "id": "redwood-web",
+                "value": "origin"
+              }
             }
           }
         },
@@ -39,7 +42,10 @@
           "outputDirectory": "flightcontrol/web/dist",
           "envVariables": {
             "REDWOOD_API_URL": {
-              "fromService": { "id": "redwood-api", "value": "origin" }
+              "fromService": {
+                "id": "redwood-api",
+                "value": "origin"
+              }
             }
           }
         }

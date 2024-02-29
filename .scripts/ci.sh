@@ -2,7 +2,7 @@
 
 set -x -eu -o pipefail
 # Uncomment to step through this script:
-trap '(read -p "[$BASH_SOURCE:$LINENO] $BASH_COMMAND")' DEBUG
+# trap '(read -p "[$BASH_SOURCE:$LINENO] $BASH_COMMAND")' DEBUG
 
 source ./env.sh
 

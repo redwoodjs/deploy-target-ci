@@ -25,5 +25,5 @@ services:
   type: web
   env: node
   region: oregon
-  buildCommand: cd render-postgres && corepack enable && yarn && yarn rw build api && yarn rw prisma migrate deploy
-  startCommand: cd render-postgres && yarn rw deploy render api --no-prisma --no-data-migrate
+  buildCommand: cd render-postgres && corepack enable && yarn install && yarn rw build api
+  startCommand: cd render-postgres && yarn rw deploy render api
