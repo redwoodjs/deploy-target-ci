@@ -11,7 +11,7 @@ Expect them to be incomplete.
       createRedwoodApp[create redwood app] --> testProject["__fixtures__/test-project"] --> deployCI[deploy target CI projects]
   ```
 
-- see renovate's [developer portal](https://developer.mend.io/github/redwoodjs/deploy-target-ci.) for debugging renovate.
+- see renovate's [developer portal](https://developer.mend.io/github/redwoodjs/deploy-target-ci) for debugging renovate.
 
 - quick video on using [Beyond Compare](https://www.scootersoftware.com/) to diff directories. the "Rules" button is a must:
 
