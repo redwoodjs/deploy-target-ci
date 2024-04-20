@@ -5620,15 +5620,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.11.18":
-  version: 18.18.9
-  resolution: "@types/node@npm:18.18.9"
-  dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10c0/8d58fba5eede0df009412ee188bc96f4baf340f4fafbda1bc66fb680fa775aedc88f0cb154a2455966443d9538af402fff022fb0632bddb1bd0648e5a86e5db9
-  languageName: node
-  linkType: hard
-
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
@@ -5743,15 +5734,6 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/75b9b2839970ebab3e557955b9e2b1091d87cefabee1023e566bccc093411acc4a1402f3da4fde18aca44f5b9c42fe0626afd073a2140002b9b53eb71a084e4d
-  languageName: node
-  linkType: hard
-
-"@types/ssh2@npm:^1.11.9":
-  version: 1.11.9
-  resolution: "@types/ssh2@npm:1.11.9"
-  dependencies:
-    "@types/node": "npm:^18.11.18"
-  checksum: 10c0/bc4101d132e415531edcaa6e929e5dcf8baf0d966081980c1ae1682abfda51a191d7fcbf6aaa34b7953132cd53c108e5a8afae744b6d951add60db43e3ac401f
   languageName: node
   linkType: hard
 
@@ -7202,7 +7184,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"asn1@npm:^0.2.4":
+"asn1@npm:^0.2.6":
   version: 0.2.6
   resolution: "asn1@npm:0.2.6"
   dependencies:
@@ -8072,10 +8054,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"buildcheck@npm:0.0.3":
-  version: 0.0.3
-  resolution: "buildcheck@npm:0.0.3"
-  checksum: 10c0/0fda98a7dca9d7a5edfe4e08d0ca98b440dc78695b15dfeb6ca1a695aa3a44512a0a4aa5a1d671df1d9bb33d964a9c6b1034cd3bccc9cad2c440d62bbcf4e2bf
+"buildcheck@npm:~0.0.6":
+  version: 0.0.6
+  resolution: "buildcheck@npm:0.0.6"
+  checksum: 10c0/8cbdb89f41bc484b8325f4828db4135b206a0dffb641eb6cdb2b7022483c45dd0e5aac6d820c9a67bdd2caab3a02c76d7ceec7bd9ec494b5a2270d2806b01a76
   languageName: node
   linkType: hard
 
@@ -9151,14 +9133,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cpu-features@npm:~0.0.4":
-  version: 0.0.4
-  resolution: "cpu-features@npm:0.0.4"
+"cpu-features@npm:~0.0.9":
+  version: 0.0.9
+  resolution: "cpu-features@npm:0.0.9"
   dependencies:
-    buildcheck: "npm:0.0.3"
-    nan: "npm:^2.15.0"
+    buildcheck: "npm:~0.0.6"
+    nan: "npm:^2.17.0"
     node-gyp: "npm:latest"
-  checksum: 10c0/54fde5d7f4504ec247c8afdc6a3f7b8a53e7f718667e78f7f2ff76c0608d37623b15e6ed55100e8435506109550ef14ae44267f36f9a96284c632a669024a96e
+  checksum: 10c0/e12aa8b791d2db6572d23553c2eb14dfe90c80fa69c788fcf8f2a5dc373b7ac1c99dd04292677751746cafe51a67d62eb09fd9f88502e37830fe602c7e582ca8
   languageName: node
   linkType: hard
 
@@ -15698,12 +15680,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nan@npm:^2.12.1, nan@npm:^2.15.0, nan@npm:^2.16.0":
-  version: 2.17.0
-  resolution: "nan@npm:2.17.0"
+"nan@npm:^2.12.1, nan@npm:^2.17.0, nan@npm:^2.18.0":
+  version: 2.19.0
+  resolution: "nan@npm:2.19.0"
   dependencies:
     node-gyp: "npm:latest"
-  checksum: 10c0/4a231a62dba025f4c4fa814c1e6ffeb450c5cd0852b780f19fe4ea22b86ba0f1f394406dfd628c67fb7f0987e982fa230da1fbd3632258f927b8defd7046c1ad
+  checksum: 10c0/b8d05d75f92ee9d94affa50d0aa41b6c698254c848529452d7ab67c2e0d160a83f563bfe2cbd53e077944eceb48c757f83c93634c7c9ff404c9ec1ed4e5ced1a
   languageName: node
   linkType: hard
 
@@ -15909,18 +15891,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-ssh@npm:13.1.0":
-  version: 13.1.0
-  resolution: "node-ssh@npm:13.1.0"
+"node-ssh@npm:13.2.0":
+  version: 13.2.0
+  resolution: "node-ssh@npm:13.2.0"
   dependencies:
-    "@types/ssh2": "npm:^1.11.9"
     is-stream: "npm:^2.0.0"
     make-dir: "npm:^3.1.0"
     sb-promise-queue: "npm:^2.1.0"
     sb-scandir: "npm:^3.1.0"
     shell-escape: "npm:^0.2.0"
-    ssh2: "npm:^1.11.0"
-  checksum: 10c0/243a9cc6da41d4f0709a1e9d12517a8bb98fc02dafc198b38d91fd009fabcfc7df9ce903b554a0abd24d709aa4629b92e241d5f03a0af0514ea7c7d8ac2bdd85
+    ssh2: "npm:^1.14.0"
+  checksum: 10c0/55a0f1d6fbc740625ba892ce955e8500068d1439532551047072639365e79e0e2c81a7231b64b0ef380a12fa9b5b0d882d4cab5f5382f0891be10586279b5925
   languageName: node
   linkType: hard
 
@@ -18482,7 +18463,7 @@ __metadata:
   dependencies:
     "@redwoodjs/core": "npm:7.4.3-next.10"
     "@redwoodjs/project-config": "npm:7.4.3-next.10"
-    node-ssh: "npm:13.1.0"
+    node-ssh: "npm:13.2.0"
   languageName: unknown
   linkType: soft
 
@@ -19297,20 +19278,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ssh2@npm:^1.11.0":
-  version: 1.11.0
-  resolution: "ssh2@npm:1.11.0"
+"ssh2@npm:^1.14.0":
+  version: 1.15.0
+  resolution: "ssh2@npm:1.15.0"
   dependencies:
-    asn1: "npm:^0.2.4"
+    asn1: "npm:^0.2.6"
     bcrypt-pbkdf: "npm:^1.0.2"
-    cpu-features: "npm:~0.0.4"
-    nan: "npm:^2.16.0"
+    cpu-features: "npm:~0.0.9"
+    nan: "npm:^2.18.0"
   dependenciesMeta:
     cpu-features:
       optional: true
     nan:
       optional: true
-  checksum: 10c0/f51a18287c827ee44420653ea192d60caf9962c7c43c021b63c2edb1fd133449e1f0d9f256c2da42b9141cb8644beb250998163088f84af9ef29330702c47bc3
+  checksum: 10c0/7c76888fbfa1c15660cf51086a6e5699b3c1caad516e29adb1d2a00fc1ef6b48946ca7ec811b4bb50456984967c4346115c7ddd3dbf981a1193bd1f40fa4529a
   languageName: node
   linkType: hard
 
