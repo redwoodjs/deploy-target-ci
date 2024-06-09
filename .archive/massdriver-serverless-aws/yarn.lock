@@ -4352,7 +4352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api-server@npm:7.6.4-next.39, @redwoodjs/api-server@npm:7.6.4-next.39+9bdcd83f3":
+"@redwoodjs/api-server@npm:7.6.4-next.39+9bdcd83f3":
   version: 7.6.4-next.39
   resolution: "@redwoodjs/api-server@npm:7.6.4-next.39"
   dependencies:
@@ -4384,6 +4384,41 @@ __metadata:
     rw-log-formatter: dist/logFormatter/bin.js
     rw-server: dist/bin.js
   checksum: 10c0/84b34b92d3c8e97aad89758b546c5820003dc79176c96664844224936b01f8e2b018e68c38dd1c0bba82c79753108a550b35fe6bf4ba9f0c5dc31e805795cfb7
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/api-server@npm:7.6.4-next.41":
+  version: 7.6.4-next.41
+  resolution: "@redwoodjs/api-server@npm:7.6.4-next.41"
+  dependencies:
+    "@fastify/url-data": "npm:5.4.0"
+    "@redwoodjs/context": "npm:7.6.4-next.41+b476c0355"
+    "@redwoodjs/fastify-web": "npm:7.6.4-next.41+b476c0355"
+    "@redwoodjs/project-config": "npm:7.6.4-next.41+b476c0355"
+    "@redwoodjs/web-server": "npm:7.6.4-next.41+b476c0355"
+    chalk: "npm:4.1.2"
+    chokidar: "npm:3.6.0"
+    dotenv-defaults: "npm:5.0.2"
+    fast-glob: "npm:3.3.2"
+    fast-json-parse: "npm:1.0.3"
+    fastify: "npm:4.27.0"
+    fastify-raw-body: "npm:4.3.0"
+    lodash: "npm:4.17.21"
+    pretty-bytes: "npm:5.6.0"
+    pretty-ms: "npm:7.0.1"
+    qs: "npm:6.12.1"
+    split2: "npm:4.2.0"
+    yargs: "npm:17.7.2"
+  peerDependencies:
+    "@redwoodjs/graphql-server": 7.6.3
+  peerDependenciesMeta:
+    "@redwoodjs/graphql-server":
+      optional: true
+  bin:
+    rw-api-server-watch: dist/watch.js
+    rw-log-formatter: dist/logFormatter/bin.js
+    rw-server: dist/bin.js
+  checksum: 10c0/2c93a95b9feb94e512e82beb1cf864a451ccd9d51b43f04c07d2b881119c901d8bcabb9c1937847ebdec69842f7a41a7939c8db4cb5aa3002afbaa4e0e65fc67
   languageName: node
   linkType: hard
 
@@ -4577,6 +4612,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@redwoodjs/context@npm:7.6.4-next.41+b476c0355":
+  version: 7.6.4-next.41
+  resolution: "@redwoodjs/context@npm:7.6.4-next.41"
+  checksum: 10c0/d229539946a520e5efb3cd6f12973c943bc414b2d1dfea64548e46e540b68fe52d1c70cea0a30e6fd94386ac98211ac8e32cb26dbd65043d4019de28cec8c2dc
+  languageName: node
+  linkType: hard
+
 "@redwoodjs/core@npm:7.6.4-next.39":
   version: 7.6.4-next.39
   resolution: "@redwoodjs/core@npm:7.6.4-next.39"
@@ -4680,6 +4722,19 @@ __metadata:
     "@redwoodjs/project-config": "npm:7.6.4-next.39+9bdcd83f3"
     fast-glob: "npm:3.3.2"
   checksum: 10c0/e3f38ea1a40900b2c97c5c073f2c064306002fb49192fbddeacd68fc7608626e328f73a336764f9b3815c387a832ca47daa7c24f90d44dcd1ce513ff623da6e2
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/fastify-web@npm:7.6.4-next.41+b476c0355":
+  version: 7.6.4-next.41
+  resolution: "@redwoodjs/fastify-web@npm:7.6.4-next.41"
+  dependencies:
+    "@fastify/http-proxy": "npm:9.5.0"
+    "@fastify/static": "npm:6.12.0"
+    "@fastify/url-data": "npm:5.4.0"
+    "@redwoodjs/project-config": "npm:7.6.4-next.41+b476c0355"
+    fast-glob: "npm:3.3.2"
+  checksum: 10c0/7b4696899c25b520f89dd91b4fe071042a86431da7ae3746bd0768613f1e6afa81be231f754b63b837f0346d486d5953d6768120384be0dfc9e82074e5b0403e
   languageName: node
   linkType: hard
 
@@ -4799,7 +4854,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/project-config@npm:7.6.4-next.39, @redwoodjs/project-config@npm:7.6.4-next.39+9bdcd83f3":
+"@redwoodjs/project-config@npm:7.6.4-next.39+9bdcd83f3":
   version: 7.6.4-next.39
   resolution: "@redwoodjs/project-config@npm:7.6.4-next.39"
   dependencies:
@@ -4808,6 +4863,18 @@ __metadata:
     smol-toml: "npm:1.2.1"
     string-env-interpolation: "npm:1.0.1"
   checksum: 10c0/4496bba99ef6beabdd4c0ff0f84ecbaae8d88df2302c114dc373588a629d8ce16559fafcbce899cc81979eb7f138591cabc9dcf18f2c08e0595227c8907a28a9
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/project-config@npm:7.6.4-next.41, @redwoodjs/project-config@npm:7.6.4-next.41+b476c0355":
+  version: 7.6.4-next.41
+  resolution: "@redwoodjs/project-config@npm:7.6.4-next.41"
+  dependencies:
+    deepmerge: "npm:4.3.1"
+    fast-glob: "npm:3.3.2"
+    smol-toml: "npm:1.2.1"
+    string-env-interpolation: "npm:1.0.1"
+  checksum: 10c0/0bd5e7dbcc726c5bfe03ce77744c492d65e9a68e1d56b9e858527cfa320abd81c94f6460bf8e45fd4b49d7711ac169b7619d85a7b2c27404c9a76ec512ba3f92
   languageName: node
   linkType: hard
 
@@ -4941,6 +5008,23 @@ __metadata:
   bin:
     rw-web-server: dist/bin.js
   checksum: 10c0/b1dcdcb05bb9cc85883fe39238b740bd9bea44366bc9f7fcdba73d5a012bb386da60df88706e76a1aba54801074a258940a11837475d8cfb5f106123e68c10da
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/web-server@npm:7.6.4-next.41+b476c0355":
+  version: 7.6.4-next.41
+  resolution: "@redwoodjs/web-server@npm:7.6.4-next.41"
+  dependencies:
+    "@redwoodjs/fastify-web": "npm:7.6.4-next.41+b476c0355"
+    "@redwoodjs/project-config": "npm:7.6.4-next.41+b476c0355"
+    chalk: "npm:4.1.2"
+    dotenv-defaults: "npm:5.0.2"
+    fastify: "npm:4.27.0"
+    fs-extra: "npm:11.2.0"
+    yargs: "npm:17.7.2"
+  bin:
+    rw-web-server: dist/bin.js
+  checksum: 10c0/156529c0ea8ab032593a0996d729244cf3e31b646894f25c0a0993bca49d0aa79a71c377a64a6faebc15c9c7a1ef80689466cc214b879bbfcfaa4776132ee2e9
   languageName: node
   linkType: hard
 
@@ -6787,7 +6871,7 @@ __metadata:
   resolution: "api@workspace:api"
   dependencies:
     "@redwoodjs/api": "npm:7.6.4-next.39"
-    "@redwoodjs/api-server": "npm:7.6.4-next.39"
+    "@redwoodjs/api-server": "npm:7.6.4-next.41"
     "@redwoodjs/auth-dbauth-api": "npm:7.6.4-next.39"
     "@redwoodjs/graphql-server": "npm:7.6.4-next.39"
   languageName: unknown
@@ -18350,7 +18434,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@redwoodjs/core": "npm:7.6.4-next.39"
-    "@redwoodjs/project-config": "npm:7.6.4-next.39"
+    "@redwoodjs/project-config": "npm:7.6.4-next.41"
   languageName: unknown
   linkType: soft
 
@@ -20908,7 +20992,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@redwoodjs/api-server": "npm:7.6.4-next.39"
+    "@redwoodjs/api-server": "npm:7.6.4-next.41"
     "@redwoodjs/auth-dbauth-web": "npm:7.6.4-next.39"
     "@redwoodjs/forms": "npm:7.6.4-next.39"
     "@redwoodjs/router": "npm:7.6.4-next.39"
