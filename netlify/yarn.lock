@@ -4732,29 +4732,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/auth-dbauth-api@npm:7.6.4-next.73":
-  version: 7.6.4-next.73
-  resolution: "@redwoodjs/auth-dbauth-api@npm:7.6.4-next.73"
+"@redwoodjs/auth-dbauth-api@npm:7.6.4-next.80":
+  version: 7.6.4-next.80
+  resolution: "@redwoodjs/auth-dbauth-api@npm:7.6.4-next.80"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.24.5"
-    "@redwoodjs/project-config": "npm:7.6.4-next.73+8ccdcf435"
+    "@redwoodjs/project-config": "npm:7.6.4-next.80+5a36ff7b2"
     base64url: "npm:3.0.1"
     core-js: "npm:3.37.1"
     md5: "npm:2.3.0"
     uuid: "npm:9.0.1"
-  checksum: 10c0/62e344aaa9ba9ce1fd590b4d0f379e1fab9f707874840833c4416f4fed3ebf7ca1afb78f460711ec7539d85df557bc8b4073ac93272d3a6e9aebdba78b6f7e12
+  checksum: 10c0/69fc133343ecd4f994fc925be8367208ccf34deec4a324d8b0ce38159a6ecde38e9a62b21cf2c03eb029e11a1c3f7e2ed1d4135bf5ed04430c73446c07274da4
   languageName: node
   linkType: hard
 
-"@redwoodjs/auth-dbauth-web@npm:7.6.4-next.73":
-  version: 7.6.4-next.73
-  resolution: "@redwoodjs/auth-dbauth-web@npm:7.6.4-next.73"
+"@redwoodjs/auth-dbauth-web@npm:7.6.4-next.80":
+  version: 7.6.4-next.80
+  resolution: "@redwoodjs/auth-dbauth-web@npm:7.6.4-next.80"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.24.5"
-    "@redwoodjs/auth": "npm:7.6.4-next.73+8ccdcf435"
+    "@redwoodjs/auth": "npm:7.6.4-next.80+5a36ff7b2"
     "@simplewebauthn/browser": "npm:7.4.0"
     core-js: "npm:3.37.1"
-  checksum: 10c0/3cf13803187766c52a03fe7f4a746a55dfe6d76e1b0d7cdaf5c80dbfed22319efc542cad9c8e942b6161a21ea7941372de525827546d898bf1532afc24b11ea8
+  checksum: 10c0/43609fb9d61bd3a96c2328509c04d749aca8a56765901858b97292cfe9a95c8798480095d7e197ed4910395748379423cd67cf6c0f76aeef199483fad18214d1
   languageName: node
   linkType: hard
 
@@ -4765,6 +4765,16 @@ __metadata:
     core-js: "npm:3.37.1"
     react: "npm:18.2.0"
   checksum: 10c0/7375309d24417953119546dfd0152ad01321fa3797c9e1392770027170ddd587485253b8d4b9ab8849e248a2e70ae77a16f258f19b42ff5988050e9c6f3829b8
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/auth@npm:7.6.4-next.80+5a36ff7b2":
+  version: 7.6.4-next.80
+  resolution: "@redwoodjs/auth@npm:7.6.4-next.80"
+  dependencies:
+    core-js: "npm:3.37.1"
+    react: "npm:18.2.0"
+  checksum: 10c0/ba5f811756fb2a7a6b453ff4430997debbb7457912134789fc6551cd133a5baaea81b78c392d7d26c5c70df934c9b1a93bc2131c3c9cbf556862570bc0222c03
   languageName: node
   linkType: hard
 
@@ -5114,7 +5124,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/project-config@npm:7.6.4-next.73, @redwoodjs/project-config@npm:7.6.4-next.73+8ccdcf435":
+"@redwoodjs/project-config@npm:7.6.4-next.73+8ccdcf435":
   version: 7.6.4-next.73
   resolution: "@redwoodjs/project-config@npm:7.6.4-next.73"
   dependencies:
@@ -5123,6 +5133,18 @@ __metadata:
     smol-toml: "npm:1.2.1"
     string-env-interpolation: "npm:1.0.1"
   checksum: 10c0/33500e7ae9b3e93d60f148057712dc620c3c27c83813bce267e19b6635c2b5e5ed8a32f59a2f6e4c4969daf833942e70446cc5b7738f8104eb62bcf359197dd1
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/project-config@npm:7.6.4-next.80, @redwoodjs/project-config@npm:7.6.4-next.80+5a36ff7b2":
+  version: 7.6.4-next.80
+  resolution: "@redwoodjs/project-config@npm:7.6.4-next.80"
+  dependencies:
+    deepmerge: "npm:4.3.1"
+    fast-glob: "npm:3.3.2"
+    smol-toml: "npm:1.2.1"
+    string-env-interpolation: "npm:1.0.1"
+  checksum: 10c0/1bc59ec15d0bf2a3ef93bbda008b5b7679b4bdbd847f03c942da494abc380773b44d321dbb6d74374be1260bd09073cab2269e58ff66272588731d38254112c8
   languageName: node
   linkType: hard
 
@@ -7204,7 +7226,7 @@ __metadata:
   resolution: "api@workspace:api"
   dependencies:
     "@redwoodjs/api": "npm:7.6.4-next.73"
-    "@redwoodjs/auth-dbauth-api": "npm:7.6.4-next.73"
+    "@redwoodjs/auth-dbauth-api": "npm:7.6.4-next.80"
     "@redwoodjs/graphql-server": "npm:7.6.4-next.73"
   languageName: unknown
   linkType: soft
@@ -19288,7 +19310,7 @@ __metadata:
   dependencies:
     "@netlify/zip-it-and-ship-it": "npm:9.13.0"
     "@redwoodjs/core": "npm:7.6.4-next.73"
-    "@redwoodjs/project-config": "npm:7.6.4-next.73"
+    "@redwoodjs/project-config": "npm:7.6.4-next.80"
   languageName: unknown
   linkType: soft
 
@@ -21871,7 +21893,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@redwoodjs/auth-dbauth-web": "npm:7.6.4-next.73"
+    "@redwoodjs/auth-dbauth-web": "npm:7.6.4-next.80"
     "@redwoodjs/forms": "npm:7.6.4-next.73"
     "@redwoodjs/router": "npm:7.6.4-next.73"
     "@redwoodjs/vite": "npm:7.6.4-next.73"
