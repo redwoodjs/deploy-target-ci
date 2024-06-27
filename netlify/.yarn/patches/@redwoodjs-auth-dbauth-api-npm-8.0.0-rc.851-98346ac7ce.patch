@@ -1,0 +1,19 @@
+diff --git a/dist/DbAuthHandler.js b/dist/DbAuthHandler.js
+index 8a1054f4c7e72234c129a2b3ed70dabcb1518450..bedd3d42cb951b798441106a9523efacaec36a53 100644
+--- a/dist/DbAuthHandler.js
++++ b/dist/DbAuthHandler.js
+@@ -79,6 +79,14 @@ class DbAuthHandler {
+    */
+   get _deleteSessionHeader() {
+     const deleteHeaders = new Headers();
++    
++    console.log('');
++    console.log('------');
++    console.log('_deleteSessionHeader cookie string', [`${(0, _shared.cookieName)(this.options.cookie?.name)}=`, ...this._cookieAttributes({ expires: 'now' })].join(';'));
++    console.log('')
++    console.log('_deleteSessionHeader auth-provider string', [`auth-provider=`, ...this._cookieAttributes({ expires: 'now' })].join(';'));
++    console.log('------');
++    console.log('');
+     deleteHeaders.append('set-cookie', [`${(0, _shared.cookieName)(this.options.cookie?.name)}=`, ...this._cookieAttributes({
+       expires: 'now'
+     })].join(';'));
