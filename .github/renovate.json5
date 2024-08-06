@@ -1,52 +1,43 @@
-// Renovate supports JSON5 (see https://docs.renovatebot.com/configuration-options/#configuration-options)
-// which allows comments (finally). See https://json5.org/.
-
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "configMigration": true,
-
-  "extends": [
-    "config:recommended",
-    ":disableRateLimiting"
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  configMigration: true,
+  extends: [
+    'config:recommended',
+    ':disableRateLimiting',
   ],
-
-  "automerge": true,
-  "postUpdateOptions": [
-    "yarnDedupeHighest"
+  automerge: true,
+  postUpdateOptions: [
+    'yarnDedupeHighest',
   ],
-  "rangeStrategy": "pin",
-  "rebaseWhen": "conflicted",
-  "semanticCommits": "disabled",
-
-  "packageRules": [
+  rangeStrategy: 'pin',
+  rebaseWhen: 'conflicted',
+  semanticCommits: 'disabled',
+  packageRules: [
     {
-      "groupName": "Redwood",
-      "matchPackagePatterns": [
-        "^@redwoodjs/"
+      groupName: 'Redwood',
+      followTag: 'rc',
+      ignoreUnstable: false,
+      matchPackageNames: [
+        '/^@redwoodjs//',
       ],
-
-      "followTag": "rc",
-      "ignoreUnstable": false
     },
-
     {
-      "groupName": "Engines",
-      "matchDepTypes": [
-        "engines"
+      groupName: 'Engines',
+      matchDepTypes: [
+        'engines',
       ],
-      "enabled": false
-    }
+      enabled: false,
+    },
   ],
-
-  "ignoreDeps": [
-    "@netlify/zip-it-and-ship-it",
-    "archiver",
-    "fs-extra",
-    "node",
-    "humanize-string",
-    "prettier-plugin-tailwindcss",
-    "prop-types",
-    "react",
-    "react-dom"
-  ]
+  ignoreDeps: [
+    '@netlify/zip-it-and-ship-it',
+    'archiver',
+    'fs-extra',
+    'node',
+    'humanize-string',
+    'prettier-plugin-tailwindcss',
+    'prop-types',
+    'react',
+    'react-dom',
+  ],
 }
