@@ -12,7 +12,7 @@
         {
           "id": "redwood-api",
           "name": "Redwood API",
-          "type": "fargate",
+          "type": "web",
           "buildType": "nixpacks",
           "cpu": 0.25,
           "memory": 0.5,
@@ -23,6 +23,9 @@
           "healthCheckPath": "/graphql/health",
           "healthCheckGracePeriodSecs": 30,
           "healthCheckTimeoutSecs": 30,
+          "ci": {
+            "type": "ec2"
+          },
           "envVariables": {
             "REDWOOD_WEB_URL": {
               "fromService": {
@@ -41,6 +44,9 @@
           "installCommand": "cd flightcontrol && corepack enable && yarn install",
           "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol web",
           "outputDirectory": "flightcontrol/web/dist",
+          "ci": {
+            "type": "ec2"
+          },
           "envVariables": {
             "REDWOOD_API_URL": {
               "fromService": {
