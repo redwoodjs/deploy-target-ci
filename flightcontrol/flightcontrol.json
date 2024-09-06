@@ -15,7 +15,7 @@
           "type": "web",
           "buildType": "nixpacks",
           "cpu": 0.50,
-          "memory": 0.5,
+          "memory": 1.0,
           "installCommand": "cd flightcontrol && corepack enable && yarn install",
           "buildCommand": "cd flightcontrol && yarn rw deploy flightcontrol api",
           "startCommand": "cd flightcontrol && yarn rw deploy flightcontrol api --serve",
