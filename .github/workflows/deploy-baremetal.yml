@@ -76,7 +76,7 @@ jobs:
           echo "RW_DEPLOY_COMMIT=$RW_DEPLOY_COMMIT" >> $GITHUB_ENV
 
       - name: 💬 Message Slack
-        uses: slackapi/slack-github-action@v1
+        uses: slackapi/slack-github-action@v2
         with:
           payload: |
             {
